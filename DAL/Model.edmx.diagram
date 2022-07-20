@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3edba0952b354b7cae6c424153843be4" Name="Diagram1">
+        <EntityTypeShape EntityType="SwimMoodModel.ActiveHour" Width="1.5" PointX="5.375" PointY="15.5" />
+        <EntityTypeShape EntityType="SwimMoodModel.Cours_To_Customer" Width="1.5" PointX="7.5" PointY="5.25" />
+        <EntityTypeShape EntityType="SwimMoodModel.Customr_To_Pool" Width="1.5" PointX="7.5" PointY="11.5" />
+        <EntityTypeShape EntityType="SwimMoodModel.EntCustomr" Width="1.5" PointX="5.25" PointY="8.625" />
+        <EntityTypeShape EntityType="SwimMoodModel.Erea" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="SwimMoodModel.Maneger" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="SwimMoodModel.Pool" Width="1.5" PointX="3" PointY="9.125" />
+        <EntityTypeShape EntityType="SwimMoodModel.Sale" Width="1.5" PointX="5.25" PointY="18" />
+        <EntityTypeShape EntityType="SwimMoodModel.User" Width="1.5" PointX="5.25" PointY="0.75" />
+        <AssociationConnector Association="SwimMoodModel.FK_ActiveHour_Pool" />
+        <AssociationConnector Association="SwimMoodModel.FK_Cours_To_Customer_User" />
+        <AssociationConnector Association="SwimMoodModel.FK_Customr_To_Pool_User" />
+        <AssociationConnector Association="SwimMoodModel.FK_EntCustomrs_Customr_To_Pool" />
+        <AssociationConnector Association="SwimMoodModel.FK_EntCustomrs_Pool" />
+        <AssociationConnector Association="SwimMoodModel.FK_Pool_Erea" />
+        <AssociationConnector Association="SwimMoodModel.FK_User_Maneger" />
+        <AssociationConnector Association="SwimMoodModel.FK_Sales_Pool" />
+        <EntityTypeShape EntityType="SwimMoodModel.Packege" Width="1.5" PointX="5.25" PointY="21.75" />
+        <AssociationConnector Association="SwimMoodModel.FK_Customr_To_Pool_Packege" />
+        <AssociationConnector Association="SwimMoodModel.FK_Packege_Pool" />
+        <EntityTypeShape EntityType="SwimMoodModel.Cour" Width="1.5" PointX="5.125" PointY="11.5" />
+        <AssociationConnector Association="SwimMoodModel.FK_Cours_Pool" />
+        <AssociationConnector Association="SwimMoodModel.FK_Cours_To_Customer_Cours" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
