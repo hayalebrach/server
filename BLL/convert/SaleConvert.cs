@@ -16,11 +16,9 @@ namespace BLL.convert
             return new DTO.SaleDTO()
             {
                 Id = obj.Id,
-                PoolId = obj.PoolId,
                 Dis = obj.Dis,
                 StartDate = obj.StartDate,
                 EndDate = obj.EndDate,
-                EnteriesAmount = obj.EnteriesAmount,
                 Price=obj.Price
             };
         }
@@ -34,11 +32,9 @@ namespace BLL.convert
             return new DAL.Sale()
             {
                 Id = obj.Id,
-                PoolId = obj.PoolId,
                 Dis = obj.Dis,
                 StartDate = obj.StartDate,
                 EndDate = obj.EndDate,
-                EnteriesAmount = obj.EnteriesAmount,
                 Price = obj.Price
             };
         }

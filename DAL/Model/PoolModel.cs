@@ -46,11 +46,8 @@ namespace DAL.Model
                 Pool newPool = db.Pools.FirstOrDefault(x => x.Id == Pool.Id);
                 newPool.Id = Pool.Id;
                 newPool.Name = Pool.Name;
-                newPool.Address = Pool.Address;
                 newPool.Price = Pool.Price;
                 newPool.Amount = Pool.Amount;
-                newPool.ManagerId = Pool.ManagerId;
-                newPool.PositionId = Pool.PositionId;
                 db.SaveChanges();
                 return Pool;
     }

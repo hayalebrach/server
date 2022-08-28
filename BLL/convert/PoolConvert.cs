@@ -18,11 +18,8 @@ namespace BLL.convert
             {
                 Id = obj.Id,
                 Name=obj.Name,
-                Address = obj.Address,
                 Price = obj.Price,
                 Amount = obj.Amount,
-                ManagerId = obj.ManagerId,
-                PositionId=obj.PositionId
             };
         }
         #endregion
@@ -36,11 +33,9 @@ namespace BLL.convert
             {
                 Id = obj.Id,
                 Name = obj.Name,
-                Address = obj.Address,
                 Price = obj.Price,
                 Amount = obj.Amount,
-                ManagerId = obj.ManagerId,
-                PositionId = obj.PositionId
+              
             };
         }
         #endregion

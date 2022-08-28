@@ -10,48 +10,45 @@ namespace BLL.convert
     {
        
         #region המרה משכבת דיטיאו לשכבת דל
-        public static DTO.EntCustomrDTO Convert(DAL.EntCustomr obj)
+        public static DTO.EntCustomrDTO Convert(DAL.EnterCustomer obj)
         {
             if (obj == null)
                 return null;
             return new DTO.EntCustomrDTO()
             {
                 Id = obj.Id,
-                PoolId = obj.PoolId,
-                CustomerToPool_Id = obj.CustomerToPool_Id,
+               
                 EnterDate = obj.EnterDate,
                 StartHour = obj.StartHour,
-                FinishHour = obj.FinishHour
             };
         }
         #endregion
 
         #region המרה משכבת דל לשכבת דיטיאו
-        public static DAL.EntCustomr Convert(DTO.EntCustomrDTO obj)
+        public static DAL.EnterCustomer Convert(DTO.EntCustomrDTO obj)
         {
             if (obj == null)
                 return null;
-            return new DAL.EntCustomr()
+            return new DAL.EnterCustomer()
             {
                 Id = obj.Id,
-                PoolId = obj.PoolId,
-                CustomerToPool_Id = obj.CustomerToPool_Id,
+               
                 EnterDate = obj.EnterDate,
                 StartHour = obj.StartHour,
-                FinishHour = obj.FinishHour
+               
             };
         }
         #endregion
 
         #region המרה של מערך מדיטיאו לדל
-        public static List<DAL.EntCustomr> Convert(List<DTO.EntCustomrDTO> obj)
+        public static List<DAL.EnterCustomer> Convert(List<DTO.EntCustomrDTO> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }
         #endregion
 
         #region המרה של מערך דלמ לדיטיאו
-        public static List<DTO.EntCustomrDTO> Convert(List<DAL.EntCustomr> obj)
+        public static List<DTO.EntCustomrDTO> Convert(List<DAL.EnterCustomer> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }

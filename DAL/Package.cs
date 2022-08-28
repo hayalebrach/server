@@ -12,20 +12,21 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Maneger
+    public partial class Package
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Maneger()
+        public Package()
         {
-            this.Users = new HashSet<User>();
+            this.CustomerToPools = new HashSet<CustomerToPool>();
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
+        public Nullable<int> IdPool { get; set; }
+        public Nullable<int> EntersAmount { get; set; }
+        public Nullable<int> Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<CustomerToPool> CustomerToPools { get; set; }
+        public virtual Pool Pool { get; set; }
     }
 }

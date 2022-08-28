@@ -14,5 +14,11 @@ namespace Client_2.Controllers
         {
             return service.Get();
         }
+
+
+        public DTO.UserDTO Get(string name, int passwod)
+        {
+            return service.Get(name,passwod);
+        }
     }
 }

@@ -13,5 +13,10 @@ namespace BLL
         {
             return convert.UserConvert.Convert(model.Get());
         }
+
+        public DTO.UserDTO Get(string name,int password)
+        {
+            return convert.UserConvert.Convert(model.Get(name,password));
+        }
     }
 }

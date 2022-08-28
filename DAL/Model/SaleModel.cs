@@ -45,11 +45,9 @@ namespace DAL.Model
             {
                 Sale newSale = db.Sales.FirstOrDefault(x => x.Id == Sale.Id);
                 newSale.Id = Sale.Id;
-                newSale.PoolId = Sale.PoolId;
                 newSale.Dis = Sale.Dis;
                 newSale.StartDate = Sale.StartDate;
                 newSale.EndDate = Sale.EndDate;
-                newSale.EnteriesAmount = Sale.EnteriesAmount;
                 newSale.Price = Sale.Price;
                 db.SaveChanges();
                 return Sale;

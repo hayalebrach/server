@@ -17,13 +17,19 @@ namespace DAL.Model
                 return db.Users.ToList();
         }
 
+        public User Get(string name,int password)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
 
+                return db.Users.FirstOrDefault(x => x.Name == name&&x.Password==password);
+            }
+        }
 
         public User Get(int Id)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                User User = new User();
 
                 return db.Users.FirstOrDefault(x => x.Id == Id);
             }
@@ -51,8 +57,6 @@ namespace DAL.Model
                 newUser.Email = User.Email;
                 newUser.Phone = User.Phone;
                 newUser.Type = User.Type;
-                newUser.Authorization = User.Authorization;
-                newUser.LastEentry = User.LastEentry;
                 db.SaveChanges();
                 return User;
     }

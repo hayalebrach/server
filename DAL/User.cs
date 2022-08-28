@@ -17,22 +17,29 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Cours_To_Customer = new HashSet<Cours_To_Customer>();
-            this.Customr_To_Pool = new HashSet<Customr_To_Pool>();
+            this.Courses = new HashSet<Course>();
+            this.CoursToCustomers = new HashSet<CoursToCustomer>();
+            this.CustomerToPools = new HashSet<CustomerToPool>();
+            this.Pools = new HashSet<Pool>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Phone { get; set; }
-        public Nullable<int> Type { get; set; }
-        public Nullable<int> Authorization { get; set; }
-        public Nullable<System.DateTime> LastEentry { get; set; }
+        public Nullable<int> Password { get; set; }
+        public Nullable<bool> Type { get; set; }
+        public Nullable<int> IdRole { get; set; }
+        public Nullable<System.DateTime> LastEntery { get; set; }
+        public Nullable<int> Phone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cours_To_Customer> Cours_To_Customer { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customr_To_Pool> Customr_To_Pool { get; set; }
-        public virtual Maneger Maneger { get; set; }
+        public virtual ICollection<CoursToCustomer> CoursToCustomers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CustomerToPool> CustomerToPools { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pool> Pools { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

@@ -18,10 +18,7 @@ namespace BLL.convert
                 Id = obj.Id,
                 Name = obj.Name,
                 Email = obj.Email,
-                Phone = obj.Phone,
-                Type = obj.Type,
-                Authorization = obj.Authorization,
-                LastEentry=obj.LastEentry
+                
             };
         }
         #endregion
@@ -36,10 +33,7 @@ namespace BLL.convert
                 Id = obj.Id,
                 Name = obj.Name,
                 Email = obj.Email,
-                Phone = obj.Phone,
-                Type = obj.Type,
-                Authorization = obj.Authorization,
-                LastEentry = obj.LastEentry
+               
             };
         }
         #endregion

@@ -12,13 +12,17 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Cours_To_Customer
+    public partial class EnterCustomer
     {
         public int Id { get; set; }
-        public Nullable<int> UserId { get; set; }
-        public Nullable<int> CourseId { get; set; }
+        public Nullable<int> IdPool { get; set; }
+        public Nullable<System.DateTime> EnterDate { get; set; }
+        public Nullable<int> IdCustomerToPool { get; set; }
+        public Nullable<System.TimeSpan> StartHour { get; set; }
+        public Nullable<System.TimeSpan> EndHour { get; set; }
+        public Nullable<int> NumPeople { get; set; }
     
-        public virtual User User { get; set; }
-        public virtual Cour Cour { get; set; }
+        public virtual CustomerToPool CustomerToPool { get; set; }
+        public virtual Pool Pool { get; set; }
     }
 }

@@ -11,64 +11,58 @@ namespace DAL.Model
         //פונקצית
         //GET 
         //שמחזירה את השעות פעילות
-        public List<Cour> Get()
-        {
-            using (SwimMoodEntities db = new SwimMoodEntities())
-                return db.Cours.ToList();
-        }
-
-        public Cour Get(int Id)
+        public List<Course> Get()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Cour Cour = new Cour();
+                return db.Courses.ToList();
+            }
+        }
 
-                return db.Cours.FirstOrDefault(x => x.Id == Id);
+        public Course Get(int Id)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+
+                return db.Courses.FirstOrDefault(x => x.Id == Id);
             }
         }
         //
-        public Cour Post(Cour Cour)
+        public Course Post(Course Course)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
 
-                Cour = db.Cours.Add(Cour);
+                Course = db.Courses.Add(Course);
                 db.SaveChanges();
-                return Cour;
+                return Course;
 
             }
         }
      
         //פונקצית עדכון
-        public Cour Put(Cour Cour)
+        public Course Put(Course Course)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Cour newCour = db.Cours.FirstOrDefault(x => x.Id == Cour.Id);
-                newCour.Id = Cour.Id;
-                newCour.PoolId = Cour.PoolId;
-                newCour.Name = Cour.Name;
-                newCour.PeopleAmount = Cour.PeopleAmount;
-                newCour.Dis = Cour.Dis;
-                newCour.Price = Cour.Price;
-                newCour.StartHour = Cour.StartHour;
-                newCour.EndHour = Cour.EndHour;
-                newCour.Day = Cour.Day;
-                newCour.Type = Cour.Type;
+                Course newCour = db.Courses.FirstOrDefault(x => x.Id == Course.Id);
+                newCour.Id = Course.Id;
+                newCour.PeopleAmount = Course.PeopleAmount;
+                newCour.Dis = Course.Dis;
                 db.SaveChanges();
-                return Cour;
+                return Course;
 
             }
         }
 
         //פונקצית מחיקה
-        public Cour Delete(Cour Cour)
+        public Course Delete(Course Course)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Cour newCour = db.Cours.Remove(Cour);
+                Course newCour = db.Courses.Remove(Course);
                 db.SaveChanges();
-                return Cour;
+                return Course;
 
             }
         }

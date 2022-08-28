@@ -12,27 +12,25 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Cour
+    public partial class CustomerToPool
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cour()
+        public CustomerToPool()
         {
-            this.Cours_To_Customer = new HashSet<Cours_To_Customer>();
+            this.EnterCustomers = new HashSet<EnterCustomer>();
         }
     
         public int Id { get; set; }
-        public Nullable<int> PoolId { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> PeopleAmount { get; set; }
-        public string Dis { get; set; }
-        public Nullable<int> Price { get; set; }
-        public Nullable<System.TimeSpan> StartHour { get; set; }
-        public Nullable<System.TimeSpan> EndHour { get; set; }
-        public Nullable<int> Day { get; set; }
-        public Nullable<int> Type { get; set; }
+        public Nullable<int> IdPackages { get; set; }
+        public Nullable<int> IdUser { get; set; }
+        public Nullable<int> AmountLeft { get; set; }
+        public Nullable<int> AmountGet { get; set; }
+        public Nullable<int> TotalPrice { get; set; }
+        public Nullable<System.DateTime> DateBuy { get; set; }
     
-        public virtual Pool Pool { get; set; }
+        public virtual Package Package { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cours_To_Customer> Cours_To_Customer { get; set; }
+        public virtual ICollection<EnterCustomer> EnterCustomers { get; set; }
     }
 }

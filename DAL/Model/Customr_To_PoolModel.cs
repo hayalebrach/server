@@ -11,59 +11,57 @@ namespace DAL.Model
         //פונקצית
         //GET 
         //שמחזירה את השעות פעילות
-        public List<Customr_To_Pool> Get()
+        public List<CustomerToPool> Get()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
-                return db.Customr_To_Pool.ToList();
+                return db.CustomerToPools.ToList();
         }
 
-        public Customr_To_Pool Get(int Id)
+        public CustomerToPool Get(int Id)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Customr_To_Pool Customr_To_Pool = new Customr_To_Pool();
+                CustomerToPool CustomerToPool = new CustomerToPool();
 
-                return db.Customr_To_Pool.FirstOrDefault(x => x.Id == Id);
+                return db.CustomerToPools.FirstOrDefault(x => x.Id == Id);
             }
         }
         //
-        public Customr_To_Pool Post(Customr_To_Pool Customr_To_Pool)
+        public CustomerToPool Post(CustomerToPool CustomerToPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
 
-                Customr_To_Pool = db.Customr_To_Pool.Add(Customr_To_Pool);
+                CustomerToPool = db.CustomerToPools.Add(CustomerToPool);
                 db.SaveChanges();
-                return Customr_To_Pool;
+                return CustomerToPool;
 
             }
         }
         //פונקצית עדכון
-        public Customr_To_Pool Put(Customr_To_Pool Customr_To_Pool)
+        public CustomerToPool Put(CustomerToPool CustomerToPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Customr_To_Pool newCustomr_To_Pool = db.Customr_To_Pool.FirstOrDefault(x => x.Id == Customr_To_Pool.Id);
-                newCustomr_To_Pool.Id = Customr_To_Pool.Id;
-                newCustomr_To_Pool.PackageId = Customr_To_Pool.PackageId;
-                newCustomr_To_Pool.UserId = Customr_To_Pool.UserId;
-                newCustomr_To_Pool.AmountLeft = Customr_To_Pool.AmountLeft;
-                newCustomr_To_Pool.AmountGet = Customr_To_Pool.AmountGet;
-                newCustomr_To_Pool.TotalPrice = Customr_To_Pool.TotalPrice;
-                newCustomr_To_Pool.DateBuy = Customr_To_Pool.DateBuy;
+                CustomerToPool newCustomr_To_Pool = db.CustomerToPools.FirstOrDefault(x => x.Id == CustomerToPool.Id);
+                newCustomr_To_Pool.Id = CustomerToPool.Id;
+                newCustomr_To_Pool.AmountLeft = CustomerToPool.AmountLeft;
+                newCustomr_To_Pool.AmountGet = CustomerToPool.AmountGet;
+                newCustomr_To_Pool.TotalPrice = CustomerToPool.TotalPrice;
+                newCustomr_To_Pool.DateBuy = CustomerToPool.DateBuy;
                 db.SaveChanges();
-                return Customr_To_Pool;
+                return CustomerToPool;
             }
     
         }
         //פונקצית מחיקה
-        public Customr_To_Pool Delete(Customr_To_Pool Customr_To_Pool)
+        public CustomerToPool Delete(CustomerToPool CustomerToPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Customr_To_Pool newCustomr_To_Pool = db.Customr_To_Pool.Remove(Customr_To_Pool);
+                CustomerToPool newCustomr_To_Pool = db.CustomerToPools.Remove(CustomerToPool);
                 db.SaveChanges();
-                return Customr_To_Pool;
+                return CustomerToPool;
 
             }
         }

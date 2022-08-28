@@ -12,21 +12,21 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Packege
+    public partial class Day
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Packege()
+        public Day()
         {
-            this.Customr_To_Pool = new HashSet<Customr_To_Pool>();
+            this.DaysToCours = new HashSet<DaysToCour>();
+            this.DaysToPools = new HashSet<DaysToPool>();
         }
     
         public int Id { get; set; }
-        public Nullable<int> PoolId { get; set; }
-        public Nullable<int> EntersAmount { get; set; }
-        public Nullable<int> Price { get; set; }
+        public string NameDay { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customr_To_Pool> Customr_To_Pool { get; set; }
-        public virtual Pool Pool { get; set; }
+        public virtual ICollection<DaysToCour> DaysToCours { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DaysToPool> DaysToPools { get; set; }
     }
 }

@@ -12,16 +12,18 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class EntCustomr
+    public partial class Role
     {
-        public int Id { get; set; }
-        public Nullable<int> PoolId { get; set; }
-        public Nullable<int> CustomerToPool_Id { get; set; }
-        public Nullable<System.DateTime> EnterDate { get; set; }
-        public Nullable<System.TimeSpan> StartHour { get; set; }
-        public Nullable<System.TimeSpan> FinishHour { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Role()
+        {
+            this.Users = new HashSet<User>();
+        }
     
-        public virtual Customr_To_Pool Customr_To_Pool { get; set; }
-        public virtual Pool Pool { get; set; }
+        public int Id { get; set; }
+        public string TypeUser { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

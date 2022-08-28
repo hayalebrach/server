@@ -12,16 +12,16 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Sale
+    public partial class DaysToPool
     {
         public int Id { get; set; }
         public Nullable<int> IdPool { get; set; }
-        public string Dis { get; set; }
-        public Nullable<System.DateTime> StartDate { get; set; }
-        public Nullable<System.DateTime> EndDate { get; set; }
-        public Nullable<int> EnterAmount { get; set; }
-        public Nullable<int> Price { get; set; }
+        public Nullable<int> IdDays { get; set; }
+        public Nullable<System.TimeSpan> StartHour { get; set; }
+        public Nullable<System.TimeSpan> EndHour { get; set; }
+        public Nullable<bool> Type { get; set; }
     
+        public virtual Day Day { get; set; }
         public virtual Pool Pool { get; set; }
     }
 }

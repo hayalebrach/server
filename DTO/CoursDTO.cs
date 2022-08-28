@@ -10,6 +10,8 @@ namespace DTO
     {
         public int Id { get; set; }
         public Nullable<int> PoolId { get; set; }
+        public string PoolName { get; set; }
+
         public string Name { get; set; }
         public Nullable<int> PeopleAmount { get; set; }
         public string Dis { get; set; }

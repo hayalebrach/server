@@ -25,16 +25,19 @@ namespace DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ActiveHour> ActiveHours { get; set; }
-        public virtual DbSet<Cours_To_Customer> Cours_To_Customer { get; set; }
-        public virtual DbSet<Customr_To_Pool> Customr_To_Pool { get; set; }
-        public virtual DbSet<EntCustomr> EntCustomrs { get; set; }
+        public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<CoursToCustomer> CoursToCustomers { get; set; }
+        public virtual DbSet<CustomerToPool> CustomerToPools { get; set; }
+        public virtual DbSet<Day> Days { get; set; }
+        public virtual DbSet<DaysToCour> DaysToCours { get; set; }
+        public virtual DbSet<DaysToPool> DaysToPools { get; set; }
+        public virtual DbSet<EnterCustomer> EnterCustomers { get; set; }
         public virtual DbSet<Erea> Ereas { get; set; }
-        public virtual DbSet<Maneger> Manegers { get; set; }
+        public virtual DbSet<Package> Packages { get; set; }
         public virtual DbSet<Pool> Pools { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Packege> Packeges { get; set; }
-        public virtual DbSet<Cour> Cours { get; set; }
     }
 }

@@ -10,14 +10,13 @@ namespace BLL.convert
     {
 
         #region המרה משכבת דיטיאו לשכבת דל
-        public static DTO.PackegeDTO Convert(DAL.Packege obj)
+        public static DTO.PackegeDTO Convert(DAL.Package obj)
         {
             if (obj == null)
                 return null;
             return new DTO.PackegeDTO()
             {
                 Id = obj.Id,
-                PoolId = obj.PoolId,
                 EntersAmount = obj.EntersAmount,
                 Price = obj.Price
             };
@@ -25,14 +24,13 @@ namespace BLL.convert
         #endregion
 
         #region המרה משכבת דל לשכבת דיטיאו
-        public static DAL.Packege Convert(DTO.PackegeDTO obj)
+        public static DAL.Package Convert(DTO.PackegeDTO obj)
         {
             if (obj == null)
                 return null;
-            return new DAL.Packege()
+            return new DAL.Package()
             {
                 Id = obj.Id,
-                PoolId = obj.PoolId,
                 EntersAmount = obj.EntersAmount,
                 Price = obj.Price
             };
@@ -40,14 +38,14 @@ namespace BLL.convert
         #endregion
 
         #region המרה של מערך מדיטיאו לדל
-        public static List<DAL.Packege> Convert(List<DTO.PackegeDTO> obj)
+        public static List<DAL.Package> Convert(List<DTO.PackegeDTO> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }
         #endregion
 
         #region המרה של מערך דלמ לדיטיאו
-        public static List<DTO.PackegeDTO> Convert(List<DAL.Packege> obj)
+        public static List<DTO.PackegeDTO> Convert(List<DAL.Package> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }

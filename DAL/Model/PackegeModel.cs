@@ -11,54 +11,53 @@ namespace DAL.Model
         //פונקצית
         //GET 
         //שמחזירה את השעות פעילות
-        public List<Packege> Get()
+        public List<Package> Get()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
-                return db.Packeges.ToList();
+                return db.Packages.ToList();
         }
-        public Packege Get(int Id)
+        public Package Get(int Id)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Packege Packege = new Packege();
+                Package Package = new Package();
 
-                return db.Packeges.FirstOrDefault(x => x.Id == Id);
+                return db.Packages.FirstOrDefault(x => x.Id == Id);
             }
         }
         //
-        public Packege Post(Packege Packege)
+        public Package Post(Package Package)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
 
-                Packege = db.Packeges.Add(Packege);
+                Package = db.Packages.Add(Package);
                 db.SaveChanges();
-                return Packege;
+                return Package;
 
             }
         }
         //פונקצית עדכון
-        public Packege Put(Packege Packege)
+        public Package Put(Package Package)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Packege newPackege = db.Packeges.FirstOrDefault(x => x.Id == Packege.Id);
-                newPackege.Id = Packege.Id;
-                newPackege.PoolId = Packege.PoolId;
-                newPackege.EntersAmount = Packege.EntersAmount;
-                newPackege.Price = Packege.Price;
+                Package newPackege = db.Packages.FirstOrDefault(x => x.Id == Package.Id);
+                newPackege.Id = Package.Id;
+                newPackege.EntersAmount = Package.EntersAmount;
+                newPackege.Price = Package.Price;
                 db.SaveChanges();
-                return Packege; 
+                return Package; 
     }
         }
         //פונקצית מחיקה
-        public Packege Delete(Packege Packege)
+        public Package Delete(Package Package)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Packege newPackege = db.Packeges.Remove(Packege);
+                Package newPackege = db.Packages.Remove(Package);
                 db.SaveChanges();
-                return Packege;
+                return Package;
 
             }
         }

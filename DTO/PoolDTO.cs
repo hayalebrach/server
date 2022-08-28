@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+    //public class poolCorsDTO:PoolDTO
+    //{
+    //    public List<CoursDTO> Corses { get; set; }
+    //}
     public class PoolDTO
     {
         public int Id { get; set; }

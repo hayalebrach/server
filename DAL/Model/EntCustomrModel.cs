@@ -12,58 +12,55 @@ namespace DAL.Model
         //פונקצית
         //GET 
         //שמחזירה את השעות פעילות
-        public List<EntCustomr> Get()
+        public List<EnterCustomer> Get()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
-                return db.EntCustomrs.ToList();
+                return db.EnterCustomers.ToList();
         }
 
 
-        public EntCustomr Get(int Id)
+        public EnterCustomer Get(int Id)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                EntCustomr EntCustomr = new EntCustomr();
+                EnterCustomer EnterCustomer = new EnterCustomer();
 
-                return db.EntCustomrs.FirstOrDefault(x => x.Id == Id);
+                return db.EnterCustomers.FirstOrDefault(x => x.Id == Id);
             }
         }
         //
-        public EntCustomr Post(EntCustomr EntCustomr)
+        public EnterCustomer Post(EnterCustomer EnterCustomer)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
 
-                EntCustomr = db.EntCustomrs.Add(EntCustomr);
+                EnterCustomer = db.EnterCustomers.Add(EnterCustomer);
                 db.SaveChanges();
-                return EntCustomr;
+                return EnterCustomer;
 
             }
         }
         //פונקצית עדכון
-        public EntCustomr Put(EntCustomr EntCustomr)
+        public EnterCustomer Put(EnterCustomer EnterCustomer)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                EntCustomr newEntCustomr = db.EntCustomrs.FirstOrDefault(x => x.Id == EntCustomr.Id);
-                newEntCustomr.Id = EntCustomr.Id;
-                newEntCustomr.PoolId = EntCustomr.PoolId;
-                newEntCustomr.CustomerToPool_Id = EntCustomr.CustomerToPool_Id;
-                newEntCustomr.EnterDate = EntCustomr.EnterDate;
-                newEntCustomr.StartHour = EntCustomr.StartHour;
-                newEntCustomr.FinishHour = EntCustomr.FinishHour;
+                EnterCustomer newEntCustomr = db.EnterCustomers.FirstOrDefault(x => x.Id == EnterCustomer.Id);
+                newEntCustomr.Id = EnterCustomer.Id;
+                newEntCustomr.EnterDate = EnterCustomer.EnterDate;
+                newEntCustomr.StartHour = EnterCustomer.StartHour;
                 db.SaveChanges();
-                return EntCustomr;
+                return EnterCustomer;
     }
         }
         //פונקצית מחיקה
-        public EntCustomr Delete(EntCustomr EntCustomr)
+        public EnterCustomer Delete(EnterCustomer EnterCustomer)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                EntCustomr newEntCustomr = db.EntCustomrs.Remove(EntCustomr);
+                EnterCustomer newEntCustomr = db.EnterCustomers.Remove(EnterCustomer);
                 db.SaveChanges();
-                return EntCustomr;
+                return EnterCustomer;
 
             }
         }

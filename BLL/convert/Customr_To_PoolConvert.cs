@@ -10,15 +10,14 @@ namespace BLL.convert
     {
 
         #region המרה משכבת דיטיאו לשכבת דל
-        public static DTO.Customr_To_PoolDTO Convert(DAL.Customr_To_Pool obj)
+        public static DTO.Customr_To_PoolDTO Convert(DAL.CustomerToPool obj)
         {
             if (obj == null)
                 return null;
             return new DTO.Customr_To_PoolDTO()
             {
                 Id = obj.Id,
-                PackageId = obj.PackageId,
-                UserId = obj.UserId,
+               
                 AmountLeft = obj.AmountLeft,
                 AmountGet = obj.AmountGet,
                 TotalPrice = obj.TotalPrice,
@@ -28,15 +27,14 @@ namespace BLL.convert
         #endregion
 
         #region המרה משכבת דל לשכבת דיטיאו
-        public static DAL.Customr_To_Pool Convert(DTO.Customr_To_PoolDTO obj)
+        public static DAL.CustomerToPool Convert(DTO.Customr_To_PoolDTO obj)
         {
             if (obj == null)
                 return null;
-            return new DAL.Customr_To_Pool()
+            return new DAL.CustomerToPool()
             {
                 Id = obj.Id,
-                PackageId = obj.PackageId,
-                UserId = obj.UserId,
+              
                 AmountLeft = obj.AmountLeft,
                 AmountGet = obj.AmountGet,
                 TotalPrice = obj.TotalPrice,
@@ -46,14 +44,14 @@ namespace BLL.convert
         #endregion
 
         #region המרה של מערך מדיטיאו לדל
-        public static List<DAL.Customr_To_Pool> Convert(List<DTO.Customr_To_PoolDTO> obj)
+        public static List<DAL.CustomerToPool> Convert(List<DTO.Customr_To_PoolDTO> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }
         #endregion
 
         #region המרה של מערך דלמ לדיטיאו
-        public static List<DTO.Customr_To_PoolDTO> Convert(List<DAL.Customr_To_Pool> obj)
+        public static List<DTO.Customr_To_PoolDTO> Convert(List<DAL.CustomerToPool> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }

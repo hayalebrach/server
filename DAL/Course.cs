@@ -12,25 +12,27 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Customr_To_Pool
+    public partial class Course
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customr_To_Pool()
+        public Course()
         {
-            this.EntCustomrs = new HashSet<EntCustomr>();
+            this.CoursToCustomers = new HashSet<CoursToCustomer>();
+            this.DaysToCours = new HashSet<DaysToCour>();
         }
     
         public int Id { get; set; }
-        public Nullable<int> PackageId { get; set; }
-        public Nullable<int> UserId { get; set; }
-        public Nullable<int> AmountLeft { get; set; }
-        public Nullable<int> AmountGet { get; set; }
-        public Nullable<int> TotalPrice { get; set; }
-        public Nullable<System.DateTime> DateBuy { get; set; }
+        public Nullable<int> IdPool { get; set; }
+        public string NameCours { get; set; }
+        public Nullable<int> PeopleAmount { get; set; }
+        public string Dis { get; set; }
+        public Nullable<int> IdUser { get; set; }
     
+        public virtual Pool Pool { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EntCustomr> EntCustomrs { get; set; }
-        public virtual Packege Packege { get; set; }
+        public virtual ICollection<CoursToCustomer> CoursToCustomers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DaysToCour> DaysToCours { get; set; }
     }
 }

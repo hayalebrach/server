@@ -9,56 +9,47 @@ namespace BLL.convert
     public class CoursConvert
     {
         #region המרה משכבת דיטיאו לשכבת דל
-        public static DTO.CoursDTO Convert(DAL.Cour obj)
+        public static DTO.CoursDTO Convert(DAL.Course obj)
         {
             if (obj == null)
                 return null;
             return new DTO.CoursDTO()
             {
                 Id = obj.Id,
-                PoolId = obj.PoolId,               
-                Name = obj.Name,
+              
                 PeopleAmount = obj.PeopleAmount,
                 Dis = obj.Dis,
-                Price = obj.Price,
-                StartHour = obj.StartHour,
-                EndHour = obj.EndHour,       
-                Day = obj.Day,
-                Type = obj.Type,
-            };
+               
+                PoolName=obj.Pool?.Name
+    };
         }
         #endregion
       
         #region המרה משכבת דל לשכבת דיטיאו
-        public static DAL.Cour Convert(DTO.CoursDTO obj)
+        public static DAL.Course Convert(DTO.CoursDTO obj)
         {
             if (obj == null)
                 return null;
-            return new DAL.Cour()
+            return new DAL.Course()
             {
                 Id = obj.Id,
-                PoolId = obj.PoolId,
-                Name = obj.Name,
                 PeopleAmount = obj.PeopleAmount,
                 Dis = obj.Dis,
-                Price = obj.Price,
-                StartHour = obj.StartHour,
-                EndHour = obj.EndHour,
-                Day = obj.Day,
-                Type = obj.Type,
+                             
+              
             };
         }
         #endregion
 
         #region המרה של מערך מדיטיאו לדל
-        public static List<DAL.Cour> Convert(List<DTO.CoursDTO> obj)
+        public static List<DAL.Course> Convert(List<DTO.CoursDTO> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }
         #endregion
 
         #region המרה של מערך דלמ לדיטיאו
- public static List<DTO.CoursDTO> Convert(List<DAL.Cour> obj)
+ public static List<DTO.CoursDTO> Convert(List<DAL.Course> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }

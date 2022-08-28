@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BLL</RootNamespace>
     <AssemblyName>BLL</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,15 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActiveHourService.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="convert\ActiveHourConvert.cs" />
     <Compile Include="convert\CoursConvert.cs" />
     <Compile Include="convert\Cours_To_CustomerConvert.cs" />
     <Compile Include="convert\Customr_To_PoolConvert.cs" />
     <Compile Include="convert\EntCustomrConvert.cs" />
     <Compile Include="convert\EreaConvert.cs" />
-    <Compile Include="convert\ManegerConvert.cs" />
     <Compile Include="convert\PackegeConvert.cs" />
     <Compile Include="convert\PoolConvert.cs" />
     <Compile Include="convert\SaleConvert.cs" />
@@ -57,7 +55,6 @@
     <Compile Include="Customr_To_PoolService.cs" />
     <Compile Include="EntCustomrService.cs" />
     <Compile Include="EreaService.cs" />
-    <Compile Include="ManegerService.cs" />
     <Compile Include="PackegeService.cs" />
     <Compile Include="PoolService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
