@@ -8,10 +8,10 @@ namespace BLL
 {
     public class CoursService
     {
-        DAL.Model.CoursModel model = new DAL.Model.CoursModel();
+        DAL.Model.CoursModel model = new DAL.Model.CoursModel(); 
         public List<DTO.CoursDTO> Get()
         {
-            return convert.CoursConvert.Convert(model.Get());
+            return convert.CoursConvert.Convert(model.Get()); 
         }
     }
 }
