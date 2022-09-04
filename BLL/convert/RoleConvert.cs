@@ -6,60 +6,46 @@ using System.Threading.Tasks;
 
 namespace BLL.convert
 {
-    public class UserConvert
+    public class RoleConvert
     {
         #region המרה משכבת דל לשכבת דיטיאו
-        public static DTO.UserDTO Convert(DAL.User obj)
+        public static DTO.RoleDTO Convert(DAL.Role obj)
         {
             if (obj == null)
                 return null;
-            return new DTO.UserDTO()
+            return new DTO.RoleDTO()
             {
                 Id = obj.Id,
-                Name = obj.Name,
-                Email = obj.Email,
-                Password = obj.Password,
-                Type = obj.Type,
-                LastEntery = obj.LastEntery,
-                Phone = obj.Phone,
-                IdRole = obj.IdRole,
-                
+                TypeUser= obj.TypeUser
             };
         }
         #endregion
 
         #region המרה משכבת דיטיאו לשכבת דל
-        public static DAL.User Convert(DTO.UserDTO obj)
+        public static DAL.Role Convert(DTO.RoleDTO obj)
         {
             if (obj == null)
                 return null;
-            return new DAL.User()
+            return new DAL.Role()
             {
                 Id = obj.Id,
-                Name = obj.Name,
-                Email = obj.Email,
-                Password = obj.Password,
-                Type = obj.Type,
-                LastEntery = obj.LastEntery,
-                Phone = obj.Phone,
-                IdRole = obj.IdRole,
+                TypeUser = obj.TypeUser
             };
         }
         #endregion
 
         #region המרה של מערך מדיטיאו לדל
-        public static List<DAL.User> Convert(List<DTO.UserDTO> obj)
+        public static List<DAL.Role> Convert(List<DTO.RoleDTO> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }
         #endregion
 
         #region המרה של מערך דלמ לדיטיאו
-        public static List<DTO.UserDTO> Convert(List<DAL.User> obj)
+        public static List<DTO.RoleDTO> Convert(List<DAL.Role> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }
         #endregion
-
     }
 }
