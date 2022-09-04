@@ -34,5 +34,7 @@ namespace DAL
         public virtual ICollection<CoursToCustomer> CoursToCustomers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DaysToCour> DaysToCours { get; set; }
+
+
     }
 }
