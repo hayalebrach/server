@@ -11,17 +11,19 @@ namespace BLL.convert
         #region המרה משכבת דיטיאו לשכבת דל
         public static DTO.CoursDTO Convert(DAL.Course obj)
         {
+            
             if (obj == null)
                 return null;
             return new DTO.CoursDTO()
             {
                 Id = obj.Id,
-              
+
                 PeopleAmount = obj.PeopleAmount,
                 Dis = obj.Dis,
-               
-                PoolName=obj.Pool?.Name
-    };
+
+                PoolName = obj.Pool?.Name
+            };
+   
         }
         #endregion
       

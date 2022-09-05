@@ -96,6 +96,7 @@
     <Compile Include="Model\EreaModel.cs" />
     <Compile Include="Model\PackegeModel.cs" />
     <Compile Include="Model\PoolModel.cs" />
+    <Compile Include="Model\RoleModel.cs" />
     <Compile Include="Model\SaleModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Package.cs">

@@ -51,6 +51,7 @@
     <Compile Include="PackegeDTO.cs" />
     <Compile Include="PoolDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleDTO.cs" />
     <Compile Include="SaleDTO.cs" />
     <Compile Include="UserDTO.cs" />
   </ItemGroup>

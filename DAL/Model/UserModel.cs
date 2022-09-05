@@ -10,32 +10,24 @@ namespace DAL.Model
     {
         //פונקצית
         //GET 
-        //שמחזירה את השעות פעילות
-        public List<User> Get()
+        //כל המשתמשים
+        public List<User> GetAllUsers()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
                 return db.Users.ToList();
         }
 
-        public User Get(string name,int password)
+        //פונקצית GET שמקבלת לפי שם וסיסמא
+        public User GetByIdAndPassword(string name,int password)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-
                 return db.Users.FirstOrDefault(x => x.Name == name&&x.Password==password);
             }
         }
 
-        public User Get(int Id)
-        {
-            using (SwimMoodEntities db = new SwimMoodEntities())
-            {
-
-                return db.Users.FirstOrDefault(x => x.Id == Id);
-            }
-        }
-        //
-        public User Post(User User)
+        //הוספת משתמש
+        public User AddUser(User User)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
