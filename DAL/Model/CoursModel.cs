@@ -11,6 +11,7 @@ namespace DAL.Model
         //פונקצית
         //GET 
         //שמחזירה את השעות פעילות
+        
         public List<Course> Get()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
@@ -18,9 +19,10 @@ namespace DAL.Model
                 return db.Courses.ToList();
             }
         }
-
+        
         public Course Get(int Id)
         {
+            
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
 
@@ -28,6 +30,7 @@ namespace DAL.Model
             }
         }
         //
+        
         public Course Post(Course Course)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())

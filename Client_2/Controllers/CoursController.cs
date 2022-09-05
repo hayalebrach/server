@@ -9,14 +9,14 @@ namespace Client_2.Controllers
 {
 
 
-    
+   
     public class CoursController : ApiController
     {
         BLL.CoursService service = new BLL.CoursService();
 
 
-        
-        public List<DTO.CoursDTO> Get()
+         [HttpGet]
+        public List<DTO.CoursDTO> getAllCourses()
         {
             return service.Get();
         }

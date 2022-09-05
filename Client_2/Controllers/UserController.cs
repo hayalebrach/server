@@ -16,9 +16,9 @@ namespace Client_2.Controllers
         }
 
 
-        public DTO.UserDTO Get(string name, int passwod)
+        public DTO.UserDTO Get(string name, int password)
         {
-            return service.Get(name,passwod);
+            return service.Get(name,password);
         }
     }
 }
