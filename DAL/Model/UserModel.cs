@@ -10,24 +10,23 @@ namespace DAL.Model
     {
         //פונקצית
         //GET 
-        //כל המשתמשים
-        public List<User> GetAllUsers()
+      
+        public List<User> GetAllUsers()  //כל המשתמשים
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
                 return db.Users.ToList();
         }
-
-        //פונקצית GET שמקבלת לפי שם וסיסמא
+ //פונקצית GET שמקבלת לפי שם וסיסמא
         public User GetByIdAndPassword(string name,int password)
+      
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
                 return db.Users.FirstOrDefault(x => x.Name == name&&x.Password==password);
             }
-        }
+        } 
 
-        //הוספת משתמש
-        public User AddUser(User User)
+        public User AddUser(User User)  //הוספת משתמש
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
@@ -38,7 +37,10 @@ namespace DAL.Model
 
             }
         }
+
+
         //פונקצית עדכון
+
         public User Put(User User)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
@@ -47,11 +49,14 @@ namespace DAL.Model
                 newUser.Id = User.Id;
                 newUser.Name = User.Name;
                 newUser.Email = User.Email;
-                newUser.Phone = User.Phone;
+                newUser.Password = User.Password;
                 newUser.Type = User.Type;
+                newUser.IdRole = User.IdRole;
+                newUser.LastEntery = User.LastEntery;
+                newUser.Phone = User.Phone;
                 db.SaveChanges();
                 return User;
-    }
+            }
         }
         //פונקצית מחיקה
         public User Delete(User User)

@@ -92,6 +92,8 @@
     </Compile>
     <Compile Include="Model\CoursModel.cs" />
     <Compile Include="Model\Customr_To_PoolModel.cs" />
+    <Compile Include="Model\DaysModel.cs" />
+    <Compile Include="Model\DaysToPoolModel.cs" />
     <Compile Include="Model\EntCustomrModel.cs" />
     <Compile Include="Model\EreaModel.cs" />
     <Compile Include="Model\PackegeModel.cs" />

@@ -9,9 +9,9 @@ namespace BLL
     public class EreaService
     {
         DAL.Model.EreaModel model = new DAL.Model.EreaModel();
-        public List<DTO.EreaDTO> Get()
+        public List<DTO.EreaDTO> GetAllEreas()
         {
-            return convert.EreaConvert.Convert(model.Get());
+            return convert.EreaConvert.Convert(model.GetAllEreas());
         }
     }
 }

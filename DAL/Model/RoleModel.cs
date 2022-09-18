@@ -8,24 +8,14 @@ namespace DAL.Model
 {
     public class RoleModel
     {
-
+        //ייבוא של כל התפקידים
         public List<Role> GetAllRole()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
                 return db.Roles.ToList();
         }
 
-        //public Role Get(int Id)
-        //{
-        //    using (SwimMoodEntities db = new SwimMoodEntities())
-        //    {
-        //        Role Role = new Role();
-
-        //        return db.Roles.FirstOrDefault(x => x.Id == Id);
-        //    }
-        //}
-        ////
-          
+        //הוספת תפקיד
         public Role AddRole(DAL.Role role)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
@@ -36,6 +26,7 @@ namespace DAL.Model
 
             }
         }
+
         //פונקצית עדכון
         public Role Put(Role Role)
         {

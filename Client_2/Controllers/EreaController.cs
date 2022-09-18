@@ -10,9 +10,10 @@ namespace Client_2.Controllers
     public class EreaController : ApiController
     {
         BLL.EreaService service = new BLL.EreaService();
-        public List<DTO.EreaDTO> Get()
+        //ייבוא של כל האיזורים
+        public List<DTO.EreaDTO> GetAllEreas()
         {
-            return service.Get();
+            return service.GetAllEreas();
         }
     }
 }

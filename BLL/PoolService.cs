@@ -13,5 +13,10 @@ namespace BLL
         {
             return convert.PoolConvert.Convert(model.Get());
         }
+
+        public DTO.PoolDTO AddPool(DTO.PoolDTO Pool) //הוספת משתמש
+        {
+            return convert.PoolConvert.Convert(model.AddPool(convert.PoolConvert.Convert(Pool)));
+        }
     }
 }

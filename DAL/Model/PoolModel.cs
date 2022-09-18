@@ -27,7 +27,7 @@ namespace DAL.Model
             }
         }
         //
-        public Pool Post(Pool Pool)
+        public Pool AddPool(Pool Pool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {

@@ -14,5 +14,12 @@ namespace Client_2.Controllers
         {
             return service.Get();
         }
+        //הוספת בריכה
+        [HttpPost]
+        public DTO.PoolDTO AddPool(DTO.PoolDTO Pool)
+        {
+            return service.AddPool(Pool);
+        }
+
     }
 }

@@ -9,7 +9,9 @@ namespace BLL
     public class RoleService
     {
         DAL.Model.RoleModel model = new DAL.Model.RoleModel();
+
         //פונקציות
+        //ייבוא של כל התפקידים
         public List<DTO.RoleDTO> GetAllRole()
         {
             return convert.RoleConvert.Convert(model.GetAllRole());

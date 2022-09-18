@@ -45,9 +45,10 @@
     <Compile Include="CoursDTO.cs" />
     <Compile Include="Cours_To_CustomerDTO.cs" />
     <Compile Include="Customr_To_PoolDTO.cs" />
+    <Compile Include="DaysDTO.cs" />
+    <Compile Include="DaysToPoolDTO.cs" />
     <Compile Include="EntCustomrDTO.cs" />
     <Compile Include="EreaDTO.cs" />
-    <Compile Include="ManegerDTO.cs" />
     <Compile Include="PackegeDTO.cs" />
     <Compile Include="PoolDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

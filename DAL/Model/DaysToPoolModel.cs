@@ -6,59 +6,59 @@ using System.Threading.Tasks;
 
 namespace DAL.Model
 {
-    public class EreaModel
+    public class DaysToPoolModel
     {
-        //פונקצית
-        //GET 
-        //שמחזירה את כל האיזורים
-        public List<Erea> GetAllEreas()
-        {
-            using (SwimMoodEntities db = new SwimMoodEntities())
-                return db.Ereas.ToList();
-        }
-
-        public Erea Get(int Id)
+        public List<DaysToPool> Get()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Erea Erea = new Erea();
+                return db.DaysToPools.ToList();
+            }
+        }
+        public DaysToPool Get(int Id)
+        {
 
-                return db.Ereas.FirstOrDefault(x => x.Id == Id);
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+
+                return db.DaysToPools.FirstOrDefault(x => x.Id == Id);
             }
         }
         //
-        public Erea Post(Erea Erea)
+
+        public DaysToPool AddDaysToPool(DaysToPool DaysToPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
 
-                Erea = db.Ereas.Add(Erea);
+                DaysToPool = db.DaysToPools.Add(DaysToPool);
                 db.SaveChanges();
-                return Erea;
+                return DaysToPool;
 
             }
         }
+
         //פונקצית עדכון
-        public Erea Put(Erea Erea)
+        public DaysToPool Put(DaysToPool DaysToPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Erea newErea = db.Ereas.FirstOrDefault(x => x.Id == Erea.Id);
-                newErea.Id = Erea.Id;
-                newErea.Name = Erea.Name;
+                DaysToPool newDaysToPool = db.DaysToPools.FirstOrDefault(x => x.Id == DaysToPool.Id);
+                newDaysToPool.Id = DaysToPool.Id;
                 db.SaveChanges();
-                return Erea;
+                return DaysToPool;
 
             }
         }
+
         //פונקצית מחיקה
-        public Erea Delete(Erea Erea)
+        public DaysToPool Delete(DaysToPool DaysToPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Erea newErea = db.Ereas.Remove(Erea);
+                DaysToPool newDaysToPool = db.DaysToPools.Remove(DaysToPool);
                 db.SaveChanges();
-                return Erea;
+                return DaysToPool;
 
             }
         }

@@ -12,7 +12,7 @@ namespace DTO
         public Nullable<int> PoolId { get; set; }
         public string PoolName { get; set; }
 
-        public string Name { get; set; }
+        public string NameCours { get; set; }
         public Nullable<int> PeopleAmount { get; set; }
         public string Dis { get; set; }
         public Nullable<int> Price { get; set; }
