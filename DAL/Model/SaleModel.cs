@@ -27,7 +27,7 @@ namespace DAL.Model
             }
         }
         //
-        public Sale Post(Sale Sale)
+        public Sale AddSale(Sale Sale)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {

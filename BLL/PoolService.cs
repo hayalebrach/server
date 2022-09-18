@@ -9,9 +9,9 @@ namespace BLL
     public class PoolService
     {
         DAL.Model.PoolModel model = new DAL.Model.PoolModel();
-        public List<DTO.PoolDTO> Get()
+        public List<DTO.PoolDTO> GetAllPools()
         {
-            return convert.PoolConvert.Convert(model.Get());
+            return convert.PoolConvert.Convert(model.GetAllPools());
         }
     }
 }

@@ -13,7 +13,7 @@ namespace DAL.Model
         //כל המשתמשים
         public List<User> GetAllUsers()
         {
-            using (SwimMoodEntities db = new SwimMoodEntities())
+            using (SwimMoodEntities db = new SwimMoodEntities()) 
                 return db.Users.ToList();
         }
 
@@ -64,5 +64,7 @@ namespace DAL.Model
 
             }
         }
+
+
     }
 }

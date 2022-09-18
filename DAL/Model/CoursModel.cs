@@ -19,24 +19,31 @@ namespace DAL.Model
                 return db.Courses.ToList();
             }
         }
-        
-        public Course Get(int Id)
+
+        public List<Course> GetCoursesByPool(int IdPool)
         {
-            
+
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
 
-                return db.Courses.FirstOrDefault(x => x.Id == Id);
+                List<Course> x = new List<Course>();
+                foreach(Course c in db.Courses)
+                {
+                    if(c.IdPool == IdPool)
+                    x.Add(c);
+                }
+                return x;
             }
         }
         //
-        
-        public Course Post(Course Course)
+
+        public Course AddCourse(Course Course)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
 
                 Course = db.Courses.Add(Course);
+                
                 db.SaveChanges();
                 return Course;
 

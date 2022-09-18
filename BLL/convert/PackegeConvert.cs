@@ -17,6 +17,7 @@ namespace BLL.convert
             return new DTO.PackegeDTO()
             {
                 Id = obj.Id,
+                PoolId = obj.IdPool,
                 EntersAmount = obj.EntersAmount,
                 Price = obj.Price
             };

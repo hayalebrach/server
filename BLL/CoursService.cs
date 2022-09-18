@@ -13,5 +13,17 @@ namespace BLL
         {
             return convert.CoursConvert.Convert(model.Get()); 
         }
+
+        public List<DTO.CoursDTO> GetCoursesByPool(int IdPool)
+        {
+            return convert.CoursConvert.Convert(model.GetCoursesByPool(IdPool));
+        }
+
+
+
+        public DTO.CoursDTO AddCourse(DTO.CoursDTO Course)
+        {
+            return convert.CoursConvert.Convert(model.AddCourse(convert.CoursConvert.Convert(Course)));
+        }
     }
 }

@@ -11,18 +11,18 @@ namespace Client_2.Controllers
     {
         BLL.UserService service = new BLL.UserService();
         [HttpGet]
-         //כל המשתמשים
+        //כל המשתמשים
         public List<DTO.UserDTO> GetAllUsers()
         {
             return service.GetAllUsers();
         }
-   }
 
-        [HttpGet]     
+
+        [HttpGet]
         //פונקצית GET שמקבלת לפי שם וסיסמא
-        public DTO.UserDTO GetByIdAndPassword(string name, int passwod)
+        public DTO.UserDTO GetByIdAndPassword(string name, int password)
         {
-            return service.GetByIdAndPassword(name,passwod);
+            return service.GetByIdAndPassword(name, password);
 
         }
         [HttpPost]
@@ -30,8 +30,9 @@ namespace Client_2.Controllers
         {
             return service.AddUser(User);
         }
-        
-            
-        
+
+
+
     }
-}
+    }
+

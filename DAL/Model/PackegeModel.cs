@@ -25,8 +25,8 @@ namespace DAL.Model
                 return db.Packages.FirstOrDefault(x => x.Id == Id);
             }
         }
-        //
-        public Package Post(Package Package)
+        //מוסיפה כרטיסיה
+        public Package AddCard(Package Package)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {

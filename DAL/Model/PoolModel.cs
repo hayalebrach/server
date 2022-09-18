@@ -11,7 +11,7 @@ namespace DAL.Model
         //פונקצית
         //GET 
         //שמחזירה את השעות פעילות
-        public List<Pool> Get()
+        public List<Pool> GetAllPools()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
                 return db.Pools.ToList();
