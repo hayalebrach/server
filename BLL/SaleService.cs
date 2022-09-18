@@ -13,5 +13,10 @@ namespace BLL
         {
             return convert.SaleConvert.Convert(model.Get());
         }
+
+        public DTO.SaleDTO AddSale(DTO.SaleDTO Sale)
+        {
+            return convert.SaleConvert.Convert(model.AddSale(convert.SaleConvert.Convert(Sale)));
+        }
     }
 }

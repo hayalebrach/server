@@ -14,5 +14,10 @@ namespace Client_2.Controllers
         {
             return service.Get();
         }
+
+        public DTO.SaleDTO AddSale(DTO.SaleDTO Sale)
+        {
+            return service.AddSale(Sale);
+        }
     }
 }

@@ -13,5 +13,10 @@ namespace BLL
         {
             return convert.PackegeConvert.Convert(model.Get());
         }
+
+        public DTO.PackegeDTO AddCard(DTO.PackegeDTO Card)
+        {
+            return convert.PackegeConvert.Convert(model.AddCard(convert.PackegeConvert.Convert(Card)));
+        }
     }
 }

@@ -20,5 +20,15 @@ namespace Client_2.Controllers
         {
             return service.Get();
         }
+
+        public List<DTO.CoursDTO> GetCoursesByPool(int IdPool)
+        {
+            return service.GetCoursesByPool(IdPool);
+        }
+
+        public DTO.CoursDTO AddCourse(DTO.CoursDTO Course)
+        {
+            return service.AddCourse(Course);
+        }
     }
 }

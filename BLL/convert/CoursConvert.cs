@@ -9,7 +9,7 @@ namespace BLL.convert
     public class CoursConvert
     {
         #region המרה משכבת דיטיאו לשכבת דל
-        public static DTO.CoursDTO Convert(DAL.Course obj)
+        public static DTO.CoursDTO Convert(DAL.Course  obj)
         {
             
             if (obj == null)
@@ -17,11 +17,10 @@ namespace BLL.convert
             return new DTO.CoursDTO()
             {
                 Id = obj.Id,
-
                 PeopleAmount = obj.PeopleAmount,
+                NameCours=obj.NameCours,
                 Dis = obj.Dis,
-
-                PoolName = obj.Pool?.Name
+                /*PoolName = obj.Pool?.Name*/
             };
    
         }

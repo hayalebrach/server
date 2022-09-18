@@ -14,5 +14,10 @@ namespace Client_2.Controllers
         {
             return service.Get();
         }
+
+        public DTO.PackegeDTO AddCard(DTO.PackegeDTO Card)
+        {
+            return service.AddCard(Card);
+        }
     }
 }
