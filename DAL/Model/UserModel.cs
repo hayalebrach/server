@@ -16,6 +16,7 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities()) 
                 return db.Users.ToList();
         }
+        //פונקציה שמקבלת ת"ז משתמש ומחזירה לי את המשתמש-בשביל העדכון
  //פונקצית GET שמקבלת לפי שם וסיסמא
         public User GetByIdAndPassword(string name,int password)
       
