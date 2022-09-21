@@ -9,9 +9,10 @@ namespace DTO
     public class CoursDTO
     {
         public int Id { get; set; }
-        public Nullable<int> PoolId { get; set; }
+        public Nullable<int> IdPool { get; set; }
         public string PoolName { get; set; }
 
+        public Nullable<int> IdUser { get; set; }
         public string NameCours { get; set; }
         public Nullable<int> PeopleAmount { get; set; }
         public string Dis { get; set; }

@@ -25,5 +25,12 @@ namespace BLL
         {
             return convert.CoursConvert.Convert(model.AddCourse(convert.CoursConvert.Convert(Course)));
         }
+
+        public DTO.CoursDTO DeleteCourse(int Id)
+        {
+            return convert.CoursConvert.Convert(model.DeleteCourse(Id));
+        }
+
+        
     }
 }
