@@ -17,9 +17,13 @@ namespace BLL.convert
             return new DTO.CoursDTO()
             {
                 Id = obj.Id,
+                IdPool = obj.IdPool,
+                NameCours = obj.NameCours,
                 PeopleAmount = obj.PeopleAmount,
-                NameCours=obj.NameCours,
                 Dis = obj.Dis,
+                IdUser = obj.IdUser,
+                
+               
                 /*PoolName = obj.Pool?.Name*/
             };
    

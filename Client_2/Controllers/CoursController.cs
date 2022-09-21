@@ -29,6 +29,13 @@ namespace Client_2.Controllers
         public DTO.CoursDTO AddCourse(DTO.CoursDTO Course)
         {
             return service.AddCourse(Course);
+
+            
+        }
+
+        public DTO.CoursDTO DeleteCourse(int Id)
+        {
+            return service.DeleteCourse(Id);
         }
     }
 }

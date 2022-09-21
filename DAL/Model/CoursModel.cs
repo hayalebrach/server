@@ -66,13 +66,14 @@ namespace DAL.Model
         }
 
         //פונקצית מחיקה
-        public Course Delete(Course Course)
+        public Course DeleteCourse(int Id)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Course newCour = db.Courses.Remove(Course);
+                Course Cour = db.Courses.FirstOrDefault(x => x.Id == Id);
+                db.Courses.Remove(Cour);
                 db.SaveChanges();
-                return Course;
+                return Cour;
 
             }
         }
