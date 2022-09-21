@@ -9,9 +9,9 @@ namespace BLL
     public class PackegeService
     {
         DAL.Model.PackegeModel model = new DAL.Model.PackegeModel();
-        public List<DTO.PackegeDTO> Get()
+        public List<DTO.PackegeDTO> Get(int IdPool)
         {
-            return convert.PackegeConvert.Convert(model.Get());
+            return convert.PackegeConvert.Convert(model.Get(IdPool));
         }
 
         public DTO.PackegeDTO AddCard(DTO.PackegeDTO Card)

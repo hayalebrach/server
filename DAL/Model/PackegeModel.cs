@@ -11,20 +11,24 @@ namespace DAL.Model
         //פונקצית
         //GET 
         //שמחזירה את השעות פעילות
-        public List<Package> Get()
-        {
-            using (SwimMoodEntities db = new SwimMoodEntities())
-                return db.Packages.ToList();
-        }
-        public Package Get(int Id)
+        public List<Package> Get(int IdPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Package Package = new Package();
 
-                return db.Packages.FirstOrDefault(x => x.Id == Id);
+                 return db.Packages.ToList();
             }
+               
         }
+        //public Package Get(int Id)
+        //{
+        //    using (SwimMoodEntities db = new SwimMoodEntities())
+        //    {
+        //        Package Package = new Package();
+
+        //        return db.Packages.FirstOrDefault(x => x.Id == Id);
+        //    }
+        //}
         //מוסיפה כרטיסיה
         public Package AddCard(Package Package)
         {

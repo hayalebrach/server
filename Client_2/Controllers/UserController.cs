@@ -31,7 +31,11 @@ namespace Client_2.Controllers
             return service.AddUser(User);
         }
 
-
+        [HttpPut]
+        public DTO.UserDTO Put(DTO.UserDTO User)
+        {
+            return service.Put(User);
+        }
 
     }
     }
