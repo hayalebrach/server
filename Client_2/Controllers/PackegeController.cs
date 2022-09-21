@@ -10,9 +10,9 @@ namespace Client_2.Controllers
     public class PackegeController : ApiController
     {
         BLL.PackegeService service = new BLL.PackegeService();
-        public List<DTO.PackegeDTO> Get(int IdPool)
+        public List<DTO.PackegeDTO> GetCardsByIdPool(int IdPool)
         {
-            return service.Get(IdPool);
+            return service.GetCardsByIdPool(IdPool);
         }
 
         public DTO.PackegeDTO AddCard(DTO.PackegeDTO Card)
