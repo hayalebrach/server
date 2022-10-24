@@ -19,7 +19,18 @@ namespace BLL
         {
             return convert.UserConvert.Convert(model.GetByIdAndPassword(name,password));
         }
- 
+
+        public DTO.UserDTO GetById(int UserId)
+        {
+            return convert.UserConvert.Convert(model.GetById(UserId));
+
+        }
+
+        public List<DTO.UserDTO> GetAllManagers()
+        {
+            return convert.UserConvert.Convert(model.GetAllManagers());
+        }
+
         public DTO.UserDTO AddUser(DTO.UserDTO User) //הוספת משתמש
         {
             return convert.UserConvert.Convert(model.AddUser(convert.UserConvert.Convert(User)));

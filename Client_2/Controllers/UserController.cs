@@ -17,6 +17,13 @@ namespace Client_2.Controllers
             return service.GetAllUsers();
         }
 
+        [HttpGet]
+        //מחזירה רק את המנהלים
+        public List<DTO.UserDTO> GetAllManagers()
+        {
+            return service.GetAllManagers();
+        }
+
 
         [HttpGet]
         //פונקצית GET שמקבלת לפי שם וסיסמא
@@ -25,6 +32,13 @@ namespace Client_2.Controllers
             return service.GetByIdAndPassword(name, password);
 
         }
+
+        public DTO.UserDTO GetById(int UserId)
+        {
+            return service.GetById(UserId);
+
+        }
+
         [HttpPost]
         public DTO.UserDTO AddUser(DTO.UserDTO User)
         {
@@ -36,6 +50,8 @@ namespace Client_2.Controllers
         {
             return service.Put(User);
         }
+
+        
 
     }
     }

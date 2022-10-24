@@ -37,5 +37,22 @@ namespace Client_2.Controllers
         {
             return service.DeleteCourse(Id);
         }
+
+        [HttpPut]
+        public DTO.CoursDTO UpdateCourse(DTO.CoursDTO Course)
+        {
+            return service.UpdateCourse(Course);
+        }
+
+
+        //הוספת קורס להעביר לקורס טו קסטומר
+        /*public DTO.CoursDTO Course_Enrollment(DTO.CoursDTO User)
+        {
+            return service.CourseEnrollment(User);
+
+
+        }*/
+
+
     }
 }

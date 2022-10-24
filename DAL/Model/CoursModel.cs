@@ -51,7 +51,7 @@ namespace DAL.Model
         }
      
         //פונקצית עדכון
-        public Course Put(Course Course)
+        public Course UpdateCourse(Course Course)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
@@ -77,6 +77,8 @@ namespace DAL.Model
 
             }
         }
+
+        
 
     }
 

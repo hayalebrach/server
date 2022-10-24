@@ -16,8 +16,21 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities()) 
                 return db.Users.ToList();
         }
+
+        public List<User> GetAllManagers()  //כל המנהלים
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+
+                return db.Users.Where(x => x.IdRole ==2).ToList();
+            }
+        }
+
+
+
+
         //פונקציה שמקבלת ת"ז משתמש ומחזירה לי את המשתמש-בשביל העדכון
- //פונקצית GET שמקבלת לפי שם וסיסמא
+        //פונקצית GET שמקבלת לפי שם וסיסמא
         public User GetByIdAndPassword(string name,int password)
       
         {
@@ -25,7 +38,17 @@ namespace DAL.Model
             {
                 return db.Users.FirstOrDefault(x => x.Name == name&&x.Password==password);
             }
-        } 
+        }
+
+        public User GetById(int UserId)
+
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                return db.Users.FirstOrDefault(x => x.Id==UserId);
+            }
+        }
+
 
         public User AddUser(User User)  //הוספת משתמש
         {
