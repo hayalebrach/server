@@ -7,13 +7,11 @@
       <Diagram DiagramId="3edba0952b354b7cae6c424153843be4" Name="Diagram1" ZoomLevel="106">
         <EntityTypeShape EntityType="SwimMoodModel.Course" Width="1.5" PointX="7.5" PointY="9.75" />
         <EntityTypeShape EntityType="SwimMoodModel.CoursToCustomer" Width="1.5" PointX="12.75" PointY="10.25" />
-        <EntityTypeShape EntityType="SwimMoodModel.CustomerToPool" Width="1.5" PointX="8.25" PointY="5.75" />
         <EntityTypeShape EntityType="SwimMoodModel.Day" Width="1.5" PointX="7.5" PointY="20.375" />
         <EntityTypeShape EntityType="SwimMoodModel.DaysToCour" Width="1.5" PointX="9.75" PointY="11.75" />
         <EntityTypeShape EntityType="SwimMoodModel.DaysToPool" Width="1.5" PointX="12.5" PointY="13" />
         <EntityTypeShape EntityType="SwimMoodModel.EnterCustomer" Width="1.5" PointX="10.5" PointY="8.125" />
         <EntityTypeShape EntityType="SwimMoodModel.Erea" Width="1.5" PointX="3" PointY="6.375" />
-        <EntityTypeShape EntityType="SwimMoodModel.Package" Width="1.5" PointX="7.5" PointY="17.125" />
         <EntityTypeShape EntityType="SwimMoodModel.Pool" Width="1.5" PointX="5.25" PointY="9.25" />
         <EntityTypeShape EntityType="SwimMoodModel.Role" Width="1.5" PointX="0.75" PointY="10.375" />
         <EntityTypeShape EntityType="SwimMoodModel.Sale" Width="1.5" PointX="7.5" PointY="13.5" />
@@ -24,16 +22,12 @@
         <AssociationConnector Association="SwimMoodModel.FK_CoursToCustomer_Course" />
         <AssociationConnector Association="SwimMoodModel.FK_DaysToCours_Course" />
         <AssociationConnector Association="SwimMoodModel.FK_CoursToCustomer_User" />
-        <AssociationConnector Association="SwimMoodModel.FK_CustomerToPool_packages" />
-        <AssociationConnector Association="SwimMoodModel.FK_CustomerToPool_User" />
-        <AssociationConnector Association="SwimMoodModel.FK_EnterCustomer_CustomerToPool" />
         <AssociationConnector Association="SwimMoodModel.FK_DaysToCours_Days" />
         <AssociationConnector Association="SwimMoodModel.FK_DaysToPool_Days" />
         <AssociationConnector Association="SwimMoodModel.FK_DaysToCours_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_DaysToPool_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_EnterCustomer_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_Pool_Erea" />
-        <AssociationConnector Association="SwimMoodModel.FK_packages_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_Pool_User" />
         <AssociationConnector Association="SwimMoodModel.FK_Sale_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_User_Role" />

@@ -10,9 +10,10 @@ namespace Client_2.Controllers
     public class Customr_To_PoolController : ApiController
     {
         BLL.Customr_To_PoolService service = new BLL.Customr_To_PoolService();
-        public List<DTO.Customr_To_PoolDTO> Get()
-        {
-            return service.Get();
-        }
+        //פונקציה שמיבאת לקוחות לבריכה מסוימת לפי id
+        //public List<DTO.Customr_To_PoolDTO> GetByIdPool(int IdPool)
+        //{
+        //    return service.GetByIdPool(IdPool);
+        //}
     }
 }

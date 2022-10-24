@@ -17,11 +17,13 @@ namespace BLL.convert
             return new DTO.Customr_To_PoolDTO()
             {
                 Id = obj.Id,
-               
+                //IdPackage = obj.IdPackages,
+                UserId=obj.IdUser,
                 AmountLeft = obj.AmountLeft,
                 AmountGet = obj.AmountGet,
                 TotalPrice = obj.TotalPrice,
-                DateBuy = obj.DateBuy
+                DateBuy = obj.DateBuy,
+                //PoolId= obj.Package?.IdPool ?? 0,
             };
         }
         #endregion

@@ -43,9 +43,10 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="convert\CoursConvert.cs" />
-    <Compile Include="convert\Cours_To_CustomerConvert.cs" />
+    <Compile Include="convert\CoursToCustomerConvert.cs" />
     <Compile Include="convert\Customr_To_PoolConvert.cs" />
     <Compile Include="convert\DaysConvert.cs" />
+    <Compile Include="convert\DaysToCoursConvert.cs" />
     <Compile Include="convert\DaysToPoolConvert.cs" />
     <Compile Include="convert\EntCustomrConvert.cs" />
     <Compile Include="convert\EreaConvert.cs" />
@@ -55,8 +56,10 @@
     <Compile Include="convert\SaleConvert.cs" />
     <Compile Include="convert\UserConvert.cs" />
     <Compile Include="CoursService.cs" />
+    <Compile Include="CoursToCustomerService.cs" />
     <Compile Include="Customr_To_PoolService.cs" />
     <Compile Include="DayServiice.cs" />
+    <Compile Include="DaysToCoursService.cs" />
     <Compile Include="DaysToPoolService.cs" />
     <Compile Include="EntCustomrService.cs" />
     <Compile Include="EreaService.cs" />

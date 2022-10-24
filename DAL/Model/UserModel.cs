@@ -8,16 +8,17 @@ namespace DAL.Model
 {
     public class UserModel
     {
-        //פונקצית
-        //GET 
-      
-        public List<User> GetAllUsers()  //כל המשתמשים
+        public User GetUsersToPool(string name, int password)
+
         {
-            using (SwimMoodEntities db = new SwimMoodEntities()) 
-                return db.Users.ToList();
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                return db.Users.FirstOrDefault(x => x.Name == name && x.Password == password);
+            }
         }
-        //פונקציה שמקבלת ת"ז משתמש ומחזירה לי את המשתמש-בשביל העדכון
- //פונקצית GET שמקבלת לפי שם וסיסמא
+
+
+        //פונקצית GET שמקבלת לפי שם וסיסמא
         public User GetByIdAndPassword(string name,int password)
       
         {

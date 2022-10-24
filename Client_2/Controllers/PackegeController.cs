@@ -10,14 +10,30 @@ namespace Client_2.Controllers
     public class PackegeController : ApiController
     {
         BLL.PackegeService service = new BLL.PackegeService();
+        //ייבוא של הכרטיסים לפי ת"ז בריכה
         public List<DTO.PackegeDTO> GetCardsByIdPool(int IdPool)
         {
             return service.GetCardsByIdPool(IdPool);
         }
+        //הוספת כרטיס
 
+        [HttpPost]
         public DTO.PackegeDTO AddCard(DTO.PackegeDTO Card)
         {
             return service.AddCard(Card);
+        }
+        //עדכון
+        [HttpPut]
+     
+        public DTO.PackegeDTO Put(DTO.PackegeDTO Packege)
+        {
+            return service.Put(Packege);
+        }
+        //מחיקה
+        [HttpPut]
+        public DTO.PackegeDTO PutForDelete(DTO.PackegeDTO package)
+        {
+            return service.PutForDelete(package);
         }
     }
 }

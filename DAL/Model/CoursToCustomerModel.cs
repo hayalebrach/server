@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Model
 {
-    public class DaysModel
+    public class CoursToCustomerModel
     {
-       
+        //פונקציות פנימיות ביותר
     }
 }

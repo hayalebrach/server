@@ -42,8 +42,7 @@ namespace BLL.convert
                 Adress = obj.Adress,
                 IdErea = obj.IdErea,
                 IdUser = obj.IdUser,
-                Phone = obj.Phone
-
+                Phone= obj.Phone,
             };
         }
         #endregion

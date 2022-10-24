@@ -16,20 +16,16 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
                 List<Package> CardsToPool = new List<Package>();
-                foreach (Package p in db.Packages)
-                {
-                    if(p.IdPool == IdPool)
-                    CardsToPool.Add(p);
-                } 
-                 return CardsToPool;
+                return db.Packages.Where(x => x.IdPool == IdPool&&x.Status==true).ToList();
             }
                
         }
+
         public Package Get(int Id)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Package Package = new Package();
+               // Package Package = new Package();
 
                 return db.Packages.FirstOrDefault(x => x.Id == Id);
             }
@@ -52,24 +48,26 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
                 Package newPackege = db.Packages.FirstOrDefault(x => x.Id == Package.Id);
-                newPackege.Id = Package.Id;
                 newPackege.EntersAmount = Package.EntersAmount;
                 newPackege.Price = Package.Price;
                 db.SaveChanges();
                 return Package; 
-    }
+            }
         }
         //פונקצית מחיקה
-        public Package Delete(Package Package)
+        public Package PutForDelete(Package Package)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Package newPackege = db.Packages.Remove(Package);
+                Package newPackege = db.Packages.FirstOrDefault(x => x.Id == Package.Id);
+                newPackege.Status = false;
+                newPackege.Price=Package.Price;
+                newPackege.EntersAmount=Package.EntersAmount;
                 db.SaveChanges();
                 return Package;
-
             }
         }
+
 
     }
 }

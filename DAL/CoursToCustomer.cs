@@ -15,8 +15,8 @@ namespace DAL
     public partial class CoursToCustomer
     {
         public int Id { get; set; }
-        public Nullable<int> IdUser { get; set; }
-        public Nullable<int> IdCours { get; set; }
+        public int IdUser { get; set; }
+        public int IdCours { get; set; }
     
         public virtual Course Course { get; set; }
         public virtual User User { get; set; }

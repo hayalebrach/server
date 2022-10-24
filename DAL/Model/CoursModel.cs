@@ -71,7 +71,7 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
                 Course Cour = db.Courses.FirstOrDefault(x => x.Id == Id);
-                db.Courses.Remove(Cour);
+                //db.Courses.Remove(Cour);
                 db.SaveChanges();
                 return Cour;
 

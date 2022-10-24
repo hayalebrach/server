@@ -17,9 +17,10 @@ namespace BLL.convert
             return new DTO.PackegeDTO()
             {
                 Id = obj.Id,
-                PoolId = obj.IdPool,
+                IdPool = obj.IdPool,
                 EntersAmount = obj.EntersAmount,
-                Price = obj.Price
+                Price = obj.Price,
+            
             };
         }
         #endregion
@@ -32,8 +33,10 @@ namespace BLL.convert
             return new DAL.Package()
             {
                 Id = obj.Id,
+                IdPool = obj.IdPool,
                 EntersAmount = obj.EntersAmount,
-                Price = obj.Price
+                Price = obj.Price, 
+                
             };
         }
         #endregion

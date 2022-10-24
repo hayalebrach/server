@@ -10,12 +10,7 @@ namespace Client_2.Controllers
     public class UserController : ApiController
     {
         BLL.UserService service = new BLL.UserService();
-        [HttpGet]
-        //כל המשתמשים
-        public List<DTO.UserDTO> GetAllUsers()
-        {
-            return service.GetAllUsers();
-        }
+  
 
 
         [HttpGet]
@@ -32,6 +27,7 @@ namespace Client_2.Controllers
         }
 
         [HttpPut]
+        //עדכון
         public DTO.UserDTO Put(DTO.UserDTO User)
         {
             return service.Put(User);

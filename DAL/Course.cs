@@ -27,6 +27,7 @@ namespace DAL
         public Nullable<int> PeopleAmount { get; set; }
         public string Dis { get; set; }
         public Nullable<int> IdUser { get; set; }
+        public Nullable<bool> Status { get; set; }
     
         public virtual Pool Pool { get; set; }
         public virtual User User { get; set; }
@@ -34,7 +35,5 @@ namespace DAL
         public virtual ICollection<CoursToCustomer> CoursToCustomers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DaysToCour> DaysToCours { get; set; }
-
-
     }
 }

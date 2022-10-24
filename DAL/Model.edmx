@@ -15,6 +15,7 @@
           <Property Name="PeopleAmount" Type="int" />
           <Property Name="Dis" Type="nvarchar" MaxLength="50" />
           <Property Name="IdUser" Type="int" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="CoursToCustomer">
           <Key>
@@ -93,6 +94,7 @@
           <Property Name="IdPool" Type="int" />
           <Property Name="EntersAmount" Type="int" />
           <Property Name="Price" Type="int" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Pool">
           <Key>
@@ -105,6 +107,7 @@
           <Property Name="Amount" Type="int" />
           <Property Name="IdUser" Type="int" />
           <Property Name="IdErea" Type="int" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -558,6 +561,7 @@
           <NavigationProperty Name="User" Relationship="SwimMoodModel.FK_Course_User" FromRole="Course" ToRole="User" />
           <NavigationProperty Name="CoursToCustomers" Relationship="SwimMoodModel.FK_CoursToCustomer_Course" FromRole="Course" ToRole="CoursToCustomer" />
           <NavigationProperty Name="DaysToCours" Relationship="SwimMoodModel.FK_DaysToCours_Course" FromRole="Course" ToRole="DaysToCour" />
+          <Property Name="Status" Type="Boolean" />
         </EntityType>
         <EntityType Name="CoursToCustomer">
           <Key>
@@ -653,6 +657,7 @@
           <Property Name="Price" Type="Int32" />
           <NavigationProperty Name="CustomerToPools" Relationship="SwimMoodModel.FK_CustomerToPool_packages" FromRole="Package" ToRole="CustomerToPool" />
           <NavigationProperty Name="Pool" Relationship="SwimMoodModel.FK_packages_Pool" FromRole="Package" ToRole="Pool" />
+          <Property Name="Status" Type="Boolean" />
         </EntityType>
         <EntityType Name="Pool">
           <Key>
@@ -673,6 +678,7 @@
           <NavigationProperty Name="Packages" Relationship="SwimMoodModel.FK_packages_Pool" FromRole="Pool" ToRole="Package" />
           <NavigationProperty Name="User" Relationship="SwimMoodModel.FK_Pool_User" FromRole="Pool" ToRole="User" />
           <NavigationProperty Name="Sales" Relationship="SwimMoodModel.FK_Sale_Pool" FromRole="Pool" ToRole="Sale" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -948,6 +954,7 @@
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="SwimMoodModel.Course">
               <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="Dis" ColumnName="Dis" />
                 <ScalarProperty Name="PeopleAmount" ColumnName="PeopleAmount" />
@@ -1036,6 +1043,7 @@
           <EntitySetMapping Name="Packages">
             <EntityTypeMapping TypeName="SwimMoodModel.Package">
               <MappingFragment StoreEntitySet="Packages">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="EntersAmount" ColumnName="EntersAmount" />
                 <ScalarProperty Name="IdPool" ColumnName="IdPool" />
@@ -1046,6 +1054,7 @@
           <EntitySetMapping Name="Pools">
             <EntityTypeMapping TypeName="SwimMoodModel.Pool">
               <MappingFragment StoreEntitySet="Pool">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="IdErea" ColumnName="IdErea" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
