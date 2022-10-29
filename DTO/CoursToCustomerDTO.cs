@@ -9,7 +9,8 @@ namespace DTO
      public  class CoursToCustomerDTO
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public int CourseId { get; set; }
+        public Nullable<int> IdUser { get; set; }
+        public Nullable<int> IdCours { get; set; }
+
     }
 }

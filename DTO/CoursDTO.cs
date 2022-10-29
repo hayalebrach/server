@@ -21,5 +21,6 @@ namespace DTO
         public Nullable<int> Day { get; set; }
         public Nullable<int> Type { get; set; }
 
+
     }
 }

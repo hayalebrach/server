@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class poolCorsDTO : PoolDTO
-    {
-        public List<CoursDTO> Corses { get; set; }
+    //public class poolCorsDTO : PoolDTO
+    //{
+    //    public List<CoursDTO> Corses { get; set; }
         
-    }
+    //}
     //public class Pool_CustomerToPoolDTO : PoolDTO
     //{
     //    public List<Cours_To_CustomerDTO> customerToPool { get; set; }
@@ -25,6 +25,7 @@ namespace DTO
         public Nullable<int> Amount { get; set; }
         public Nullable<int> IdUser { get; set; }
         public Nullable<int> IdErea { get; set; }
+
         //public  Pool_CustomerToPoolDTO [] pool_CustomerToPoolDTO { get; set; }
  
     }

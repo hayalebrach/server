@@ -18,7 +18,7 @@ namespace BLL.convert
             {
                 Id = obj.Id,
                 //IdPackage = obj.IdPackages,
-                UserId=obj.IdUser,
+                IdUser =obj.IdUser,
                 AmountLeft = obj.AmountLeft,
                 AmountGet = obj.AmountGet,
                 TotalPrice = obj.TotalPrice,

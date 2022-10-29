@@ -10,12 +10,11 @@ namespace DTO
     public class Customr_To_PoolDTO
     {
         public int Id { get; set; }
-        public int IdPackage { get; set; }
-        public int UserId { get; set; }
-        //public int PoolId { get; set; }
-        public int AmountLeft { get; set; }
-        public int AmountGet { get; set; }
-        public int TotalPrice { get; set; }
+        public Nullable<int> IdPackage { get; set; }
+        public Nullable<int> IdUser { get; set; }
+        public Nullable<int> AmountLeft { get; set; }
+        public Nullable<int> AmountGet { get; set; }
+        public Nullable<int> TotalPrice { get; set; }
         public Nullable<System.DateTime> DateBuy { get; set; }
     }
 }

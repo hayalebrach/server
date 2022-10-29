@@ -6,20 +6,26 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class UserDTO
-    {
+    public class UserMInDTO
+    { 
         public int Id { get; set; }
         public string Name { get; set; }
+    }
+
+        public class UserDTO:UserMInDTO
+    {
+       
         public string Email { get; set; }
-        public int Phone { get; set; }
-        //public Nullable<int> Type { get; set; }
-        //public Nullable<System.DateTime> LastEentry { get; set; }
+        public Nullable<int> Password { get; set; }
+        public Nullable<bool> Type { get; set; }
+        public Nullable<int> IdRole { get; set; }
+        public Nullable<System.DateTime> LastEntery { get; set; }
+        public Nullable<int> Phone { get; set; }
 
-        public int Password { get; set; }
-        public bool Type { get; set; }
-        public int IdRole { get; set; }
-        public DateTime LastEntery { get; set; }
-
-
+    }
+    public class UserWithCorse : UserDTO
+    {
+        public List<CoursDTO> coursec { get; set; }
+        public PoolDTO pool { get; set; }
     }
 }
