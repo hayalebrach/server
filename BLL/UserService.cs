@@ -14,7 +14,12 @@ namespace BLL
         {
             return convert.UserConvert.Convert(model.GetAllUsers());
         }
-    
+
+        public List<DTO.UserDTO> GetAllManagers()
+        {
+            return convert.UserConvert.Convert(model.GetAllManagers());
+        }
+
         public DTO.UserDTO GetByIdAndPassword(string name,int password) //פונקצית GET שמקבלת לפי שם וסיסמא
         {
             return convert.UserConvert.Convert(model.GetByIdAndPassword(name,password));
@@ -26,10 +31,7 @@ namespace BLL
 
         }
 
-        public List<DTO.UserDTO> GetAllManagers()
-        {
-            return convert.UserConvert.Convert(model.GetAllManagers());
-        }
+        
 
         public DTO.UserDTO AddUser(DTO.UserDTO User) //הוספת משתמש
         {

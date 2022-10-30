@@ -38,6 +38,7 @@ namespace Client_2.Controllers
             return service.DeleteCourse(Id);
         }
 
+
         [HttpPut]
         public DTO.CoursDTO UpdateCourse(DTO.CoursDTO Course)
         {

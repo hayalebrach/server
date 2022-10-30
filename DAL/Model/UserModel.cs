@@ -22,7 +22,15 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
 
-                return db.Users.Where(x => x.IdRole ==2).ToList();
+                List<User> managers = new List<User>();
+                foreach (User u in db.Users)
+                {
+                    if (u.IdRole == 2)
+                        managers.Add(u);
+                }
+                return managers;
+
+                
             }
         }
 
