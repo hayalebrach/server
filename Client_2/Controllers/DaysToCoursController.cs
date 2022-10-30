@@ -7,10 +7,7 @@ using System.Web.Http;
 
 namespace Client_2.Controllers
 {
-    public class DaysController : ApiController
+    public class DaysToCoursController : ApiController
     {
-        BLL.DayServiice service=new BLL.DayServiice();
-
-
     }
 }

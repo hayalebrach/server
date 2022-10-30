@@ -31,12 +31,19 @@ namespace BLL
 
         }
 
-        
+    //פונקצית GET שמקבלת לפי שם וסיסמא
+        public DTO.UserDTO GetByIdAndPassword(string name,int password) 
+        {
+            return convert.UserConvert.Convert(model.GetByIdAndPassword(name,password));
+        }
+  //הוספת משתמש
+        public DTO.UserDTO AddUser(DTO.UserDTO User)
 
-        public DTO.UserDTO AddUser(DTO.UserDTO User) //הוספת משתמש
         {
             return convert.UserConvert.Convert(model.AddUser(convert.UserConvert.Convert(User)));
         }
+
+        //עדכון משתמש
         public DTO.UserDTO Put(DTO.UserDTO User)
         {
             return convert.UserConvert.Convert(model.Put(convert.UserConvert.Convert(User)));

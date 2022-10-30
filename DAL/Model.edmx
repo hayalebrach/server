@@ -15,6 +15,7 @@
           <Property Name="PeopleAmount" Type="int" />
           <Property Name="Dis" Type="nvarchar" MaxLength="50" />
           <Property Name="IdUser" Type="int" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="CoursToCustomer">
           <Key>
@@ -29,7 +30,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdPackages" Type="int" />
+          <Property Name="IdPackage" Type="int" />
           <Property Name="IdUser" Type="int" />
           <Property Name="AmountLeft" Type="int" />
           <Property Name="AmountGet" Type="int" />
@@ -93,6 +94,7 @@
           <Property Name="IdPool" Type="int" />
           <Property Name="EntersAmount" Type="int" />
           <Property Name="Price" Type="int" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Pool">
           <Key>
@@ -105,6 +107,7 @@
           <Property Name="Amount" Type="int" />
           <Property Name="IdUser" Type="int" />
           <Property Name="IdErea" Type="int" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -124,16 +127,6 @@
           <Property Name="EndDate" Type="date" />
           <Property Name="EnterAmount" Type="int" />
           <Property Name="Price" Type="int" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -204,7 +197,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="CustomerToPool">
-              <PropertyRef Name="IdPackages" />
+              <PropertyRef Name="IdPackage" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -377,7 +370,6 @@
           <EntitySet Name="Pool" EntityType="Self.Pool" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sale" EntityType="Self.Sale" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Course_Pool" Association="Self.FK_Course_Pool">
             <End Role="Pool" EntitySet="Pool" />
@@ -469,7 +461,6 @@
           <EntitySet Name="Pools" EntityType="SwimMoodModel.Pool" />
           <EntitySet Name="Roles" EntityType="SwimMoodModel.Role" />
           <EntitySet Name="Sales" EntityType="SwimMoodModel.Sale" />
-          <EntitySet Name="sysdiagrams" EntityType="SwimMoodModel.sysdiagram" />
           <EntitySet Name="Users" EntityType="SwimMoodModel.User" />
           <AssociationSet Name="FK_Course_Pool" Association="SwimMoodModel.FK_Course_Pool">
             <End Role="Pool" EntitySet="Pools" />
@@ -554,6 +545,7 @@
           <Property Name="PeopleAmount" Type="Int32" />
           <Property Name="Dis" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IdUser" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
           <NavigationProperty Name="Pool" Relationship="SwimMoodModel.FK_Course_Pool" FromRole="Course" ToRole="Pool" />
           <NavigationProperty Name="User" Relationship="SwimMoodModel.FK_Course_User" FromRole="Course" ToRole="User" />
           <NavigationProperty Name="CoursToCustomers" Relationship="SwimMoodModel.FK_CoursToCustomer_Course" FromRole="Course" ToRole="CoursToCustomer" />
@@ -574,7 +566,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPackages" Type="Int32" />
+          <Property Name="IdPackage" Type="Int32" />
           <Property Name="IdUser" Type="Int32" />
           <Property Name="AmountLeft" Type="Int32" />
           <Property Name="AmountGet" Type="Int32" />
@@ -651,6 +643,7 @@
           <Property Name="IdPool" Type="Int32" />
           <Property Name="EntersAmount" Type="Int32" />
           <Property Name="Price" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
           <NavigationProperty Name="CustomerToPools" Relationship="SwimMoodModel.FK_CustomerToPool_packages" FromRole="Package" ToRole="CustomerToPool" />
           <NavigationProperty Name="Pool" Relationship="SwimMoodModel.FK_packages_Pool" FromRole="Package" ToRole="Pool" />
         </EntityType>
@@ -665,6 +658,7 @@
           <Property Name="Amount" Type="Int32" />
           <Property Name="IdUser" Type="Int32" />
           <Property Name="IdErea" Type="Int32" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Courses" Relationship="SwimMoodModel.FK_Course_Pool" FromRole="Pool" ToRole="Course" />
           <NavigationProperty Name="DaysToCours" Relationship="SwimMoodModel.FK_DaysToCours_Pool" FromRole="Pool" ToRole="DaysToCour" />
           <NavigationProperty Name="DaysToPools" Relationship="SwimMoodModel.FK_DaysToPool_Pool" FromRole="Pool" ToRole="DaysToPool" />
@@ -694,16 +688,6 @@
           <Property Name="EnterAmount" Type="Int32" />
           <Property Name="Price" Type="Int32" />
           <NavigationProperty Name="Pool" Relationship="SwimMoodModel.FK_Sale_Pool" FromRole="Sale" ToRole="Pool" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -791,7 +775,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="CustomerToPool">
-              <PropertyRef Name="IdPackages" />
+              <PropertyRef Name="IdPackage" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -948,6 +932,7 @@
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="SwimMoodModel.Course">
               <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="Dis" ColumnName="Dis" />
                 <ScalarProperty Name="PeopleAmount" ColumnName="PeopleAmount" />
@@ -974,7 +959,7 @@
                 <ScalarProperty Name="AmountGet" ColumnName="AmountGet" />
                 <ScalarProperty Name="AmountLeft" ColumnName="AmountLeft" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
-                <ScalarProperty Name="IdPackages" ColumnName="IdPackages" />
+                <ScalarProperty Name="IdPackage" ColumnName="IdPackage" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1036,6 +1021,7 @@
           <EntitySetMapping Name="Packages">
             <EntityTypeMapping TypeName="SwimMoodModel.Package">
               <MappingFragment StoreEntitySet="Packages">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="EntersAmount" ColumnName="EntersAmount" />
                 <ScalarProperty Name="IdPool" ColumnName="IdPool" />
@@ -1046,6 +1032,7 @@
           <EntitySetMapping Name="Pools">
             <EntityTypeMapping TypeName="SwimMoodModel.Pool">
               <MappingFragment StoreEntitySet="Pool">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="IdErea" ColumnName="IdErea" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
@@ -1074,17 +1061,6 @@
                 <ScalarProperty Name="Dis" ColumnName="Dis" />
                 <ScalarProperty Name="IdPool" ColumnName="IdPool" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="SwimMoodModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -14,7 +14,9 @@ namespace DAL.Model
         public List<Erea> GetAllEreas()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
+            {
                 return db.Ereas.ToList();
+            }
         }
 
         public Erea Get(int Id)

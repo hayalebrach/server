@@ -11,7 +11,6 @@ namespace DTO
         public int Id { get; set; }
         public Nullable<int> IdPool { get; set; }
         public string PoolName { get; set; }
-
         public Nullable<int> IdUser { get; set; }
         public string NameCours { get; set; }
         public Nullable<int> PeopleAmount { get; set; }
@@ -21,6 +20,7 @@ namespace DTO
         public Nullable<System.TimeSpan> EndHour { get; set; }
         public Nullable<int> Day { get; set; }
         public Nullable<int> Type { get; set; }
+
 
     }
 }

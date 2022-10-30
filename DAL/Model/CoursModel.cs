@@ -16,7 +16,7 @@ namespace DAL.Model
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                return db.Courses.ToList();
+                return db.Courses.Include("Pool").ToList();
             }
         }
 
@@ -26,13 +26,14 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
 
-                List<Course> x = new List<Course>();
-                foreach(Course c in db.Courses)
-                {
-                    if(c.IdPool == IdPool)
-                    x.Add(c);
-                }
-                return x;
+              return  db.Courses.Include("pool").Where(x=>x.IdPool==IdPool).ToList();
+                //List<Course> x = new List<Course>();
+                //foreach(Course c in db.Courses)
+                //{
+                //    if(c.IdPool == IdPool)
+                //    x.Add(c);
+                //}
+                //return x;
             }
         }
         //
@@ -51,7 +52,7 @@ namespace DAL.Model
         }
      
         //פונקצית עדכון
-        public Course UpdateCourse(Course Course)
+        public Course Put(Course Course)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
@@ -71,14 +72,12 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
                 Course Cour = db.Courses.FirstOrDefault(x => x.Id == Id);
-                db.Courses.Remove(Cour);
+                //db.Courses.Remove(Cour);
                 db.SaveChanges();
                 return Cour;
 
             }
         }
-
-        
 
     }
 

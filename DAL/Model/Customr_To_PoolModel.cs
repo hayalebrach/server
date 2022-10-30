@@ -10,12 +10,17 @@ namespace DAL.Model
     {
         //פונקצית
         //GET 
-        //שמחזירה את השעות פעילות
-        public List<CustomerToPool> Get()
-        {
-            using (SwimMoodEntities db = new SwimMoodEntities())
-                return db.CustomerToPools.ToList();
-        }
+
+        //public List<CustomerToPool> GetByIdPool(int IdPool)
+        //{
+        //    using (SwimMoodEntities db = new SwimMoodEntities())
+        //    {
+        //        Package package = new Package();
+        //        CustomerToPool pool = new CustomerToPool();
+        //        //return db.CustomerToPools.Where(pool.IdPackages.Select()package.Id);
+        //    }
+             
+        //}
 
         public CustomerToPool Get(int Id)
         {

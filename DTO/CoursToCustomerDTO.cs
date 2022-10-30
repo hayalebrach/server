@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-     public  class Cours_To_CustomerDTO
+     public  class CoursToCustomerDTO
     {
         public int Id { get; set; }
-        public Nullable<int> UserId { get; set; }
-        public Nullable<int> CourseId { get; set; }
+        public Nullable<int> IdUser { get; set; }
+        public Nullable<int> IdCours { get; set; }
+
     }
 }

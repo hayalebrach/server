@@ -21,7 +21,7 @@ namespace DAL
         }
     
         public int Id { get; set; }
-        public Nullable<int> IdPackages { get; set; }
+        public Nullable<int> IdPackage { get; set; }
         public Nullable<int> IdUser { get; set; }
         public Nullable<int> AmountLeft { get; set; }
         public Nullable<int> AmountGet { get; set; }

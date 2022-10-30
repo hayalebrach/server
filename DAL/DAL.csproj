@@ -91,8 +91,10 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\CoursModel.cs" />
+    <Compile Include="Model\CoursToCustomerModel.cs" />
     <Compile Include="Model\Customr_To_PoolModel.cs" />
     <Compile Include="Model\DaysModel.cs" />
+    <Compile Include="Model\DaysToCoursModel.cs" />
     <Compile Include="Model\DaysToPoolModel.cs" />
     <Compile Include="Model\EntCustomrModel.cs" />
     <Compile Include="Model\EreaModel.cs" />
@@ -112,9 +114,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Sale.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">

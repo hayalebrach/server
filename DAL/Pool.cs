@@ -25,7 +25,6 @@ namespace DAL
             this.Sales = new HashSet<Sale>();
         }
     
-        public int Phone { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Adress { get; set; }
@@ -33,6 +32,7 @@ namespace DAL
         public Nullable<int> Amount { get; set; }
         public Nullable<int> IdUser { get; set; }
         public Nullable<int> IdErea { get; set; }
+        public string Phone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Course> Courses { get; set; }

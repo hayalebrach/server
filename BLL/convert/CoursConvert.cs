@@ -22,9 +22,7 @@ namespace BLL.convert
                 PeopleAmount = obj.PeopleAmount,
                 Dis = obj.Dis,
                 IdUser = obj.IdUser,
-                
-               
-                /*PoolName = obj.Pool?.Name*/
+                PoolName = obj.Pool?.Name
             };
    
         }

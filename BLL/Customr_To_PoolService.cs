@@ -10,10 +10,10 @@ namespace BLL
     {
        
             DAL.Model.Customr_To_PoolModel model = new DAL.Model.Customr_To_PoolModel();
-            public List<DTO.Customr_To_PoolDTO> Get()
-            {
-                return convert.Customr_To_PoolConvert.Convert(model.Get());
-            }
-       
+        //public List<DTO.Customr_To_PoolDTO> GetByIdPool(int IdPool)
+        //{
+        //    return convert.Customr_To_PoolConvert.Convert(model.GetByIdPool(IdPool));
+        //}
+
     }
 }

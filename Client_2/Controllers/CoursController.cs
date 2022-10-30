@@ -39,6 +39,7 @@ namespace Client_2.Controllers
         }
 
 
+
         [HttpPut]
         public DTO.CoursDTO UpdateCourse(DTO.CoursDTO Course)
         {
@@ -53,6 +54,7 @@ namespace Client_2.Controllers
 
 
         }*/
+
 
 
     }

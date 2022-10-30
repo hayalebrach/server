@@ -24,6 +24,7 @@ namespace DAL
         public Nullable<int> IdPool { get; set; }
         public Nullable<int> EntersAmount { get; set; }
         public Nullable<int> Price { get; set; }
+        public Nullable<bool> Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CustomerToPool> CustomerToPools { get; set; }

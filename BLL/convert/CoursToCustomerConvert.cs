@@ -6,49 +6,53 @@ using System.Threading.Tasks;
 
 namespace BLL.convert
 {
-    public class Cours_To_CustomerConvert
+    public class CoursToCustomerConvert
     {
-      
         #region המרה משכבת דיטיאו לשכבת דל
-        public static DTO.Cours_To_CustomerDTO Convert(DAL.CoursToCustomer obj)
+        public static DTO.CoursToCustomerDTO Convert(DAL.CoursToCustomer obj)
         {
             if (obj == null)
                 return null;
-            return new DTO.Cours_To_CustomerDTO()
+            return new DTO.CoursToCustomerDTO()
             {
                 Id = obj.Id,
-               
+                IdCours=obj.IdCours,
+                IdUser=obj.IdUser
+
             };
         }
         #endregion
 
         #region המרה משכבת דל לשכבת דיטיאו
 
-        public static DAL.CoursToCustomer Convert(DTO.Cours_To_CustomerDTO obj)
+        public static DAL.CoursToCustomer Convert(DTO.CoursToCustomerDTO obj)
         {
             if (obj == null)
                 return null;
             return new DAL.CoursToCustomer()
             {
                 Id = obj.Id,
-              
+                IdCours=obj.IdCours,
+                IdUser=obj.IdUser
+
             };
         }
         #endregion
-    
+
         #region המרה של מערך מדיטיאו לדל
-        public static List<DAL.CoursToCustomer> Convert(List<DTO.Cours_To_CustomerDTO> obj)
+        public static List<DAL.CoursToCustomer> Convert(List<DTO.CoursToCustomerDTO> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }
         #endregion
-      
+
         #region המרה של מערך דלמ לדיטיאו
-        public static List<DTO.Cours_To_CustomerDTO> Convert(List<DAL.CoursToCustomer> obj)
+        public static List<DTO.CoursToCustomerDTO> Convert(List<DAL.CoursToCustomer> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }
         #endregion
-       
+
     }
 }
+
