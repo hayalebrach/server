@@ -8,6 +8,10 @@ namespace DTO
 {
     public class CoursDTO
     {
+        //פלאפון מדריך
+        public Nullable<int> PhoneGuide { get; set; }
+        //אימייל מדריך
+        public string EmailGuide { get; set; }
         public int Id { get; set; }
         public Nullable<int> IdPool { get; set; }
         public string PoolName { get; set; }

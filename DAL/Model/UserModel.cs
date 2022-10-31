@@ -9,19 +9,10 @@ namespace DAL.Model
     public class UserModel
     {
         public User GetUsersToPool(string name, int password)
-
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                List<User> managers = new List<User>();
-                foreach (User u in db.Users)
-                {
-                    if (u.IdRole == 2)
-                        managers.Add(u);
-                }
-                return managers;
-
-               
+                return db.Users.FirstOrDefault(x => x.Name == name && x.Password == password);
             }
         }
 

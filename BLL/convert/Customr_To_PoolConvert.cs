@@ -17,13 +17,18 @@ namespace BLL.convert
             return new DTO.Customr_To_PoolDTO()
             {
                 Id = obj.Id,
-                //IdPackage = obj.IdPackages,
-                IdUser =obj.IdUser,
+                IdPackage = obj.IdPackage,
+                IdUser = obj.IdUser,
                 AmountLeft = obj.AmountLeft,
                 AmountGet = obj.AmountGet,
                 TotalPrice = obj.TotalPrice,
                 DateBuy = obj.DateBuy,
-                //PoolId= obj.Package?.IdPool ?? 0,
+                IdPool=obj.Package?.IdPool,
+                PasswordUser=obj.User?.Password,
+                NameUser=obj.User?.Name,
+                EmailUser=obj.User?.Email,
+                
+
             };
         }
         #endregion
@@ -35,12 +40,13 @@ namespace BLL.convert
                 return null;
             return new DAL.CustomerToPool()
             {
-                Id = obj.Id,
-              
+                Id = obj.Id,             
                 AmountLeft = obj.AmountLeft,
                 AmountGet = obj.AmountGet,
                 TotalPrice = obj.TotalPrice,
-                DateBuy = obj.DateBuy
+                DateBuy = obj.DateBuy,
+                IdPackage = obj.IdPackage,
+                IdUser = obj.IdUser,
             };
         }
         #endregion

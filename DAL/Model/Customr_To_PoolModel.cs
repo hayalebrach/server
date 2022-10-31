@@ -10,17 +10,15 @@ namespace DAL.Model
     {
         //פונקצית
         //GET 
+        //פונקציה שמיבאת משתמשים לבריכה מסוימת על פי קוד בריכה
+        public List<CustomerToPool> GetByIdPool(int IdPool)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                return db.CustomerToPools.Include("Package").Include("User").Where(x=>x.Package.IdPool==IdPool).ToList();
+            }
 
-        //public List<CustomerToPool> GetByIdPool(int IdPool)
-        //{
-        //    using (SwimMoodEntities db = new SwimMoodEntities())
-        //    {
-        //        Package package = new Package();
-        //        CustomerToPool pool = new CustomerToPool();
-        //        //return db.CustomerToPools.Where(pool.IdPackages.Select()package.Id);
-        //    }
-             
-        //}
+        }
 
         public CustomerToPool Get(int Id)
         {

@@ -31,6 +31,10 @@ namespace BLL
             return convert.CoursConvert.Convert(model.DeleteCourse(Id));
         }
 
-        
+        public DTO.CoursDTO UpdateCourse(DTO.CoursDTO Course)
+        {
+            return convert.CoursConvert.Convert(model.UpdateCourse(convert.CoursConvert.Convert(Course)));
+        }
+
     }
 }
