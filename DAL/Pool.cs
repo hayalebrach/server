@@ -20,9 +20,9 @@ namespace DAL
             this.Courses = new HashSet<Course>();
             this.DaysToCours = new HashSet<DaysToCour>();
             this.DaysToPools = new HashSet<DaysToPool>();
-            this.EnterCustomers = new HashSet<EnterCustomer>();
             this.Packages = new HashSet<Package>();
             this.Sales = new HashSet<Sale>();
+            this.EnterCustomers = new HashSet<EnterCustomer>();
         }
     
         public int Id { get; set; }
@@ -40,13 +40,13 @@ namespace DAL
         public virtual ICollection<DaysToCour> DaysToCours { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DaysToPool> DaysToPools { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EnterCustomer> EnterCustomers { get; set; }
         public virtual Erea Erea { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Package> Packages { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sale> Sales { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EnterCustomer> EnterCustomers { get; set; }
     }
 }

@@ -455,7 +455,6 @@
           <EntitySet Name="Days" EntityType="SwimMoodModel.Day" />
           <EntitySet Name="DaysToCours" EntityType="SwimMoodModel.DaysToCour" />
           <EntitySet Name="DaysToPools" EntityType="SwimMoodModel.DaysToPool" />
-          <EntitySet Name="EnterCustomers" EntityType="SwimMoodModel.EnterCustomer" />
           <EntitySet Name="Ereas" EntityType="SwimMoodModel.Erea" />
           <EntitySet Name="Packages" EntityType="SwimMoodModel.Package" />
           <EntitySet Name="Pools" EntityType="SwimMoodModel.Pool" />
@@ -490,10 +489,6 @@
             <End Role="User" EntitySet="Users" />
             <End Role="CustomerToPool" EntitySet="CustomerToPools" />
           </AssociationSet>
-          <AssociationSet Name="FK_EnterCustomer_CustomerToPool" Association="SwimMoodModel.FK_EnterCustomer_CustomerToPool">
-            <End Role="CustomerToPool" EntitySet="CustomerToPools" />
-            <End Role="EnterCustomer" EntitySet="EnterCustomers" />
-          </AssociationSet>
           <AssociationSet Name="FK_DaysToCours_Days" Association="SwimMoodModel.FK_DaysToCours_Days">
             <End Role="Day" EntitySet="Days" />
             <End Role="DaysToCour" EntitySet="DaysToCours" />
@@ -509,10 +504,6 @@
           <AssociationSet Name="FK_DaysToPool_Pool" Association="SwimMoodModel.FK_DaysToPool_Pool">
             <End Role="Pool" EntitySet="Pools" />
             <End Role="DaysToPool" EntitySet="DaysToPools" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EnterCustomer_Pool" Association="SwimMoodModel.FK_EnterCustomer_Pool">
-            <End Role="Pool" EntitySet="Pools" />
-            <End Role="EnterCustomer" EntitySet="EnterCustomers" />
           </AssociationSet>
           <AssociationSet Name="FK_Pool_Erea" Association="SwimMoodModel.FK_Pool_Erea">
             <End Role="Erea" EntitySet="Ereas" />
@@ -533,6 +524,15 @@
           <AssociationSet Name="FK_User_Role" Association="SwimMoodModel.FK_User_Role">
             <End Role="Role" EntitySet="Roles" />
             <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="EnterCustomers" EntityType="SwimMoodModel.EnterCustomer" />
+          <AssociationSet Name="FK_EnterCustomer_CustomerToPool" Association="SwimMoodModel.FK_EnterCustomer_CustomerToPool">
+            <End Role="CustomerToPool" EntitySet="CustomerToPools" />
+            <End Role="EnterCustomer" EntitySet="EnterCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnterCustomer_Pool" Association="SwimMoodModel.FK_EnterCustomer_Pool">
+            <End Role="Pool" EntitySet="Pools" />
+            <End Role="EnterCustomer" EntitySet="EnterCustomers" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Course">
@@ -613,20 +613,6 @@
           <NavigationProperty Name="Day" Relationship="SwimMoodModel.FK_DaysToPool_Days" FromRole="DaysToPool" ToRole="Day" />
           <NavigationProperty Name="Pool" Relationship="SwimMoodModel.FK_DaysToPool_Pool" FromRole="DaysToPool" ToRole="Pool" />
         </EntityType>
-        <EntityType Name="EnterCustomer">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPool" Type="Int32" />
-          <Property Name="EnterDate" Type="DateTime" Precision="0" />
-          <Property Name="IdCustomerToPool" Type="Int32" />
-          <Property Name="StartHour" Type="Time" Precision="7" />
-          <Property Name="EndHour" Type="Time" Precision="7" />
-          <Property Name="NumPeople" Type="Int32" />
-          <NavigationProperty Name="CustomerToPool" Relationship="SwimMoodModel.FK_EnterCustomer_CustomerToPool" FromRole="EnterCustomer" ToRole="CustomerToPool" />
-          <NavigationProperty Name="Pool" Relationship="SwimMoodModel.FK_EnterCustomer_Pool" FromRole="EnterCustomer" ToRole="Pool" />
-        </EntityType>
         <EntityType Name="Erea">
           <Key>
             <PropertyRef Name="Id" />
@@ -662,11 +648,11 @@
           <NavigationProperty Name="Courses" Relationship="SwimMoodModel.FK_Course_Pool" FromRole="Pool" ToRole="Course" />
           <NavigationProperty Name="DaysToCours" Relationship="SwimMoodModel.FK_DaysToCours_Pool" FromRole="Pool" ToRole="DaysToCour" />
           <NavigationProperty Name="DaysToPools" Relationship="SwimMoodModel.FK_DaysToPool_Pool" FromRole="Pool" ToRole="DaysToPool" />
-          <NavigationProperty Name="EnterCustomers" Relationship="SwimMoodModel.FK_EnterCustomer_Pool" FromRole="Pool" ToRole="EnterCustomer" />
           <NavigationProperty Name="Erea" Relationship="SwimMoodModel.FK_Pool_Erea" FromRole="Pool" ToRole="Erea" />
           <NavigationProperty Name="Packages" Relationship="SwimMoodModel.FK_packages_Pool" FromRole="Pool" ToRole="Package" />
           <NavigationProperty Name="User" Relationship="SwimMoodModel.FK_Pool_User" FromRole="Pool" ToRole="User" />
           <NavigationProperty Name="Sales" Relationship="SwimMoodModel.FK_Sale_Pool" FromRole="Pool" ToRole="Sale" />
+          <NavigationProperty Name="EnterCustomers" Relationship="SwimMoodModel.FK_EnterCustomer_Pool" FromRole="Pool" ToRole="EnterCustomer" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -791,18 +777,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_EnterCustomer_CustomerToPool">
-          <End Type="SwimMoodModel.CustomerToPool" Role="CustomerToPool" Multiplicity="0..1" />
-          <End Type="SwimMoodModel.EnterCustomer" Role="EnterCustomer" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CustomerToPool">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EnterCustomer">
-              <PropertyRef Name="IdCustomerToPool" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_DaysToCours_Days">
           <End Type="SwimMoodModel.Day" Role="Day" Multiplicity="0..1" />
           <End Type="SwimMoodModel.DaysToCour" Role="DaysToCour" Multiplicity="*" />
@@ -847,18 +821,6 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="DaysToPool">
-              <PropertyRef Name="IdPool" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EnterCustomer_Pool">
-          <End Type="SwimMoodModel.Pool" Role="Pool" Multiplicity="0..1" />
-          <End Type="SwimMoodModel.EnterCustomer" Role="EnterCustomer" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pool">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EnterCustomer">
               <PropertyRef Name="IdPool" />
             </Dependent>
           </ReferentialConstraint>
@@ -920,6 +882,44 @@
             </Principal>
             <Dependent Role="User">
               <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EnterCustomer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPool" Type="Int32" />
+          <Property Name="EnterDate" Type="DateTime" Precision="0" />
+          <Property Name="IdCustomerToPool" Type="Int32" />
+          <Property Name="StartHour" Type="Time" Precision="7" />
+          <Property Name="EndHour" Type="Time" Precision="7" />
+          <Property Name="NumPeople" Type="Int32" />
+          <NavigationProperty Name="CustomerToPool" Relationship="SwimMoodModel.FK_EnterCustomer_CustomerToPool" FromRole="EnterCustomer" ToRole="CustomerToPool" />
+          <NavigationProperty Name="Pool" Relationship="SwimMoodModel.FK_EnterCustomer_Pool" FromRole="EnterCustomer" ToRole="Pool" />
+        </EntityType>
+        <Association Name="FK_EnterCustomer_CustomerToPool">
+          <End Type="SwimMoodModel.CustomerToPool" Role="CustomerToPool" Multiplicity="0..1" />
+          <End Type="SwimMoodModel.EnterCustomer" Role="EnterCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerToPool">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterCustomer">
+              <PropertyRef Name="IdCustomerToPool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnterCustomer_Pool">
+          <End Type="SwimMoodModel.Pool" Role="Pool" Multiplicity="0..1" />
+          <End Type="SwimMoodModel.EnterCustomer" Role="EnterCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pool">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnterCustomer">
+              <PropertyRef Name="IdPool" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -997,19 +997,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="EnterCustomers">
-            <EntityTypeMapping TypeName="SwimMoodModel.EnterCustomer">
-              <MappingFragment StoreEntitySet="EnterCustomer">
-                <ScalarProperty Name="NumPeople" ColumnName="NumPeople" />
-                <ScalarProperty Name="EndHour" ColumnName="EndHour" />
-                <ScalarProperty Name="StartHour" ColumnName="StartHour" />
-                <ScalarProperty Name="IdCustomerToPool" ColumnName="IdCustomerToPool" />
-                <ScalarProperty Name="EnterDate" ColumnName="EnterDate" />
-                <ScalarProperty Name="IdPool" ColumnName="IdPool" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Ereas">
             <EntityTypeMapping TypeName="SwimMoodModel.Erea">
               <MappingFragment StoreEntitySet="Erea">
@@ -1074,6 +1061,19 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnterCustomers">
+            <EntityTypeMapping TypeName="SwimMoodModel.EnterCustomer">
+              <MappingFragment StoreEntitySet="EnterCustomer">
+                <ScalarProperty Name="NumPeople" ColumnName="NumPeople" />
+                <ScalarProperty Name="EndHour" ColumnName="EndHour" />
+                <ScalarProperty Name="StartHour" ColumnName="StartHour" />
+                <ScalarProperty Name="IdCustomerToPool" ColumnName="IdCustomerToPool" />
+                <ScalarProperty Name="EnterDate" ColumnName="EnterDate" />
+                <ScalarProperty Name="IdPool" ColumnName="IdPool" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
