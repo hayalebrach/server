@@ -27,6 +27,8 @@ namespace BLL.convert
                 PasswordUser=obj.User?.Password,
                 NameUser=obj.User?.Name,
                 EmailUser=obj.User?.Email,
+                EntersAmount=obj.Package?.EntersAmount,
+                Price=obj.Package?.Price,
                 
 
             };

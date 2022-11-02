@@ -11,7 +11,6 @@
         <EntityTypeShape EntityType="SwimMoodModel.Day" Width="1.5" PointX="13.5" PointY="13.375" />
         <EntityTypeShape EntityType="SwimMoodModel.DaysToCour" Width="1.5" PointX="15.75" PointY="9.875" />
         <EntityTypeShape EntityType="SwimMoodModel.DaysToPool" Width="1.5" PointX="13.5" PointY="7" />
-        <EntityTypeShape EntityType="SwimMoodModel.EnterCustomer" Width="1.5" PointX="10.5" PointY="6" />
         <EntityTypeShape EntityType="SwimMoodModel.Erea" Width="1.5" PointX="6" PointY="6.5" />
         <EntityTypeShape EntityType="SwimMoodModel.Package" Width="1.5" PointX="10.5" PointY="13.75" />
         <EntityTypeShape EntityType="SwimMoodModel.Pool" Width="1.5" PointX="8.25" PointY="9.25" />
@@ -25,17 +24,18 @@
         <AssociationConnector Association="SwimMoodModel.FK_CoursToCustomer_User" />
         <AssociationConnector Association="SwimMoodModel.FK_CustomerToPool_packages" />
         <AssociationConnector Association="SwimMoodModel.FK_CustomerToPool_User" />
-        <AssociationConnector Association="SwimMoodModel.FK_EnterCustomer_CustomerToPool" />
         <AssociationConnector Association="SwimMoodModel.FK_DaysToCours_Days" />
         <AssociationConnector Association="SwimMoodModel.FK_DaysToPool_Days" />
         <AssociationConnector Association="SwimMoodModel.FK_DaysToCours_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_DaysToPool_Pool" />
-        <AssociationConnector Association="SwimMoodModel.FK_EnterCustomer_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_Pool_Erea" />
         <AssociationConnector Association="SwimMoodModel.FK_packages_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_Pool_User" />
         <AssociationConnector Association="SwimMoodModel.FK_Sale_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_User_Role" />
+        <EntityTypeShape EntityType="SwimMoodModel.EnterCustomer" Width="1.5" PointX="10.5" PointY="5.875" />
+        <AssociationConnector Association="SwimMoodModel.FK_EnterCustomer_CustomerToPool" />
+        <AssociationConnector Association="SwimMoodModel.FK_EnterCustomer_Pool" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

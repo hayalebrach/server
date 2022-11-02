@@ -15,5 +15,11 @@ namespace BLL
             return convert.Customr_To_PoolConvert.Convert(model.GetByIdPool(IdPool));
         }
 
+        //פונקציה שמביאה היסטורית קניות של לקוח בבריכה מסוימת
+        public List<DTO.Customr_To_PoolDTO> GetHistoryOfUser(int IdPool, int IdUser)
+        {
+            return convert.Customr_To_PoolConvert.Convert(model.GetHistoryOfUser(IdPool, IdUser));
+        }
+
     }
 }

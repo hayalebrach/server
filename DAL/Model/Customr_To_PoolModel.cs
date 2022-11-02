@@ -19,7 +19,15 @@ namespace DAL.Model
             }
 
         }
+        //פונקציה שמביאה היסטורית קניות של לקוח בבריכה מסוימת
+        public List<CustomerToPool> GetHistoryOfUser(int IdPool,int IdUser)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                return db.CustomerToPools.Include("Package").Include("User").Where(x => x.Package.IdPool == IdPool && x.IdUser==IdUser).ToList();
+            }
 
+        }
         public CustomerToPool Get(int Id)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
