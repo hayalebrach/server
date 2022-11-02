@@ -79,24 +79,9 @@ namespace DAL.Model
             }
         }
 
-        //פונקצית עדכון
+        
 
-        public Course UpdateCourse(Course course)
-        {
-            using (SwimMoodEntities db = new SwimMoodEntities())
-            {
-                Course newCourse = db.Courses.FirstOrDefault(x => x.Id == course.Id);
-                newCourse.Id = course.Id;
-                newCourse.IdPool = course.IdPool;
-                newCourse.IdUser = course.IdUser;
-                newCourse.NameCours = course.NameCours;
-                newCourse.PeopleAmount = course.PeopleAmount;
-                newCourse.Dis = course.Dis;
-                
-                db.SaveChanges();
-                return course;
-            }
-        }
+        
         
 
     }

@@ -12,12 +12,15 @@ namespace DAL.Model
         public List<User> GetAllManagers()
         {
 
-            
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                List<User> managers = new List<User>();
+                return db.Users.Where(x => x.IdRole == 2).ToList();
+            }
         }
 
 
-        public User GetUsersToPool(string name, int password){}
-
+        public User GetUsersToPool(string name, int password)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
