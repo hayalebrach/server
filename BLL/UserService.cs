@@ -11,10 +11,10 @@ namespace BLL
         DAL.Model.UserModel model = new DAL.Model.UserModel();
         //אין לו פונקצית המשך במודל 
 
-        public List<DTO.UserDTO> GetAllUsers()//כל המשתמשים
+        /*public List<DTO.UserDTO> GetAllUsers()//כל המשתמשים
         {
             return convert.UserConvert.Convert(model.GetAllUsers());
-        }
+        }*/
         
         public List<DTO.UserDTO> GetAllManagers()
         {
