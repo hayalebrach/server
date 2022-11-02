@@ -20,6 +20,11 @@ namespace Client_2.Controllers
             return service.GetByIdAndPassword(name, password);
 
         }
+
+        public List<DTO.UserDTO> GetAllManagers()
+        {
+            return service.GetAllManagers();
+        }
         [HttpPost]
         public DTO.UserDTO AddUser(DTO.UserDTO User)
         {

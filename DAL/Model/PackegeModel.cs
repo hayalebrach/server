@@ -16,7 +16,7 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
                 List<Package> CardsToPool = new List<Package>();
-                return db.Packages.Where(x => x.IdPool == IdPool&&x.Status==true).ToList();
+                return db.Packages.Where(x => x.IdPool == IdPool && x.Status==true).ToList();
             }
                
         }
