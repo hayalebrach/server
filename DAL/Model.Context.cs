@@ -31,12 +31,12 @@ namespace DAL
         public virtual DbSet<Day> Days { get; set; }
         public virtual DbSet<DaysToCour> DaysToCours { get; set; }
         public virtual DbSet<DaysToPool> DaysToPools { get; set; }
+        public virtual DbSet<EnterCustomer> EnterCustomers { get; set; }
         public virtual DbSet<Erea> Ereas { get; set; }
         public virtual DbSet<Package> Packages { get; set; }
         public virtual DbSet<Pool> Pools { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<EnterCustomer> EnterCustomers { get; set; }
     }
 }

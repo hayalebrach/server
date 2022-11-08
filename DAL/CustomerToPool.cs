@@ -21,12 +21,13 @@ namespace DAL
         }
     
         public int Id { get; set; }
-        public Nullable<int> IdPackage { get; set; }
-        public Nullable<int> IdUser { get; set; }
+        public int IdPackage { get; set; }
+        public int IdUser { get; set; }
         public Nullable<int> AmountLeft { get; set; }
         public Nullable<int> AmountGet { get; set; }
         public Nullable<int> TotalPrice { get; set; }
         public Nullable<System.DateTime> DateBuy { get; set; }
+        public Nullable<bool> Status { get; set; }
     
         public virtual Package Package { get; set; }
         public virtual User User { get; set; }

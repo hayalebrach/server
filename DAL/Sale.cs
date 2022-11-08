@@ -15,12 +15,13 @@ namespace DAL
     public partial class Sale
     {
         public int Id { get; set; }
-        public Nullable<int> IdPool { get; set; }
+        public int IdPool { get; set; }
         public string Dis { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public Nullable<int> EnterAmount { get; set; }
         public Nullable<int> Price { get; set; }
+        public Nullable<bool> Status { get; set; }
     
         public virtual Pool Pool { get; set; }
     }
