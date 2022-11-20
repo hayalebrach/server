@@ -32,8 +32,10 @@ namespace BLL.convert
             return new DAL.CoursToCustomer()
             {
                 Id = obj.Id,
-                IdCours=obj.IdCours,
-                IdUser=obj.IdUser
+                IdCours= ((int)obj.IdCours),
+                IdUser= ((int)obj.IdUser),
+                Status=obj.Status
+                
 
             };
         }

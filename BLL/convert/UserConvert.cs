@@ -38,11 +38,11 @@ namespace BLL.convert
                 Id = obj.Id,
                 Name = obj.Name,
                 Email = obj.Email,
-                Password = obj.Password,
+                Password =obj.Password,
                 Type = obj.Type,
                 LastEntery = obj.LastEntery,
                 Phone = obj.Phone,
-                IdRole = obj.IdRole,
+                IdRole = ((int)obj.IdRole),
             };
         }
         #endregion

@@ -20,7 +20,7 @@ namespace DTO
         public int Id { get; set; }
         public string EmailUser { get; set; }
         public string NameUser { get; set; }
-        public Nullable<int> PasswordUser { get; set; }
+        public string PasswordUser { get; set; }
         public Nullable<int> IdUser { get; set; }
         public Nullable<int> AmountLeft { get; set; }
         public Nullable<int> AmountGet { get; set; }

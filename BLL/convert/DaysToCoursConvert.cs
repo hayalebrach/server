@@ -36,9 +36,9 @@ namespace BLL.convert
             {
                EndHour=obj.EndHour,
                Type = obj.Type,
-               IdCours = obj.IdCours,
-               IdDays = obj.IdDays,
-               IdPool = obj.IdPool,
+               IdCours = ((int)obj.IdCours),
+               IdDays = ((int)obj.IdDays),
+               IdPool = ((int)obj.IdPool),
                StartHour = obj.StartHour,
                Id=obj.Id  
             };

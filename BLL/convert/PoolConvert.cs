@@ -40,8 +40,8 @@ namespace BLL.convert
                 Price = obj.Price,
                 Amount = obj.Amount,
                 Adress = obj.Adress,
-                IdErea = obj.IdErea,
-                IdUser = obj.IdUser,
+                IdErea = ((int)obj.IdErea),
+                IdUser = ((int)obj.IdUser),
                 
             };
         }

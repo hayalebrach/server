@@ -16,7 +16,7 @@ namespace DTO
     {
        
         public string Email { get; set; }
-        public Nullable<int> Password { get; set; }
+        public string Password { get; set; }
         public Nullable<bool> Type { get; set; }
         public Nullable<int> IdRole { get; set; }
         public Nullable<System.DateTime> LastEntery { get; set; }

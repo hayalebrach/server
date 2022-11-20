@@ -11,6 +11,7 @@ namespace DTO
         public int Id { get; set; }
         public Nullable<int> IdUser { get; set; }
         public Nullable<int> IdCours { get; set; }
+        public bool Status { get; set; }
 
     }
 }

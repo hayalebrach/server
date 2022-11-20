@@ -47,8 +47,8 @@ namespace BLL.convert
                 AmountGet = obj.AmountGet,
                 TotalPrice = obj.TotalPrice,
                 DateBuy = obj.DateBuy,
-                IdPackage = obj.IdPackage,
-                IdUser = obj.IdUser,
+                IdPackage =((int) obj.IdPackage),
+                IdUser = ((int)obj.IdUser),
             };
         }
         #endregion

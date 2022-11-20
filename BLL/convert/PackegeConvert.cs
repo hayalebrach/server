@@ -33,7 +33,7 @@ namespace BLL.convert
             return new DAL.Package()
             {
                 Id = obj.Id,
-                IdPool = obj.IdPool,
+                IdPool = ((int)obj.IdPool),
                 EntersAmount = obj.EntersAmount,
                 Price = obj.Price, 
                 

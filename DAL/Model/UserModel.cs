@@ -20,7 +20,7 @@ namespace DAL.Model
         }
 
 
-        public User GetUsersToPool(string name, int password)
+        public User GetUsersToPool(string name, string password)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
@@ -30,7 +30,7 @@ namespace DAL.Model
         
 
         //פונקצית GET שמקבלת לפי שם וסיסמא
-        public User GetByIdAndPassword(string name,int password)
+        public User GetByIdAndPassword(string name,string password)
       
         {
             using (SwimMoodEntities db = new SwimMoodEntities())

@@ -15,7 +15,7 @@ namespace Client_2.Controllers
 
         [HttpGet]
         //פונקצית GET שמקבלת לפי שם וסיסמא
-        public DTO.UserDTO GetByIdAndPassword(string name, int password)
+        public DTO.UserDTO GetByIdAndPassword(string name, string password)
         {
             return service.GetByIdAndPassword(name, password);
 
