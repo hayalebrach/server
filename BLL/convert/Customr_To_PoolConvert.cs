@@ -23,12 +23,12 @@ namespace BLL.convert
                 AmountGet = obj.AmountGet,
                 TotalPrice = obj.TotalPrice,
                 DateBuy = obj.DateBuy,
-                IdPool=obj.Package?.IdPool,
                 PasswordUser=obj.User?.Password,
                 NameUser=obj.User?.Name,
                 EmailUser=obj.User?.Email,
                 EntersAmount=obj.Package?.EntersAmount,
                 Price=obj.Package?.Price,
+                //IdPool=obj.Package?.IdPool
                 
 
             };

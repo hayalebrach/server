@@ -13,9 +13,10 @@ namespace DTO
     public class PackegeDTO
     {
         public int Id { get; set; }
-        public Nullable<int> IdPool { get; set; }
+        public int IdPool { get; set; }
         public Nullable<int> EntersAmount { get; set; }
         public Nullable<int> Price { get; set; }
-     
+        public Nullable<bool> Status { get; set; }
+
     }
 }

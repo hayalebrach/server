@@ -8,8 +8,13 @@ namespace BLL
 {
     public class DayServiice
     {
+      
         DAL.Model.DaysModel model = new DAL.Model.DaysModel();
 
-        
+        public List<DTO.DaysDTO> Get()//כל המשתמשים
+        {
+            return convert.DaysConvert.Convert(model.Get());
+        }
+
     }
 }

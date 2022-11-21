@@ -10,7 +10,11 @@ namespace Client_2.Controllers
     public class DaysController : ApiController
     {
         BLL.DayServiice service=new BLL.DayServiice();
-
+        [HttpGet]
+        public List<DTO.DaysDTO> GetAllDays()
+        {
+            return service.Get();
+        }
 
     }
 }

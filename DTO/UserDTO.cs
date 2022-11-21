@@ -14,13 +14,13 @@ namespace DTO
 
         public class UserDTO:UserMInDTO
     {
-       
         public string Email { get; set; }
         public string Password { get; set; }
         public Nullable<bool> Type { get; set; }
-        public Nullable<int> IdRole { get; set; }
+        public int IdRole { get; set; }
         public Nullable<System.DateTime> LastEntery { get; set; }
         public Nullable<int> Phone { get; set; }
+        public Nullable<bool> Status { get; set; }
 
     }
     public class UserWithCorse : UserDTO
