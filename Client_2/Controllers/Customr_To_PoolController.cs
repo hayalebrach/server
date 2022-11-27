@@ -16,12 +16,16 @@ namespace Client_2.Controllers
             return service.GetByIdPool(IdPool);
         }
         [HttpGet]
-        public List<DTO.Customr_To_PoolDTO> GetHistoryOfUser(int IdPool,int IdUser)
+        public List<DTO.Customr_To_PoolDTO> GetHistoryOfUser(int IdUser)
         {
-            return service.GetHistoryOfUser(IdPool,IdUser);
+            return service.GetHistoryOfUser(IdUser);
         }
-        
+        public List<DTO.Customr_To_PoolDTO> Get()
+        {
+            return service.Get();
         }
 
     }
+
+}
 

@@ -28,7 +28,7 @@ namespace BLL.convert
                 EmailUser=obj.User?.Email,
                 EntersAmount=obj.Package?.EntersAmount,
                 Price=obj.Package?.Price,
-                //IdPool=obj.Package?.IdPool
+                IdPool=obj.Package != null ? obj.Package.IdPool : 0,
                 
 
             };

@@ -19,16 +19,12 @@ namespace DTO
         //-----------------------------------------------------------//
         public string PasswordUser { get; set; }
         public string NameUser { get; set; }
-<<<<<<< Updated upstream
-        public string PasswordUser { get; set; }
-        public Nullable<int> IdUser { get; set; }
-=======
+
         public string EmailUser { get; set; }
 
         //-----------------------------------------------------------//
         public int Id { get; set; }
         public int IdUser { get; set; }
->>>>>>> Stashed changes
         public Nullable<int> AmountLeft { get; set; }
         public Nullable<int> AmountGet { get; set; }
         public Nullable<int> TotalPrice { get; set; }

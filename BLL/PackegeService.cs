@@ -9,6 +9,7 @@ namespace BLL
     public class PackegeService
     {
         DAL.Model.PackegeModel model = new DAL.Model.PackegeModel();
+       
         //ייבוא של הכרטיסים לפי ת"ז בריכה
         public List<DTO.PackegeDTO> GetCardsByIdPool(int IdPool)
         {
