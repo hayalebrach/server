@@ -10,6 +10,7 @@ namespace DAL.Model
     {
         //פונקצית
         //GET 
+       
         //פונקציה שמביאה כרטיסים לבריכה מסוימת
         public List<Package> GetCardsByIdPool(int IdPool)
         {

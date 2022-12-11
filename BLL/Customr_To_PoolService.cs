@@ -16,9 +16,14 @@ namespace BLL
         }
 
         //פונקציה שמביאה היסטורית קניות של לקוח בבריכה מסוימת
-        public List<DTO.Customr_To_PoolDTO> GetHistoryOfUser(int IdPool, int IdUser)
+        public List<DTO.Customr_To_PoolDTO> GetHistoryOfUser(int IdUser)
         {
-            return convert.Customr_To_PoolConvert.Convert(model.GetHistoryOfUser(IdPool, IdUser));
+            return convert.Customr_To_PoolConvert.Convert(model.GetHistoryOfUser(IdUser));
+        }
+
+        public List<DTO.Customr_To_PoolDTO> Get()
+        {
+            return convert.Customr_To_PoolConvert.Convert(model.Get());
         }
 
         public DTO.Customr_To_PoolDTO Purchasing(DTO.Customr_To_PoolDTO purchase)

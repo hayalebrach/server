@@ -16,10 +16,8 @@ namespace BLL.convert
             return new DTO.CoursToCustomerDTO()
             {
                 Id = obj.Id,
-                IdCours=obj.IdCours,
-                IdUser=obj.IdUser,
-                Status=obj.Status,
-                
+                IdCours = obj.IdCours,
+                IdUser = obj.IdUser
 
             };
         }
@@ -39,6 +37,7 @@ namespace BLL.convert
                 IdUser= ((int)obj.IdUser),
                 Status=obj.Status
                 
+
 
 
             };

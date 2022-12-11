@@ -19,11 +19,7 @@ namespace DTO
         
         public string PasswordUser { get; set; }
         public string NameUser { get; set; }
-
-
         public string EmailUser { get; set; }
-
-        
         public int Id { get; set; }
         public int IdUser { get; set; }
 
