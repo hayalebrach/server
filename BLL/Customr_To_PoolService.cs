@@ -21,5 +21,10 @@ namespace BLL
             return convert.Customr_To_PoolConvert.Convert(model.GetHistoryOfUser(IdPool, IdUser));
         }
 
+        public DTO.Customr_To_PoolDTO Purchasing(DTO.Customr_To_PoolDTO purchase)
+        {
+            return convert.Customr_To_PoolConvert.Convert(model.Purchasing(convert.Customr_To_PoolConvert.Convert(purchase)));
+        }
+
     }
 }

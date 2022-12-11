@@ -34,16 +34,12 @@ namespace BLL.convert
             return new DAL.CoursToCustomer()
             {
                 Id = obj.Id,
-<<<<<<< Updated upstream
+
                 IdCours= ((int)obj.IdCours),
                 IdUser= ((int)obj.IdUser),
                 Status=obj.Status
                 
-=======
-              Status = obj.Status,
-              IdCours=obj.IdCours,
-              IdUser = obj.IdUser,  
->>>>>>> Stashed changes
+
 
             };
         }

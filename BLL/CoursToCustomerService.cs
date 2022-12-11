@@ -14,13 +14,12 @@ namespace BLL
         {
             return convert.CoursToCustomerConvert.Convert(model.Course_Enrollment(convert.CoursToCustomerConvert.Convert(user)));
         }
-<<<<<<< Updated upstream
+
 
         public List<DTO.CoursToCustomerDTO> GetCoursesByUser(int IdUser)
         {
             return convert.CoursToCustomerConvert.Convert(model.GetCoursesByUser(IdUser));
         }
-=======
->>>>>>> Stashed changes
+
     }
 }

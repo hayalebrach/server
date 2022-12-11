@@ -17,13 +17,11 @@ namespace Client_2.Controllers
 
 
         }
-<<<<<<< Updated upstream
 
         public List<DTO.CoursToCustomerDTO> GetCoursesByUser(int IdUser)
         {
             return service.GetCoursesByUser(IdUser);
         }
-=======
->>>>>>> Stashed changes
+
     }
 }

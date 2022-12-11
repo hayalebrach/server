@@ -20,8 +20,15 @@ namespace Client_2.Controllers
         {
             return service.GetHistoryOfUser(IdPool,IdUser);
         }
-        
+
+        public DTO.Customr_To_PoolDTO Purchasing(DTO.Customr_To_PoolDTO purchase)
+        {
+            return service.Purchasing(purchase);
+
+
         }
+
+    }
 
     }
 

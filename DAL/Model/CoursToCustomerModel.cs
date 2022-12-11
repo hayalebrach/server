@@ -19,7 +19,6 @@ namespace DAL.Model
                 return user;
 
             }
-<<<<<<< Updated upstream
 
             
         }
@@ -33,8 +32,6 @@ namespace DAL.Model
                 return db.CoursToCustomers.Where(x => x.IdUser == IdUser).ToList();
 
             }
-=======
->>>>>>> Stashed changes
         }
     }
 }
