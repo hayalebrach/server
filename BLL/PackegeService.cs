@@ -9,7 +9,11 @@ namespace BLL
     public class PackegeService
     {
         DAL.Model.PackegeModel model = new DAL.Model.PackegeModel();
-       
+        public DTO.PackegeDTO GetCardsById(int Id)
+        {
+            return convert.PackegeConvert.Convert(model.GetCardsById(Id));
+        }
+
         //ייבוא של הכרטיסים לפי ת"ז בריכה
         public List<DTO.PackegeDTO> GetCardsByIdPool(int IdPool)
         {
@@ -20,7 +24,7 @@ namespace BLL
         {
             return convert.PackegeConvert.Convert(model.AddCard(convert.PackegeConvert.Convert(Card)));
         }
-        //עדכון משתמש
+        //עדכון כרטיס
         public DTO.PackegeDTO Put(DTO.PackegeDTO Packege)
         {
             return convert.PackegeConvert.Convert(model.Put(convert.PackegeConvert.Convert(Packege)));

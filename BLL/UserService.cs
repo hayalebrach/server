@@ -20,7 +20,10 @@ namespace BLL
         {
             return convert.UserConvert.Convert(model.GetAllManagers());
         }
-
+        public List<DTO.UserDTO> GetAllGuide()
+        {
+            return convert.UserConvert.Convert(model.GetAllGuide());
+        }
 
         //אין לו פונקצית המשך במודל 
         //public DTO.UserDTO GetById(int UserId)
@@ -28,7 +31,7 @@ namespace BLL
         //    return convert.UserConvert.Convert(model.GetById(UserId));
         //}
 
-        
+
 
         /*public DTO.UserDTO GetById(int UserId)
         {
@@ -36,7 +39,7 @@ namespace BLL
 
         }*/
 
-    //פונקצית GET שמקבלת לפי שם וסיסמא
+        //פונקצית GET שמקבלת לפי שם וסיסמא
 
         //פונקצית GET שמקבלת לפי שם וסיסמא
 

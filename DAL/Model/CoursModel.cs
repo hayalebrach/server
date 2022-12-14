@@ -25,20 +25,12 @@ namespace DAL.Model
 
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-
-              return  db.Courses.Include("pool").Where(x=>x.IdPool==IdPool).ToList();
-                //List<Course> x = new List<Course>();
-                //foreach(Course c in db.Courses)
-                //{
-                //    if(c.IdPool == IdPool)
-                //    x.Add(c);
-                //}
-                //return x;
+              return  db.Courses.Include("pool").Include("user").Where(x=>x.IdPool==IdPool).ToList();
             }
         }
 
         
-        //
+        //הוספת קורס
 
         public Course AddCourse(Course Course)
         {
@@ -52,39 +44,37 @@ namespace DAL.Model
 
             }
         }
-     
         //פונקצית עדכון
-        public Course UpdateCourse(Course Course)
+        public Course Put(Course Course)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Course newCour = db.Courses.FirstOrDefault(x => x.Id == Course.Id);
-                newCour.Id = Course.Id;
-                newCour.PeopleAmount = Course.PeopleAmount;
-                newCour.Dis = Course.Dis;
+                Course newCourse = db.Courses.FirstOrDefault(x => x.Id == Course.Id);
+                newCourse.NameCours = Course.NameCours;
+                newCourse.PeopleAmount = Course.PeopleAmount;
+                newCourse.Dis = Course.Dis; 
+                newCourse.Price = Course.Price;
                 db.SaveChanges();
                 return Course;
-
             }
         }
 
         //פונקצית מחיקה
-        public Course DeleteCourse(int Id)
+        public Course PutForDelete(Course Course)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Course Cour = db.Courses.FirstOrDefault(x => x.Id == Id);
-                //db.Courses.Remove(Cour);
+                Course newPackege = db.Courses.FirstOrDefault(x => x.Id == Course.Id);
+                newPackege.Status = false;         
                 db.SaveChanges();
-                return Cour;
-
+                return Course;
             }
         }
 
-        
 
-        
-        
+
+
+
 
     }
 

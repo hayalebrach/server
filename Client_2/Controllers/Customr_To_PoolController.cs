@@ -10,6 +10,20 @@ namespace Client_2.Controllers
     public class Customr_To_PoolController : ApiController
     {
         BLL.Customr_To_PoolService service = new BLL.Customr_To_PoolService();
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
         //פונקציה שמיבאת לקוחות לבריכה מסוימת לפי id
         public List<DTO.Customr_To_PoolDTO> GetByIdPool(int IdPool)
         {
@@ -19,6 +33,10 @@ namespace Client_2.Controllers
         public List<DTO.Customr_To_PoolDTO> GetHistoryOfUser(int IdUser)
         {
             return service.GetHistoryOfUser(IdUser);
+        }
+        public List<DTO.Customr_To_PoolDTO> GetHistoryByIdPoolAndIdUser(int IdUser,int IdPool)
+        {
+            return service.GetHistoryByIdPoolAndIdUser(IdUser,IdPool);
         }
         public List<DTO.Customr_To_PoolDTO> Get()
         {

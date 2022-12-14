@@ -13,11 +13,11 @@ namespace Client_2.Controllers
 
 
         [HttpGet]
-        public List<DTO.DaysToPoolDTO> Get()
+        public List<DTO.DaysToPoolDTO> GetTimeByIdPool(int IdPool)
         {
-            return service.Get();
+            return service.GetTimeByIdPool(IdPool);
         }
-        [HttpPost]
+        [HttpPut]
         public DTO.DaysToPoolDTO AddDaysToPool(DTO.DaysToPoolDTO DaysToPool)
         {
             return service.AddDaysToPool(DaysToPool);

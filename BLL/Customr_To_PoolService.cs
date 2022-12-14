@@ -10,6 +10,8 @@ namespace BLL
     {
        
         DAL.Model.Customr_To_PoolModel model = new DAL.Model.Customr_To_PoolModel();
+       
+
         public List<DTO.Customr_To_PoolDTO> GetByIdPool(int IdPool)
         {
             return convert.Customr_To_PoolConvert.Convert(model.GetByIdPool(IdPool));
@@ -19,6 +21,10 @@ namespace BLL
         public List<DTO.Customr_To_PoolDTO> GetHistoryOfUser(int IdUser)
         {
             return convert.Customr_To_PoolConvert.Convert(model.GetHistoryOfUser(IdUser));
+        }
+        public List<DTO.Customr_To_PoolDTO> GetHistoryByIdPoolAndIdUser(int IdUser, int IdPool)
+        {
+            return convert.Customr_To_PoolConvert.Convert(model.GetHistoryByIdPoolAndIdUser(IdUser,IdPool));
         }
 
         public List<DTO.Customr_To_PoolDTO> Get()
