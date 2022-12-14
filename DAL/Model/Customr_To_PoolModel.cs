@@ -196,17 +196,19 @@ namespace DAL.Model
             }
         }
         //
-        public CustomerToPool Post(CustomerToPool CustomerToPool)
+        public CustomerToPool Purchasing(CustomerToPool purchase)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
 
-                CustomerToPool = db.CustomerToPools.Add(CustomerToPool);
+                purchase = db.CustomerToPools.Add(purchase);
                 db.SaveChanges();
-                return CustomerToPool;
+                return purchase;
 
             }
         }
+
+
         //פונקצית עדכון
         public CustomerToPool Put(CustomerToPool CustomerToPool)
         {

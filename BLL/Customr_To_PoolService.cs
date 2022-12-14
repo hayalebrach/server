@@ -32,5 +32,10 @@ namespace BLL
             return convert.Customr_To_PoolConvert.Convert(model.Get());
         }
 
+        public DTO.Customr_To_PoolDTO Purchasing(DTO.Customr_To_PoolDTO purchase)
+        {
+            return convert.Customr_To_PoolConvert.Convert(model.Purchasing(convert.Customr_To_PoolConvert.Convert(purchase)));
+        }
+
     }
 }

@@ -33,7 +33,6 @@ namespace DAL.Model
                 return db.CoursToCustomers.Where(x => x.IdUser == IdUser).ToList();
 
             }
-
         }
     }
 }
