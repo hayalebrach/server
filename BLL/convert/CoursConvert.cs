@@ -23,6 +23,7 @@ namespace BLL.convert
                 Dis = obj.Dis,
                 IdUser = obj.IdUser,
                 Price = obj.Price,
+                Status= obj.Status,
                 //PoolName = obj.Pool?.Name,
                 //EmailGuide = obj.User?.Email,
                 //PhoneGuide = obj.User?.Phone
@@ -39,9 +40,14 @@ namespace BLL.convert
             return new DAL.Course()
             {
                 Id = obj.Id,
+                IdPool = obj.IdPool,
+                NameCours = obj.NameCours,
                 PeopleAmount = obj.PeopleAmount,
                 Dis = obj.Dis,
-               
+                IdUser = obj.IdUser,
+                Price = obj.Price,
+                Status = obj.Status,
+
 
             };
         }

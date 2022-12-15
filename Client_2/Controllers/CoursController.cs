@@ -40,7 +40,7 @@ namespace Client_2.Controllers
         }
         //עדכון
         [HttpPut]
-        //[Route("~/api/Packege/GetCardsByIdPool")]
+        [Route("~/api/Cours/Put")]
         public DTO.CoursDTO Put(DTO.CoursDTO Cours)
         {
             return service.Put(Cours);

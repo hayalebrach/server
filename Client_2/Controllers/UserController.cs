@@ -25,6 +25,11 @@ namespace Client_2.Controllers
         {
             return service.GetAllGuide();
         }
+        [Route("~/api/User/GetAllUsers")]
+        public List<DTO.UserDTO> GetAllUsers()
+        {
+            return service.GetAllUsers();
+        }
         public List<DTO.UserDTO> GetAllManagers()
         {
             return service.GetAllManagers();

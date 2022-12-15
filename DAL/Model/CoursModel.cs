@@ -11,7 +11,6 @@ namespace DAL.Model
         //פונקצית
         //GET 
         //שמחזירה את השעות פעילות
-        
         public List<Course> Get()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
@@ -54,6 +53,7 @@ namespace DAL.Model
                 newCourse.PeopleAmount = Course.PeopleAmount;
                 newCourse.Dis = Course.Dis; 
                 newCourse.Price = Course.Price;
+                newCourse.Status = true;
                 db.SaveChanges();
                 return Course;
             }

@@ -15,7 +15,10 @@ namespace BLL
         {
             return convert.UserConvert.Convert(model.GetAllUsers());
         }*/
-        
+        public List<DTO.UserDTO> GetAllUsers()
+        {
+            return convert.UserConvert.Convert(model.GetAllUsers());
+        }
         public List<DTO.UserDTO> GetAllManagers()
         {
             return convert.UserConvert.Convert(model.GetAllManagers());

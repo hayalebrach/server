@@ -30,7 +30,7 @@ namespace Client_2.Controllers
         }
         //עדכון
         [HttpPut]
-        [Route("~/api/Packege/GetCardsByIdPool")]
+        [Route("~/api/Packege/Put")]
         public DTO.PackegeDTO Put(DTO.PackegeDTO Packege)
         {
             return service.Put(Packege);

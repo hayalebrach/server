@@ -8,6 +8,13 @@ namespace DAL.Model
 {
     public class UserModel
     {
+        public List<User> GetAllUsers()
+        {
+            using(SwimMoodEntities db=new SwimMoodEntities())
+            {
+                return db.Users.ToList();
+            }
+        }
         public List<User> GetAllGuide()
         {
 

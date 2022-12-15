@@ -48,6 +48,7 @@ namespace DAL.Model
                 Package newPackege = db.Packages.FirstOrDefault(x => x.Id == Package.Id);
                 newPackege.EntersAmount = Package.EntersAmount;
                 newPackege.Price = Package.Price;
+                newPackege.Status = true;
                 db.SaveChanges();
                 return Package; 
             }
