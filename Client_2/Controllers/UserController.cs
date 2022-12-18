@@ -20,7 +20,16 @@ namespace Client_2.Controllers
             return service.GetByIdAndPassword(name, password);
 
         }
-
+        [Route("~/api/User/GetAllGuide")]
+        public List<DTO.UserDTO> GetAllGuide()
+        {
+            return service.GetAllGuide();
+        }
+        [Route("~/api/User/GetAllUsers")]
+        public List<DTO.UserDTO> GetAllUsers()
+        {
+            return service.GetAllUsers();
+        }
         public List<DTO.UserDTO> GetAllManagers()
         {
             return service.GetAllManagers();

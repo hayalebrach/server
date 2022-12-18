@@ -32,18 +32,18 @@ namespace Client_2.Controllers
 
             
         }
-
-        public DTO.CoursDTO DeleteCourse(int Id)
-        {
-            return service.DeleteCourse(Id);
-        }
-
-
-
+        //מחיקה
         [HttpPut]
-        public DTO.CoursDTO UpdateCourse(DTO.CoursDTO Course)
+        public DTO.CoursDTO PutForDelete(DTO.CoursDTO Cours)
         {
-            return service.UpdateCourse(Course);
+            return service.PutForDelete(Cours);
+        }
+        //עדכון
+        [HttpPut]
+        [Route("~/api/Cours/Put")]
+        public DTO.CoursDTO Put(DTO.CoursDTO Cours)
+        {
+            return service.Put(Cours);
         }
 
 

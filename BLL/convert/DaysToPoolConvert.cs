@@ -16,6 +16,12 @@ namespace BLL.convert
             return new DTO.DaysToPoolDTO()
             {
                 Id = obj.Id,
+                EndHour = obj.EndHour,
+                IdDays = obj.IdDays,
+                Type = obj.Type,
+                IdPool=obj.IdPool,
+                StartHour = obj.StartHour,
+                Status = obj.Status,
             };
         }
         #endregion
@@ -27,7 +33,14 @@ namespace BLL.convert
                 return null;
             return new DAL.DaysToPool()
             {
-                Id = obj.Id
+                Id = obj.Id,
+                EndHour=obj.EndHour,
+                Status=obj.Status,
+                IdDays=obj.IdDays,
+                IdPool=obj.IdPool,
+                StartHour=obj.StartHour,
+                Type = obj.Type,
+                
             };
         }
         #endregion

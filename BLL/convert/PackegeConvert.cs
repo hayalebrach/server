@@ -20,6 +20,7 @@ namespace BLL.convert
                 IdPool = obj.IdPool,
                 EntersAmount = obj.EntersAmount,
                 Price = obj.Price,
+                Status = obj.Status,
             
             };
         }
@@ -36,6 +37,7 @@ namespace BLL.convert
                 IdPool = ((int)obj.IdPool),
                 EntersAmount = obj.EntersAmount,
                 Price = obj.Price, 
+                Status=obj.Status,
                 
             };
         }

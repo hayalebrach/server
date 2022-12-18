@@ -9,11 +9,12 @@ namespace BLL
     public  class DaysToPoolService
     {
         DAL.Model.DaysToPoolModel model = new DAL.Model.DaysToPoolModel();
-        public List<DTO.DaysToPoolDTO> Get()
+        public List<DTO.DaysToPoolDTO> GetTimeByIdPool(int IdPool)
         {
-            return convert.DaysToPoolConvert.Convert(model.Get());
+            return convert.DaysToPoolConvert.Convert(model.GetTimeByIdPool(IdPool));
         }
-        public DTO.DaysToPoolDTO AddDaysToPool(DTO.DaysToPoolDTO DaysToPool) //הוספת משתמש
+        //הוספת זמן
+        public DTO.DaysToPoolDTO AddDaysToPool(DTO.DaysToPoolDTO DaysToPool) 
         {
             return convert.DaysToPoolConvert.Convert(model.AddDaysToPool(convert.DaysToPoolConvert.Convert(DaysToPool)));
         }

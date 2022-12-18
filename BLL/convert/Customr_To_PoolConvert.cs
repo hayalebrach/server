@@ -29,6 +29,8 @@ namespace BLL.convert
                 EntersAmount=obj.Package?.EntersAmount,
                 Price=obj.Package?.Price,
                 IdPool=obj.Package != null ? obj.Package.IdPool : 0,
+                Status=obj.Status
+
                 
 
             };
@@ -49,6 +51,8 @@ namespace BLL.convert
                 DateBuy = obj.DateBuy,
                 IdPackage =((int) obj.IdPackage),
                 IdUser = ((int)obj.IdUser),
+                Status=obj.Status,
+                
             };
         }
         #endregion

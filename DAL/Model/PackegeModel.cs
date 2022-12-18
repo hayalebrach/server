@@ -16,18 +16,15 @@ namespace DAL.Model
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                List<Package> CardsToPool = new List<Package>();
                 return db.Packages.Where(x => x.IdPool == IdPool && x.Status==true).ToList();
             }
                
         }
 
-        public Package Get(int Id)
+        public Package GetCardsById(int Id)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-               // Package Package = new Package();
-
                 return db.Packages.FirstOrDefault(x => x.Id == Id);
             }
         }
@@ -51,6 +48,7 @@ namespace DAL.Model
                 Package newPackege = db.Packages.FirstOrDefault(x => x.Id == Package.Id);
                 newPackege.EntersAmount = Package.EntersAmount;
                 newPackege.Price = Package.Price;
+                newPackege.Status = true;
                 db.SaveChanges();
                 return Package; 
             }
