@@ -24,7 +24,7 @@ namespace DAL.Model
 
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-              return  db.Courses.Include("pool").Include("user").Where(x=>x.IdPool==IdPool).ToList();
+              return  db.Courses.Include("pool").Include("user").Where(x=>x.IdPool==IdPool&&x.Status==true).ToList();
             }
         }
 

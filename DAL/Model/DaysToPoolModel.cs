@@ -8,18 +8,18 @@ namespace DAL.Model
 {
     public class DaysToPoolModel
     {
-        public List<DaysToPool> Get()
+        public DaysToPool Get(int Id)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                return db.DaysToPools.ToList();
+                return db.DaysToPools.FirstOrDefault(x=>x.Id==Id&&x.Status==true);
             }
         }
         public List<DaysToPool> GetTimeByIdPool(int IdPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                return db.DaysToPools.Where(x=>x.IdPool==IdPool).ToList();
+                return db.DaysToPools.Where(x=>x.IdPool==IdPool&&x.Status==true).ToList();
             }
         }
 

@@ -40,6 +40,12 @@ namespace Client_2.Controllers
         {
             return service.Get();
         }
+        [HttpPut]
+        [Route("~/api/Customr_To_Pool/Put")]
+        public DTO.Customr_To_PoolDTO Put(int Id,int AmountGet)
+        {
+            return service.Put(Id,AmountGet);
+        }
     }
 }
 

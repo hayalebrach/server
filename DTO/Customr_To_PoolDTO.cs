@@ -12,17 +12,11 @@ namespace DTO
         //כל אלא הם משתנים שיש אותם בכרטיסים צריך לבדוק
         //איך אני משתמשת בכל האוביקט במקום כל פעם 
         //להביא לי משתנה אחר שאני צריכה
-        public int IdPackage { get; set; }
-        public int IdPool { get; set; }
-        public Nullable<int> EntersAmount { get; set; }
-        public Nullable<int> Price { get; set; }
-        
-        public string PasswordUser { get; set; }
-        public string NameUser { get; set; }
-        public string EmailUser { get; set; }
-        public int Id { get; set; }
-        public int IdUser { get; set; }
 
+        public int Id { get; set; }
+        public int IdPackage { get; set; }
+        public int IdUser { get; set; }
+        public int IdPool { get; set; }
         public Nullable<int> AmountLeft { get; set; }
         public Nullable<int> AmountGet { get; set; }
         public Nullable<int> TotalPrice { get; set; }

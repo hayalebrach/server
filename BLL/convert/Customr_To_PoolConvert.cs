@@ -23,13 +23,9 @@ namespace BLL.convert
                 AmountGet = obj.AmountGet,
                 TotalPrice = obj.TotalPrice,
                 DateBuy = obj.DateBuy,
-                PasswordUser=obj.User?.Password,
-                NameUser=obj.User?.Name,
-                EmailUser=obj.User?.Email,
-                EntersAmount=obj.Package?.EntersAmount,
-                Price=obj.Package?.Price,
-                IdPool=obj.Package != null ? obj.Package.IdPool : 0,
-                Status=obj.Status
+                Status = obj.Status,
+                IdPool=obj.Package!=null?(int)obj.Package.IdPool:0
+               
 
                 
 
