@@ -23,6 +23,7 @@ namespace BLL.convert
                 Adress=obj.Adress,
                 IdErea=obj.IdErea,
                 IdUser=obj.IdUser,
+                Pic=obj.Pic,
                 
             };
         }

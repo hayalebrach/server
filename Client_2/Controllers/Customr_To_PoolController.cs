@@ -31,11 +31,12 @@ namespace Client_2.Controllers
         public DTO.Customr_To_PoolDTO Purchasing(DTO.Customr_To_PoolDTO purchase)
         {
             return service.Purchasing(purchase);
-
-
-
-
         }
+
+
+
+
+        
         public List<DTO.Customr_To_PoolDTO> Get()
         {
             return service.Get();
@@ -48,5 +49,6 @@ namespace Client_2.Controllers
         }
     }
 }
+
 
 
