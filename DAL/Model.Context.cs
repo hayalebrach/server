@@ -33,9 +33,11 @@ namespace DAL
         public virtual DbSet<DaysToPool> DaysToPools { get; set; }
         public virtual DbSet<EnterCustomer> EnterCustomers { get; set; }
         public virtual DbSet<Erea> Ereas { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Package> Packages { get; set; }
         public virtual DbSet<Pool> Pools { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<RolesToPool> RolesToPools { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }

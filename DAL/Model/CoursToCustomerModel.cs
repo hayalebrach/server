@@ -12,7 +12,7 @@ namespace DAL.Model
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-
+                
                 user = db.CoursToCustomers.Add(user);
 
                 db.SaveChanges();

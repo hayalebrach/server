@@ -22,6 +22,7 @@ namespace DAL
             this.DaysToPools = new HashSet<DaysToPool>();
             this.EnterCustomers = new HashSet<EnterCustomer>();
             this.Packages = new HashSet<Package>();
+            this.RolesToPools = new HashSet<RolesToPool>();
             this.Sales = new HashSet<Sale>();
         }
     
@@ -48,6 +49,8 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Package> Packages { get; set; }
         public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RolesToPool> RolesToPools { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sale> Sales { get; set; }
     }
