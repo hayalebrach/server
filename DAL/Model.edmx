@@ -17,6 +17,7 @@
           <Property Name="IdUser" Type="int" Nullable="false" />
           <Property Name="Status" Type="bit" />
           <Property Name="Price" Type="int" />
+          <Property Name="Pic" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="CoursToCustomer">
           <Key>
@@ -166,7 +167,7 @@
           <Property Name="Type" Type="bit" />
           <Property Name="IdRole" Type="int" Nullable="false" />
           <Property Name="LastEntery" Type="date" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="9" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="10" />
           <Property Name="Status" Type="bit" />
         </EntityType>
         <Association Name="FK_Course_Pool">
@@ -639,6 +640,7 @@
           <Property Name="IdUser" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Boolean" />
           <Property Name="Price" Type="Int32" />
+          <Property Name="Pic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Pool" Relationship="SwimMoodModel.FK_Course_Pool" FromRole="Course" ToRole="Pool" />
           <NavigationProperty Name="User" Relationship="SwimMoodModel.FK_Course_User" FromRole="Course" ToRole="User" />
           <NavigationProperty Name="CoursToCustomers" Relationship="SwimMoodModel.FK_CoursToCustomer_Course" FromRole="Course" ToRole="CoursToCustomer" />
@@ -824,7 +826,7 @@
           <Property Name="Type" Type="Boolean" />
           <Property Name="IdRole" Type="Int32" Nullable="false" />
           <Property Name="LastEntery" Type="DateTime" Precision="0" />
-          <Property Name="Phone" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
           <NavigationProperty Name="Courses" Relationship="SwimMoodModel.FK_Course_User" FromRole="User" ToRole="Course" />
           <NavigationProperty Name="CoursToCustomers" Relationship="SwimMoodModel.FK_CoursToCustomer_User" FromRole="User" ToRole="CoursToCustomer" />
@@ -1094,6 +1096,7 @@
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="SwimMoodModel.Course">
               <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />

@@ -29,6 +29,7 @@ namespace DAL
         public int IdUser { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<int> Price { get; set; }
+        public string Pic { get; set; }
     
         public virtual Pool Pool { get; set; }
         public virtual User User { get; set; }
