@@ -34,13 +34,16 @@ namespace Client_2.Controllers
         {
             return service.GetAllManagers();
         }
+
         [HttpPost]
+        [Route("~/api/User/AddUser")]
         public DTO.UserDTO AddUser(DTO.UserDTO User)
         {
             return service.AddUser(User);
         }
 
         [HttpPut]
+       
         //עדכון
         public DTO.UserDTO Put(DTO.UserDTO User)
         {

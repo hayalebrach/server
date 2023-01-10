@@ -13,6 +13,13 @@ namespace Client_2.Controllers
 
 
         [HttpGet]
+        [Route("~/api/DaysToPool/Get")]
+
+        public DTO.DaysToPoolDTO Get(int Id)
+        {
+            return service.Get(Id);
+        }        
+        [Route("~/api/DaysToPool/GetTimeByIdPool")]
         public List<DTO.DaysToPoolDTO> GetTimeByIdPool(int IdPool)
         {
             return service.GetTimeByIdPool(IdPool);

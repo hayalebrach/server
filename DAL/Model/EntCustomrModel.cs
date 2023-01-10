@@ -19,13 +19,15 @@ namespace DAL.Model
         }
 
 
-        public EnterCustomer Get(int Id)
+        public List<EnterCustomer> GetAllNumPeople(int IdPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                EnterCustomer EnterCustomer = new EnterCustomer();
+                List<EnterCustomer> EnterCustomerList = db.EnterCustomers
+                    .Where(x => x.IdPool == IdPool&&x.Status==true).ToList();
 
-                return db.EnterCustomers.FirstOrDefault(x => x.Id == Id);
+
+                return EnterCustomerList;
             }
         }
         //

@@ -59,7 +59,7 @@ namespace DAL.Model
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                return db.CustomerToPools.Include("Package").Include("User").Where(x => x.IdUser == IdUser).ToList();
+                return db.CustomerToPools.Include("Package").Include("User").Where(x => x.IdUser == IdUser&&x.Status==true).ToList();
             }
 
         }
@@ -97,18 +97,16 @@ namespace DAL.Model
 
 
         //פונקצית עדכון
-        public CustomerToPool Put(CustomerToPool CustomerToPool)
+        public CustomerToPool Put(int Id, int AmountGet)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                CustomerToPool newCustomr_To_Pool = db.CustomerToPools.FirstOrDefault(x => x.Id == CustomerToPool.Id);
-                newCustomr_To_Pool.Id = CustomerToPool.Id;
-                newCustomr_To_Pool.AmountLeft = CustomerToPool.AmountLeft;
-                newCustomr_To_Pool.AmountGet = CustomerToPool.AmountGet;
-                newCustomr_To_Pool.TotalPrice = CustomerToPool.TotalPrice;
-                newCustomr_To_Pool.DateBuy = CustomerToPool.DateBuy;
+                CustomerToPool newCustomr_To_Pool = db.CustomerToPools.FirstOrDefault(x => x.Id == Id);
+                newCustomr_To_Pool.AmountGet = AmountGet;
+                if (AmountGet == newCustomr_To_Pool.AmountLeft)
+                    newCustomr_To_Pool.Status = false; 
                 db.SaveChanges();
-                return CustomerToPool;
+                return db.CustomerToPools.Include("Package").Include("User").FirstOrDefault(x=>x.Id==Id);
             }
 
         }

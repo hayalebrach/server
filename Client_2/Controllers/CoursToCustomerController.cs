@@ -17,7 +17,8 @@ namespace Client_2.Controllers
 
 
         }
-
+        [HttpGet]
+        [Route("~/api/CourseToCustumer/GetCoursesByUser")]
         public List<DTO.CoursToCustomerDTO> GetCoursesByUser(int IdUser)
         {
             return service.GetCoursesByUser(IdUser);

@@ -23,6 +23,7 @@ namespace BLL.convert
                 LastEntery = obj.LastEntery,
                 Phone = obj.Phone,
                 IdRole = obj.IdRole,
+                Status = obj.Status,
                 
             };
         }
@@ -43,6 +44,7 @@ namespace BLL.convert
                 LastEntery = obj.LastEntery,
                 Phone = obj.Phone,
                 IdRole = ((int)obj.IdRole),
+                Status = obj.Status,
             };
         }
         #endregion

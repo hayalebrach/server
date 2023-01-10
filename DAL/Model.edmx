@@ -92,6 +92,15 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Images">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="NameImage" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageCaption" Type="nvarchar" MaxLength="50" />
+          <Property Name="FileValue" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Packages">
           <Key>
             <PropertyRef Name="Id" />
@@ -124,6 +133,15 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TypeUser" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="RolesToPool">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="IdPool" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Sale">
           <Key>
             <PropertyRef Name="Id" />
@@ -148,7 +166,7 @@
           <Property Name="Type" Type="bit" />
           <Property Name="IdRole" Type="int" Nullable="false" />
           <Property Name="LastEntery" Type="date" />
-          <Property Name="Phone" Type="int" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="9" />
           <Property Name="Status" Type="bit" />
         </EntityType>
         <Association Name="FK_Course_Pool">
@@ -343,6 +361,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_RolesToPool_Pool">
+          <End Role="Pool" Type="Self.Pool" Multiplicity="1" />
+          <End Role="RolesToPool" Type="Self.RolesToPool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pool">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolesToPool">
+              <PropertyRef Name="IdPool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolesToPool_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="RolesToPool" Type="Self.RolesToPool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolesToPool">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolesToPool_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="RolesToPool" Type="Self.RolesToPool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolesToPool">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Sale_Pool">
           <End Role="Pool" Type="Self.Pool" Multiplicity="1" />
           <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
@@ -376,9 +430,11 @@
           <EntitySet Name="DaysToPool" EntityType="Self.DaysToPool" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EnterCustomer" EntityType="Self.EnterCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Erea" EntityType="Self.Erea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Packages" EntityType="Self.Packages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pool" EntityType="Self.Pool" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RolesToPool" EntityType="Self.RolesToPool" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sale" EntityType="Self.Sale" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Course_Pool" Association="Self.FK_Course_Pool">
@@ -445,6 +501,18 @@
             <End Role="User" EntitySet="User" />
             <End Role="Pool" EntitySet="Pool" />
           </AssociationSet>
+          <AssociationSet Name="FK_RolesToPool_Pool" Association="Self.FK_RolesToPool_Pool">
+            <End Role="Pool" EntitySet="Pool" />
+            <End Role="RolesToPool" EntitySet="RolesToPool" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolesToPool_Role" Association="Self.FK_RolesToPool_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="RolesToPool" EntitySet="RolesToPool" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolesToPool_User" Association="Self.FK_RolesToPool_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="RolesToPool" EntitySet="RolesToPool" />
+          </AssociationSet>
           <AssociationSet Name="FK_Sale_Pool" Association="Self.FK_Sale_Pool">
             <End Role="Pool" EntitySet="Pool" />
             <End Role="Sale" EntitySet="Sale" />
@@ -467,9 +535,11 @@
           <EntitySet Name="DaysToPools" EntityType="SwimMoodModel.DaysToPool" />
           <EntitySet Name="EnterCustomers" EntityType="SwimMoodModel.EnterCustomer" />
           <EntitySet Name="Ereas" EntityType="SwimMoodModel.Erea" />
+          <EntitySet Name="Images" EntityType="SwimMoodModel.Image" />
           <EntitySet Name="Packages" EntityType="SwimMoodModel.Package" />
           <EntitySet Name="Pools" EntityType="SwimMoodModel.Pool" />
           <EntitySet Name="Roles" EntityType="SwimMoodModel.Role" />
+          <EntitySet Name="RolesToPools" EntityType="SwimMoodModel.RolesToPool" />
           <EntitySet Name="Sales" EntityType="SwimMoodModel.Sale" />
           <EntitySet Name="Users" EntityType="SwimMoodModel.User" />
           <AssociationSet Name="FK_Course_Pool" Association="SwimMoodModel.FK_Course_Pool">
@@ -536,13 +606,25 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Pool" EntitySet="Pools" />
           </AssociationSet>
+          <AssociationSet Name="FK_RolesToPool_Pool" Association="SwimMoodModel.FK_RolesToPool_Pool">
+            <End Role="Pool" EntitySet="Pools" />
+            <End Role="RolesToPool" EntitySet="RolesToPools" />
+          </AssociationSet>
           <AssociationSet Name="FK_Sale_Pool" Association="SwimMoodModel.FK_Sale_Pool">
             <End Role="Pool" EntitySet="Pools" />
             <End Role="Sale" EntitySet="Sales" />
           </AssociationSet>
+          <AssociationSet Name="FK_RolesToPool_Role" Association="SwimMoodModel.FK_RolesToPool_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="RolesToPool" EntitySet="RolesToPools" />
+          </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="SwimMoodModel.FK_User_Role">
             <End Role="Role" EntitySet="Roles" />
             <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolesToPool_User" Association="SwimMoodModel.FK_RolesToPool_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="RolesToPool" EntitySet="RolesToPools" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Course">
@@ -651,6 +733,15 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Pools" Relationship="SwimMoodModel.FK_Pool_Erea" FromRole="Erea" ToRole="Pool" />
         </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="NameImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageCaption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FileValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Package">
           <Key>
             <PropertyRef Name="Id" />
@@ -684,6 +775,7 @@
           <NavigationProperty Name="Erea" Relationship="SwimMoodModel.FK_Pool_Erea" FromRole="Pool" ToRole="Erea" />
           <NavigationProperty Name="Packages" Relationship="SwimMoodModel.FK_packages_Pool" FromRole="Pool" ToRole="Package" />
           <NavigationProperty Name="User" Relationship="SwimMoodModel.FK_Pool_User" FromRole="Pool" ToRole="User" />
+          <NavigationProperty Name="RolesToPools" Relationship="SwimMoodModel.FK_RolesToPool_Pool" FromRole="Pool" ToRole="RolesToPool" />
           <NavigationProperty Name="Sales" Relationship="SwimMoodModel.FK_Sale_Pool" FromRole="Pool" ToRole="Sale" />
         </EntityType>
         <EntityType Name="Role">
@@ -692,7 +784,20 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TypeUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RolesToPools" Relationship="SwimMoodModel.FK_RolesToPool_Role" FromRole="Role" ToRole="RolesToPool" />
           <NavigationProperty Name="Users" Relationship="SwimMoodModel.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="RolesToPool">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <Property Name="IdPool" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pool" Relationship="SwimMoodModel.FK_RolesToPool_Pool" FromRole="RolesToPool" ToRole="Pool" />
+          <NavigationProperty Name="Role" Relationship="SwimMoodModel.FK_RolesToPool_Role" FromRole="RolesToPool" ToRole="Role" />
+          <NavigationProperty Name="User" Relationship="SwimMoodModel.FK_RolesToPool_User" FromRole="RolesToPool" ToRole="User" />
         </EntityType>
         <EntityType Name="Sale">
           <Key>
@@ -719,13 +824,14 @@
           <Property Name="Type" Type="Boolean" />
           <Property Name="IdRole" Type="Int32" Nullable="false" />
           <Property Name="LastEntery" Type="DateTime" Precision="0" />
-          <Property Name="Phone" Type="Int32" />
+          <Property Name="Phone" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
           <NavigationProperty Name="Courses" Relationship="SwimMoodModel.FK_Course_User" FromRole="User" ToRole="Course" />
           <NavigationProperty Name="CoursToCustomers" Relationship="SwimMoodModel.FK_CoursToCustomer_User" FromRole="User" ToRole="CoursToCustomer" />
           <NavigationProperty Name="CustomerToPools" Relationship="SwimMoodModel.FK_CustomerToPool_User" FromRole="User" ToRole="CustomerToPool" />
           <NavigationProperty Name="Pools" Relationship="SwimMoodModel.FK_Pool_User" FromRole="User" ToRole="Pool" />
           <NavigationProperty Name="Role" Relationship="SwimMoodModel.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="RolesToPools" Relationship="SwimMoodModel.FK_RolesToPool_User" FromRole="User" ToRole="RolesToPool" />
         </EntityType>
         <Association Name="FK_Course_Pool">
           <End Type="SwimMoodModel.Pool" Role="Pool" Multiplicity="1" />
@@ -919,6 +1025,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_RolesToPool_Pool">
+          <End Type="SwimMoodModel.Pool" Role="Pool" Multiplicity="1" />
+          <End Type="SwimMoodModel.RolesToPool" Role="RolesToPool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pool">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolesToPool">
+              <PropertyRef Name="IdPool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Sale_Pool">
           <End Type="SwimMoodModel.Pool" Role="Pool" Multiplicity="1" />
           <End Type="SwimMoodModel.Sale" Role="Sale" Multiplicity="*" />
@@ -931,6 +1049,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_RolesToPool_Role">
+          <End Type="SwimMoodModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="SwimMoodModel.RolesToPool" Role="RolesToPool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolesToPool">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_User_Role">
           <End Type="SwimMoodModel.Role" Role="Role" Multiplicity="1" />
           <End Type="SwimMoodModel.User" Role="User" Multiplicity="*" />
@@ -940,6 +1070,18 @@
             </Principal>
             <Dependent Role="User">
               <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolesToPool_User">
+          <End Type="SwimMoodModel.User" Role="User" Multiplicity="1" />
+          <End Type="SwimMoodModel.RolesToPool" Role="RolesToPool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolesToPool">
+              <PropertyRef Name="IdUser" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1044,6 +1186,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="SwimMoodModel.Image">
+              <MappingFragment StoreEntitySet="Images">
+                <ScalarProperty Name="FileValue" ColumnName="FileValue" />
+                <ScalarProperty Name="ImageCaption" ColumnName="ImageCaption" />
+                <ScalarProperty Name="NameImage" ColumnName="NameImage" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Packages">
             <EntityTypeMapping TypeName="SwimMoodModel.Package">
               <MappingFragment StoreEntitySet="Packages">
@@ -1075,6 +1227,16 @@
             <EntityTypeMapping TypeName="SwimMoodModel.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="TypeUser" ColumnName="TypeUser" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolesToPools">
+            <EntityTypeMapping TypeName="SwimMoodModel.RolesToPool">
+              <MappingFragment StoreEntitySet="RolesToPool">
+                <ScalarProperty Name="IdPool" ColumnName="IdPool" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

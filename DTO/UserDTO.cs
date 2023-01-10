@@ -19,7 +19,7 @@ namespace DTO
         public Nullable<bool> Type { get; set; }
         public int IdRole { get; set; }
         public Nullable<System.DateTime> LastEntery { get; set; }
-        public Nullable<int> Phone { get; set; }
+        public string Phone { get; set; }
         public Nullable<bool> Status { get; set; }
 
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL.convert
 {
-    public class DaysToCourConvert
+    public class DaysToCoursConvert
     {
 
         #region המרה משכבת דל לשכבת דיטיאו

@@ -44,8 +44,6 @@ namespace BLL
 
         //פונקצית GET שמקבלת לפי שם וסיסמא
 
-        //פונקצית GET שמקבלת לפי שם וסיסמא
-
         public DTO.UserDTO GetByIdAndPassword(string name,string password) 
         {
             return convert.UserConvert.Convert(model.GetByIdAndPassword(name,password));

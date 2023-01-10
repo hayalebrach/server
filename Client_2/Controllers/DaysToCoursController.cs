@@ -9,5 +9,20 @@ namespace Client_2.Controllers
 {
     public class DaysToCoursController : ApiController
     {
+        BLL.DayToCoursService service = new BLL.DayToCoursService();
+        [HttpGet]
+
+        [Route("~/api/DayToCours/GetTimeByIdPool")]
+        public List<DTO.DayToCoursDTO> GetTimeByIdPool(int IdPool)
+        {
+            return service.GetTimeByIdPool(IdPool);
+        }
+        [HttpPut]
+        public DTO.DayToCoursDTO AddDayToCours(DTO.DayToCoursDTO DayToCours)
+        {
+            return service.AddDayToCours(DayToCours);
+        }
+
+
     }
 }

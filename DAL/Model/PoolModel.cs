@@ -23,7 +23,7 @@ namespace DAL.Model
             {
                 Pool Pool = new Pool();
 
-                return db.Pools.FirstOrDefault(x => x.Id == Id);
+                return db.Pools.FirstOrDefault(x => x.Id == Id&&x.Status==true);
             }
         }
         //
@@ -31,7 +31,7 @@ namespace DAL.Model
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-
+                Pool.Status = true;
                 Pool = db.Pools.Add(Pool);
                 db.SaveChanges();
                 return Pool;

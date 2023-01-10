@@ -39,7 +39,7 @@ namespace DAL.Model
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                return db.Users.FirstOrDefault(x => x.Name == name && x.Password == password);
+                return db.Users.FirstOrDefault(x => x.Name == name && x.Password == password&&x.Status==true);
             }
         }
         
@@ -58,7 +58,6 @@ namespace DAL.Model
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-
                 User = db.Users.Add(User);
                 db.SaveChanges();
                 return User;

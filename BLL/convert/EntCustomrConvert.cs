@@ -17,7 +17,11 @@ namespace BLL.convert
             return new DTO.EntCustomrDTO()
             {
                 Id = obj.Id,
-               
+               EndHour = obj.EndHour,
+               IdPool = obj.IdPool,
+               NumPeople = obj.NumPeople,
+               IdCustomerToPool = obj.IdCustomerToPool,
+               Status = obj.Status,
                 EnterDate = obj.EnterDate,
                 StartHour = obj.StartHour,
             };
@@ -32,7 +36,11 @@ namespace BLL.convert
             return new DAL.EnterCustomer()
             {
                 Id = obj.Id,
-               
+                IdPool = obj.IdPool,
+                EndHour= obj.EndHour,
+                IdCustomerToPool = obj.IdCustomerToPool,
+                NumPeople = obj.NumPeople,
+                Status = obj.Status,
                 EnterDate = obj.EnterDate,
                 StartHour = obj.StartHour,
                
