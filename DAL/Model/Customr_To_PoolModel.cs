@@ -16,27 +16,39 @@ namespace DAL.Model
 
         public static string send(string maill)
         {
-           MailMessage mm = new MailMessage("swimmoodmail@gmail.com", maill);
 
-            mm.Body = "הצלחנו";
+            
+                MailMessage msg = new MailMessage() { From = new MailAddress("swimmood8@gmail.com", "המזון הקניה המשתלמת ביותר") };
+                msg.To.Add(maill);
+                msg.Body = "הצלחה";
+                msg.Subject = "ניסו";
+                msg.IsBodyHtml = false;
+                msg.BodyEncoding = System.Text.Encoding.UTF8;
+                msg.Priority = MailPriority.High;
+                try
+                {
+                    using (SmtpClient client = new SmtpClient())
+                    {
+                        client.EnableSsl = true;
+                        client.UseDefaultCredentials = false;
+                        client.Credentials = new NetworkCredential("swimmood8@gmail.com", "bfvussfffeigxlqz");
+                        client.Host = "smtp.gmail.com";
+                        client.Port = 587;
+                        client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        client.Send(msg);
+                    }
+                return "succses";
+                }
+                catch (Exception e)
+                {
+                return "filed";
 
-            SmtpClient client = new SmtpClient("smtp.gmail.com");
-            client.EnableSsl = true;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.Timeout = 30 * 1000;
-            client.Credentials = new NetworkCredential("swimmoodmail@gmail.com", "SWIMMAIL");
-            client.Port = 587;
-            client.EnableSsl = true;
-            try
-            {
-                client.Send(mm);
-                return "המייל נשלח בהצלחה";
-            }
-            catch
-            {
-                return mm.Body;
-            }
+                }
+            
+
+
+            
+            
 
         }
 
@@ -48,8 +60,8 @@ namespace DAL.Model
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                //string EmailBody = "hb05331875890@gmail.com";
-                //send(EmailBody);
+                string EmailBody = "hb05331875890@gmail.com";
+               send(EmailBody);
                 return db.CustomerToPools.Include("Package").Include("User").Where(x => x.Package.IdPool == IdPool).ToList();
             }
 
