@@ -14,14 +14,12 @@ namespace DAL.Model
 
 
 
-        public static string send(string maill)
+        public static string send(string body,string mail,string subject)
         {
-
-            
-                MailMessage msg = new MailMessage() { From = new MailAddress("swimmood8@gmail.com", "המזון הקניה המשתלמת ביותר") };
-                msg.To.Add(maill);
-                msg.Body = "הצלחה";
-                msg.Subject = "ניסו";
+                MailMessage msg = new MailMessage() { From = new MailAddress("swimmood8@gmail.com", "swimMood")};
+                msg.To.Add(mail);
+                msg.Body =body ;
+                msg.Subject = subject;
                 msg.IsBodyHtml = false;
                 msg.BodyEncoding = System.Text.Encoding.UTF8;
                 msg.Priority = MailPriority.High;
@@ -44,12 +42,6 @@ namespace DAL.Model
                 return "filed";
 
                 }
-            
-
-
-            
-            
-
         }
 
        
@@ -61,7 +53,7 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
                 string EmailBody = "hb05331875890@gmail.com";
-               send(EmailBody);
+               //send(EmailBody);
                 return db.CustomerToPools.Include("Package").Include("User").Where(x => x.Package.IdPool == IdPool).ToList();
             }
 

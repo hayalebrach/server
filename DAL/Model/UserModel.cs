@@ -3,11 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Net.Mail;
+using System.Net;
 namespace DAL.Model
 {
     public class UserModel
     {
+        public User getUserByMail(string mail)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                return db.Users.FirstOrDefault(x => x.Email == mail && x.Status == true);
+            }
+        }
+    
+        public User SendMail(string body,string mail,string subject)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                Customr_To_PoolModel.send(body, mail,subject);
+                return db.Users.FirstOrDefault(x=>x.Email==mail);
+            }
+        }
         public List<User> GetAllUsers()
         {
             using(SwimMoodEntities db=new SwimMoodEntities())
@@ -83,6 +100,18 @@ namespace DAL.Model
                 newUser.Phone = User.Phone;
                 db.SaveChanges();
                 return User;
+            }
+        }
+        //פונקצית עדכון סיסמא
+
+        public User PutPassWord(string PassWord,int Id)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                User newUser = db.Users.FirstOrDefault(x => x.Id == Id);
+                newUser.Password = PassWord;
+                db.SaveChanges();
+                return newUser;
             }
         }
         //פונקצית מחיקה

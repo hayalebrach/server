@@ -10,10 +10,19 @@ namespace Client_2.Controllers
     public class UserController : ApiController
     {
         BLL.UserService service = new BLL.UserService();
-  
-
 
         [HttpGet]
+        public DTO.UserDTO getUserByMail(string mail)
+        {
+            return service.getUserByMail(mail);
+
+        }
+        [HttpGet]
+        [Route("~/api/User/SendMail")]
+        public DTO.UserDTO SendMail(string mail,string body,string subject)
+        {
+            return service.SendMail(body, mail,subject);
+        }
         //פונקצית GET שמקבלת לפי שם וסיסמא
         public DTO.UserDTO GetByIdAndPassword(string name, string password)
         {
@@ -49,7 +58,12 @@ namespace Client_2.Controllers
         {
             return service.Put(User);
         }
+        //פונקצית עדכון סיסמא
+        public DTO.UserDTO PutPassWord(string PassWord,int Id)
+        {
+            return service.PutPassWord(PassWord,Id);
+        }
 
     }
-    }
+}
 
