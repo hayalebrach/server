@@ -8,19 +8,18 @@ namespace BLL
 {
     public class CoursService
     {
-        DAL.Model.CoursModel model = new DAL.Model.CoursModel(); 
+        DAL.Model.CoursModel model = new DAL.Model.CoursModel();
+        //פונקציה שלוקחת את כל הקורסים
         public List<DTO.CoursDTO> Get()
         {
             return convert.CoursConvert.Convert(model.Get()); 
         }
-
+        //לוקחת את כל הקורסים לבריכה
         public List<DTO.CoursDTO> GetCoursesByPool(int IdPool)
         {
             return convert.CoursConvert.Convert(model.GetCoursesByPool(IdPool));
         }
-
-
-
+        //מוסיפה קורס
         public DTO.CoursDTO AddCourse(DTO.CoursDTO Course)
         {
             return convert.CoursConvert.Convert(model.AddCourse(convert.CoursConvert.Convert(Course)));
@@ -39,6 +38,7 @@ namespace BLL
             return convert.CoursConvert.Convert(model.Put(convert.CoursConvert.Convert(Cours)));
 
         }
+
         //עדכון קורס
         //public DTO.CoursDTO UpdateCourse(DTO.CoursDTO course)
         //{

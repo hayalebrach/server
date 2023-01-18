@@ -12,8 +12,9 @@ namespace DTO
         public Nullable<int> PhoneGuide { get; set; }
         //אימייל מדריך
         public string EmailGuide { get; set; }
-
+        //שם הבריכה
         public string PoolName { get; set; }
+
         public int Id { get; set; }
         public int IdPool { get; set; }
         public string NameCours { get; set; }
@@ -22,7 +23,7 @@ namespace DTO
         public int IdUser { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<int> Price { get; set; }
-        public string Pic { get; set; }
+        public int IdPic { get; set; }
 
 
         public Nullable<System.TimeSpan> StartHour { get; set; }

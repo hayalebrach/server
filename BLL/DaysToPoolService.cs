@@ -9,10 +9,13 @@ namespace BLL
     public  class DaysToPoolService
     {
         DAL.Model.DaysToPoolModel model = new DAL.Model.DaysToPoolModel();
+        //לוקחת שעה בבריכה לפי ת"ז
+
         public DTO.DaysToPoolDTO Get(int Id)
         {
             return convert.DaysToPoolConvert.Convert(model.Get(Id));
         }
+        //לוקחת מערכת שעות לבריכה
         public List<DTO.DaysToPoolDTO> GetTimeByIdPool(int IdPool)
         {
             return convert.DaysToPoolConvert.Convert(model.GetTimeByIdPool(IdPool));

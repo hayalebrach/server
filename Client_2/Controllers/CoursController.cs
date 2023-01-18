@@ -13,24 +13,21 @@ namespace Client_2.Controllers
     public class CoursController : ApiController
     {
         BLL.CoursService service = new BLL.CoursService();
-
-
+        //פונקציה שלוקחת את כל הקורסים
          [HttpGet]
         public List<DTO.CoursDTO> getAllCourses()
         {
             return service.Get();
         }
-
+        //לוקחת את כל הקורסים לבריכה
         public List<DTO.CoursDTO> GetCoursesByPool(int IdPool)
         {
             return service.GetCoursesByPool(IdPool);
         }
-
+        //מוסיפה קורס
         public DTO.CoursDTO AddCourse(DTO.CoursDTO Course)
         {
             return service.AddCourse(Course);
-
-            
         }
         //מחיקה
         [HttpPut]

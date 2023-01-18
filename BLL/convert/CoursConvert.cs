@@ -24,6 +24,7 @@ namespace BLL.convert
                 IdUser = obj.IdUser,
                 Price = obj.Price,
                 Status= obj.Status,
+                IdPic = obj.IdPic,
                 //PoolName = obj.Pool?.Name,
                 //EmailGuide = obj.User?.Email,
                 //PhoneGuide = obj.User?.Phone
@@ -47,6 +48,7 @@ namespace BLL.convert
                 IdUser = obj.IdUser,
                 Price = obj.Price,
                 Status = obj.Status,
+                IdPic = obj.IdPic,
 
 
             };

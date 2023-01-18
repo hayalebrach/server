@@ -8,6 +8,7 @@ namespace DAL.Model
 {
     public class DaysToPoolModel
     {
+        //לוקחת שעה בבריכה לפי ת"ז
         public DaysToPool Get(int Id)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
@@ -15,6 +16,7 @@ namespace DAL.Model
                 return db.DaysToPools.FirstOrDefault(x=>x.Id==Id&&x.Status==true);
             }
         }
+        //לוקחת מערכת שעות לבריכה
         public List<DaysToPool> GetTimeByIdPool(int IdPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())

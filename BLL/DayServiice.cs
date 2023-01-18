@@ -10,7 +10,7 @@ namespace BLL
     {
       
         DAL.Model.DaysModel model = new DAL.Model.DaysModel();
-
+        //כל הימים
         public List<DTO.DaysDTO> Get()//כל המשתמשים
         {
             return convert.DaysConvert.Convert(model.Get());

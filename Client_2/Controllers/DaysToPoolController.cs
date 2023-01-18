@@ -11,19 +11,21 @@ namespace Client_2.Controllers
     {
         BLL.DaysToPoolService service = new BLL.DaysToPoolService();
 
-
+        //לוקחת שעה בבריכה לפי ת"ז
         [HttpGet]
         [Route("~/api/DaysToPool/Get")]
 
         public DTO.DaysToPoolDTO Get(int Id)
         {
             return service.Get(Id);
-        }        
+        } 
+        //לוקחת מערכת שעות לבריכה
         [Route("~/api/DaysToPool/GetTimeByIdPool")]
         public List<DTO.DaysToPoolDTO> GetTimeByIdPool(int IdPool)
         {
             return service.GetTimeByIdPool(IdPool);
         }
+        //מוסיפה לבריכה זמן
         [HttpPut]
         public DTO.DaysToPoolDTO AddDaysToPool(DTO.DaysToPoolDTO DaysToPool)
         {

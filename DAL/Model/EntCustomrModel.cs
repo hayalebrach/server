@@ -8,17 +8,13 @@ namespace DAL.Model
 {
     public class EntCustomrModel
     {
-
-        //פונקצית
-        //GET 
-        //שמחזירה את השעות פעילות
         public List<EnterCustomer> Get()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
                 return db.EnterCustomers.ToList();
         }
 
-
+        //לוקחת את כל המשתמשים לבריכה זו באותו ביום
         public List<EnterCustomer> GetAllNumPeople(int IdPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
@@ -30,7 +26,7 @@ namespace DAL.Model
                 return EnterCustomerList;
             }
         }
-        //
+        //שמירת מקום
         public EnterCustomer Post(EnterCustomer EnterCustomer)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())

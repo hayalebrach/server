@@ -28,8 +28,10 @@ namespace DAL
         public Nullable<int> TotalPrice { get; set; }
         public Nullable<System.DateTime> DateBuy { get; set; }
         public Nullable<bool> Status { get; set; }
+        public int IdPool { get; set; }
     
         public virtual Package Package { get; set; }
+        public virtual Pool Pool { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EnterCustomer> EnterCustomers { get; set; }

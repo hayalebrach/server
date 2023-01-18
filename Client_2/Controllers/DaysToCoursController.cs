@@ -11,12 +11,13 @@ namespace Client_2.Controllers
     {
         BLL.DayToCoursService service = new BLL.DayToCoursService();
         [HttpGet]
-
+        //לוקחת מערכת שעות לבריכה
         [Route("~/api/DayToCours/GetTimeByIdPool")]
         public List<DTO.DayToCoursDTO> GetTimeByIdPool(int IdPool)
         {
             return service.GetTimeByIdPool(IdPool);
         }
+        //מוסיפה שעה לבריכה
         [HttpPut]
         public DTO.DayToCoursDTO AddDayToCours(DTO.DayToCoursDTO DayToCours)
         {

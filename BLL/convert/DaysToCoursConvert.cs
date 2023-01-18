@@ -23,6 +23,7 @@ namespace BLL.convert
                StartHour=obj.StartHour,
                Type=obj.Type,
                Id=obj.Id,
+               Status=obj.Status,
             };
         }
         #endregion
@@ -40,7 +41,8 @@ namespace BLL.convert
                IdDays = ((int)obj.IdDays),
                IdPool = ((int)obj.IdPool),
                StartHour = obj.StartHour,
-               Id=obj.Id  
+               Id=obj.Id,
+               Status = obj.Status,
             };
         }
         #endregion

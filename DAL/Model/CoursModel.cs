@@ -8,17 +8,15 @@ namespace DAL.Model
 {
     public class CoursModel
     {
-        //פונקצית
-        //GET 
-        //שמחזירה את השעות פעילות
+        //פונקציה שלוקחת את כל הקורסים
         public List<Course> Get()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                return db.Courses.Include("Pool").ToList();
+                return db.Courses.Include("Pool").Where(x=>x.Status==true).ToList();
             }
         }
-
+        //לוקחת את כל הקורסים לבריכה
         public List<Course> GetCoursesByPool(int IdPool)
         {
 
@@ -27,17 +25,12 @@ namespace DAL.Model
               return  db.Courses.Include("pool").Include("user").Where(x=>x.IdPool==IdPool&&x.Status==true).ToList();
             }
         }
-
-        
         //הוספת קורס
-
         public Course AddCourse(Course Course)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-
                 Course = db.Courses.Add(Course);
-                
                 db.SaveChanges();
                 return Course;
 
@@ -48,12 +41,14 @@ namespace DAL.Model
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
             {
-                Course newCourse = db.Courses.FirstOrDefault(x => x.Id == Course.Id);
+                Course newCourse = db.Courses.FirstOrDefault(x => x.Id == Course.Id&&x.Status==true);
                 newCourse.NameCours = Course.NameCours;
                 newCourse.PeopleAmount = Course.PeopleAmount;
                 newCourse.Dis = Course.Dis; 
                 newCourse.Price = Course.Price;
                 newCourse.Status = true;
+                newCourse.IdPic = Course.IdPic;
+                newCourse.IdUser = Course.IdUser;
                 db.SaveChanges();
                 return Course;
             }
@@ -70,16 +65,5 @@ namespace DAL.Model
                 return Course;
             }
         }
-
-
-
-
-
-
     }
-
-
-
-
-
 }
