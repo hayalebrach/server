@@ -46,6 +46,7 @@ namespace DAL.Model
                 newPool.Name = Pool.Name;
                 newPool.Price = Pool.Price;
                 newPool.Amount = Pool.Amount;
+                newPool.Pic=Pool.Pic;
                 db.SaveChanges();
                 return Pool;
     }

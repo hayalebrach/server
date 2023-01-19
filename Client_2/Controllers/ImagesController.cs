@@ -61,10 +61,6 @@ namespace Client_2.Controllers
 
 
 
-
-
-
-
         }
 
     }
