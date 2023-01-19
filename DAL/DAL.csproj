@@ -101,6 +101,7 @@
     <Compile Include="Model\DaysToPoolModel.cs" />
     <Compile Include="Model\EntCustomrModel.cs" />
     <Compile Include="Model\EreaModel.cs" />
+    <Compile Include="Model\ImagesModel.cs" />
     <Compile Include="Model\PackegeModel.cs" />
     <Compile Include="Model\PoolModel.cs" />
     <Compile Include="Model\RoleModel.cs" />

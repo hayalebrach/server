@@ -9,6 +9,11 @@ namespace BLL
     public class PackegeService
     {
         DAL.Model.PackegeModel model = new DAL.Model.PackegeModel();
+
+        public List<DTO.PackegeDTO> GetAllCards()
+        {
+            return convert.PackegeConvert.Convert(model.GetAllCards());
+        }
         public DTO.PackegeDTO GetCardsById(int Id)
         {
             return convert.PackegeConvert.Convert(model.GetCardsById(Id));

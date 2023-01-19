@@ -10,9 +10,13 @@ namespace DAL.Model
 {
     public class Customr_To_PoolModel
     {
-        
 
 
+        public List<CustomerToPool> GetAll()
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+                return db.CustomerToPools.ToList();
+        }
 
         public static string send(string maill)
         {

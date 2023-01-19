@@ -10,7 +10,12 @@ namespace DAL.Model
     {
         //פונקצית
         //GET 
-       
+
+        public List<Package> GetAllCards()
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+                return db.Packages.ToList();
+        }
         //פונקציה שמביאה כרטיסים לבריכה מסוימת
         public List<Package> GetCardsByIdPool(int IdPool)
         {
