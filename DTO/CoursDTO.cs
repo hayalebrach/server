@@ -23,7 +23,7 @@ namespace DTO
         public int IdUser { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<int> Price { get; set; }
-        public int IdPic { get; set; }
+        public string Pic { get; set; }
 
 
         public Nullable<System.TimeSpan> StartHour { get; set; }

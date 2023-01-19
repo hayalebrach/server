@@ -5,22 +5,20 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="3edba0952b354b7cae6c424153843be4" Name="Diagram1" ZoomLevel="106">
-        <EntityTypeShape EntityType="SwimMoodModel.Course" Width="1.5" PointX="5.25" PointY="18.375" />
-        <EntityTypeShape EntityType="SwimMoodModel.CoursToCustomer" Width="1.5" PointX="13.5" PointY="11.875" />
-        <EntityTypeShape EntityType="SwimMoodModel.CustomerToPool" Width="1.5" PointX="10.5" PointY="15.5" />
-        <EntityTypeShape EntityType="SwimMoodModel.Day" Width="1.5" PointX="8.25" PointY="11.375" />
-        <EntityTypeShape EntityType="SwimMoodModel.DaysToCour" Width="1.5" PointX="13.5" PointY="19.625" />
-        <EntityTypeShape EntityType="SwimMoodModel.DaysToPool" Width="1.5" PointX="10.5" PointY="11.875" />
-        <EntityTypeShape EntityType="SwimMoodModel.EnterCustomer" Width="1.5" PointX="12.75" PointY="15.75" />
-        <EntityTypeShape EntityType="SwimMoodModel.Erea" Width="1.5" PointX="6" PointY="12" />
-        <EntityTypeShape EntityType="SwimMoodModel.Image" Width="1.5" PointX="6" PointY="23.375" />
-        <EntityTypeShape EntityType="SwimMoodModel.Package" Width="1.5" PointX="10.5" PointY="23.25" />
-        <EntityTypeShape EntityType="SwimMoodModel.Pool" Width="1.5" PointX="8.25" PointY="14.375" />
-        <EntityTypeShape EntityType="SwimMoodModel.Role" Width="1.5" PointX="0.75" PointY="13.25" />
-        <EntityTypeShape EntityType="SwimMoodModel.RolesToPool" Width="1.5" PointX="5.25" PointY="15" />
-        <EntityTypeShape EntityType="SwimMoodModel.Sale" Width="1.5" PointX="10.5" PointY="19.75" />
-        <EntityTypeShape EntityType="SwimMoodModel.User" Width="1.5" PointX="3" PointY="15.25" />
-        <AssociationConnector Association="SwimMoodModel.FK_Course_Images" />
+        <EntityTypeShape EntityType="SwimMoodModel.Course" Width="1.5" PointX="10.5" PointY="15.375" />
+        <EntityTypeShape EntityType="SwimMoodModel.CoursToCustomer" Width="1.5" PointX="12.75" PointY="11.875" />
+        <EntityTypeShape EntityType="SwimMoodModel.CustomerToPool" Width="1.5" PointX="13.5" PointY="15.375" />
+        <EntityTypeShape EntityType="SwimMoodModel.Day" Width="1.5" PointX="13.5" PointY="20.25" />
+        <EntityTypeShape EntityType="SwimMoodModel.DaysToCour" Width="1.5" PointX="15.75" PointY="15.5" />
+        <EntityTypeShape EntityType="SwimMoodModel.DaysToPool" Width="1.5" PointX="10.5" PointY="11.75" />
+        <EntityTypeShape EntityType="SwimMoodModel.EnterCustomer" Width="1.5" PointX="18.75" PointY="15.625" />
+        <EntityTypeShape EntityType="SwimMoodModel.Erea" Width="1.5" PointX="6" PointY="18.25" />
+        <EntityTypeShape EntityType="SwimMoodModel.Package" Width="1.5" PointX="10.5" PointY="19.625" />
+        <EntityTypeShape EntityType="SwimMoodModel.Pool" Width="1.5" PointX="8.25" PointY="14.25" />
+        <EntityTypeShape EntityType="SwimMoodModel.Role" Width="1.5" PointX="0.75" PointY="13.125" />
+        <EntityTypeShape EntityType="SwimMoodModel.RolesToPool" Width="1.5" PointX="5.25" PointY="14.875" />
+        <EntityTypeShape EntityType="SwimMoodModel.Sale" Width="1.5" PointX="10.5" PointY="22.75" />
+        <EntityTypeShape EntityType="SwimMoodModel.User" Width="1.5" PointX="3" PointY="15.125" />
         <AssociationConnector Association="SwimMoodModel.FK_Course_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_Course_User" />
         <AssociationConnector Association="SwimMoodModel.FK_CoursToCustomer_Course" />
@@ -37,7 +35,6 @@
         <AssociationConnector Association="SwimMoodModel.FK_DaysToPool_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_EnterCustomer_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_Pool_Erea" />
-        <AssociationConnector Association="SwimMoodModel.FK_Pool_Images" />
         <AssociationConnector Association="SwimMoodModel.FK_packages_Pool" />
         <AssociationConnector Association="SwimMoodModel.FK_Pool_User" />
         <AssociationConnector Association="SwimMoodModel.FK_RolesToPool_Pool" />

@@ -15,5 +15,18 @@ namespace Client_2.Controllers
         {
             return service.GetAllEreas();
         }
+        //הוספת איזור
+        [HttpPost]
+        public DTO.EreaDTO Post(DTO.EreaDTO Erea)
+        {
+            return service.Post(Erea);
+        }
+
+        //פונקציה שמחזירה לי אוביקט שהשם שלו שווה לשם שהיא קיבלה
+        public DTO.EreaDTO GetByName(string Name)
+        {
+            return service.GetByName(Name);
+        }
     }
+
 }

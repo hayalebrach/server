@@ -18,7 +18,16 @@ namespace DAL.Model
                 return db.Ereas.ToList();
             }
         }
+        //פונקציה שמחזירה לי אוביקט שהשם שלו שווה לשם שהיא קיבלה
+        public Erea GetByName(string Name)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                Erea Erea = new Erea();
 
+                return db.Ereas.FirstOrDefault(x => x.Name == Name);
+            }
+        }
         public Erea Get(int Id)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())

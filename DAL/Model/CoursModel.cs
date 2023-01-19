@@ -47,7 +47,7 @@ namespace DAL.Model
                 newCourse.Dis = Course.Dis; 
                 newCourse.Price = Course.Price;
                 newCourse.Status = true;
-                newCourse.IdPic = Course.IdPic;
+                newCourse.Pic = Course.Pic;
                 newCourse.IdUser = Course.IdUser;
                 db.SaveChanges();
                 return Course;

@@ -29,9 +29,8 @@ namespace DAL
         public int IdUser { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<int> Price { get; set; }
-        public int IdPic { get; set; }
+        public string Pic { get; set; }
     
-        public virtual Image Image { get; set; }
         public virtual Pool Pool { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
