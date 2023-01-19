@@ -14,9 +14,21 @@ namespace DAL
     
     public partial class Image
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Image()
+        {
+            this.Courses = new HashSet<Course>();
+            this.Pools = new HashSet<Pool>();
+        }
+    
         public int Id { get; set; }
         public string NameImage { get; set; }
         public string ImageCaption { get; set; }
         public string FileValue { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Course> Courses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pool> Pools { get; set; }
     }
 }

@@ -10,6 +10,7 @@ namespace Client_2.Controllers
     public class PoolController : ApiController
     {
         BLL.PoolService service = new BLL.PoolService();
+        //לוקחת את כל הבריכות
 
         [HttpGet]
         public List<DTO.PoolDTO> GetAllPools()

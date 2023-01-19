@@ -9,57 +9,60 @@ namespace BLL
     public class UserService
     {
         DAL.Model.UserModel model = new DAL.Model.UserModel();
-        //אין לו פונקצית המשך במודל 
-
-        /*public List<DTO.UserDTO> GetAllUsers()//כל המשתמשים
+        //פונקצית GET לפי מייל
+        public DTO.UserDTO getUserByMail(string mail)
         {
-            return convert.UserConvert.Convert(model.GetAllUsers());
-        }*/
-        public List<DTO.UserDTO> GetAllUsers()
-        {
-            return convert.UserConvert.Convert(model.GetAllUsers());
+            return convert.UserConvert.Convert(model.getUserByMail(mail));
         }
-        public List<DTO.UserDTO> GetAllManagers()
+       
+        //פונקתיה ששולחת מייל
+        public DTO.UserDTO SendMail(string body, string mail,string subject)
         {
-            return convert.UserConvert.Convert(model.GetAllManagers());
+            return convert.UserConvert.Convert(model.SendMail(body, mail,subject));
         }
+        //פונקצית GET שמקבלת לפי שם וסיסמא
+        public DTO.UserDTO GetByIdAndPassword(string name, string password)
+        {
+            return convert.UserConvert.Convert(model.GetByIdAndPassword(name, password));
+        }
+        //פונקציה שלוקחת את כל המדריכים לקורסים שבאותה בריכה
         public List<DTO.UserDTO> GetAllGuide()
         {
             return convert.UserConvert.Convert(model.GetAllGuide());
         }
-
-        //אין לו פונקצית המשך במודל 
-        //public DTO.UserDTO GetById(int UserId)
-        //{
-        //    return convert.UserConvert.Convert(model.GetById(UserId));
-        //}
-
-
-
-        /*public DTO.UserDTO GetById(int UserId)
+        //פונקציה שלוקחת את כל המשתמשים
+        public List<DTO.UserDTO> GetAllUsers()
         {
-            return convert.UserConvert.Convert(model.GetById(UserId));
-
-        }*/
-
-        //פונקצית GET שמקבלת לפי שם וסיסמא
-
-        public DTO.UserDTO GetByIdAndPassword(string name,string password) 
-        {
-            return convert.UserConvert.Convert(model.GetByIdAndPassword(name,password));
+            return convert.UserConvert.Convert(model.GetAllUsers());
         }
-        //הוספת משתמש
+        //פונקציה שלוקחת את כל מנהלי הבריכות
+        public List<DTO.UserDTO> GetAllManagers()
+        {
+            return convert.UserConvert.Convert(model.GetAllManagers());
+        }
+        //פונקציה שמוסיפה משתמש/מנהל בריכה/מנהל אתר
         public DTO.UserDTO AddUser(DTO.UserDTO User)
 
         {
             return convert.UserConvert.Convert(model.AddUser(convert.UserConvert.Convert(User)));
         }
+        //פונקצית עדכון סיסמא
+        public DTO.UserDTO PutPassWord(string PassWord, int Id)
+        {
+            return convert.UserConvert.Convert(model.PutPassWord(PassWord, Id));
+        }
+        //פונקציה שמעדכנת כניסה אחרונה
+        public DTO.UserDTO LastEnteryDate(DTO.UserDTO User)
+        {
+            return convert.UserConvert.Convert(model.LastEnteryDate(convert.UserConvert.Convert(User)));
+        }
 
         //עדכון משתמש
-        public DTO.UserDTO Put(DTO.UserDTO User)
-        {
-            return convert.UserConvert.Convert(model.Put(convert.UserConvert.Convert(User)));
+        
+        //public DTO.UserDTO Put(DTO.UserDTO User)
+        //{
+        //    return convert.UserConvert.Convert(model.Put(convert.UserConvert.Convert(User)));
 
-        }
+        //}
     }
 }

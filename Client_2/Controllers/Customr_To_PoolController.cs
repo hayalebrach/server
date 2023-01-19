@@ -22,30 +22,27 @@ namespace Client_2.Controllers
             return service.GetByIdPool(IdPool);
         }
         [HttpGet]
+        //פונקציה שמביאה היסטורית קניות של לקוח בבריכה מסוימת
         public List<DTO.Customr_To_PoolDTO> GetHistoryOfUser(int IdUser)
         {
             return service.GetHistoryOfUser(IdUser);
         }
-
+        //פונקציה שמביאה היסטורית קניותשל משתמש למנהל בריכה מסוימת
         public List<DTO.Customr_To_PoolDTO> GetHistoryByIdPoolAndIdUser(int IdUser, int IdPool)
         {
             return service.GetHistoryByIdPoolAndIdUser(IdUser, IdPool);
         }
-
-
-        public DTO.Customr_To_PoolDTO Purchasing(DTO.Customr_To_PoolDTO purchase)
-        {
-            return service.Purchasing(purchase);
-        }
-
-
-
-
-        
+        //מביאה את כל המתמשים לבריכה
         public List<DTO.Customr_To_PoolDTO> Get()
         {
             return service.Get();
         }
+        //רכישת כרטיסיה של לקוח
+        public DTO.Customr_To_PoolDTO Purchasing(DTO.Customr_To_PoolDTO purchase)
+        {
+            return service.Purchasing(purchase);
+        }
+        //פונקצית עדכון כשלקוח משתמש בכרטיסיה מסוימת
         [HttpPut]
         [Route("~/api/Customr_To_Pool/Put")]
         public DTO.Customr_To_PoolDTO Put(int Id,int AmountGet)

@@ -15,6 +15,7 @@ namespace Client_2.Controllers
         {
             return service.GetAllCards();
         }
+       //לוקחת כרטיס לפי ת"ז
         public DTO.PackegeDTO GetCardsById(int Id)
         {
             return service.GetCardsById(Id);
@@ -27,7 +28,6 @@ namespace Client_2.Controllers
             return service.GetCardsByIdPool(IdPool);
         }
         //הוספת כרטיס
-
         [HttpPost]
         public DTO.PackegeDTO AddCard(DTO.PackegeDTO Card)
         {

@@ -16,6 +16,16 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities())
                 return db.Packages.ToList();
         }
+
+         //לוקחת כרטיס לפי ת"ז
+        public Package GetCardsById(int Id)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                return db.Packages.FirstOrDefault(x => x.Id == Id&&x.Status==true);
+            }
+        }
+
         //פונקציה שמביאה כרטיסים לבריכה מסוימת
         public List<Package> GetCardsByIdPool(int IdPool)
         {
@@ -25,14 +35,7 @@ namespace DAL.Model
             }
                
         }
-
-        public Package GetCardsById(int Id)
-        {
-            using (SwimMoodEntities db = new SwimMoodEntities())
-            {
-                return db.Packages.FirstOrDefault(x => x.Id == Id);
-            }
-        }
+      
         //מוסיפה כרטיסיה
         public Package AddCard(Package Package)
         {

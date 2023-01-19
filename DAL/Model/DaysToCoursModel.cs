@@ -8,7 +8,7 @@ namespace DAL.Model
 {
     public class DaysToCoursModel
     {
-
+        //לוקחת מערכת שעות לבריכה
         public List<DaysToCour> GetTimeByIdPool(int IdPool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
@@ -16,7 +16,7 @@ namespace DAL.Model
                 return db.DaysToCours.Where(x => x.IdPool == IdPool && x.Status == true).ToList();
             }
         }
-        //אולי נעשה את הבדיקה הזו דרך הריאקט
+        //מוסיפה שעה לבריכה
         public DaysToCour AddDaysToCours(DaysToCour DaysToCours)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
@@ -32,8 +32,7 @@ namespace DAL.Model
                 {
                     DaysToCours.Status = true;
                     DaysToCours = db.DaysToCours.Add(DaysToCours);
-                }
-                   
+                }             
                 db.SaveChanges();
                 return DaysToCours;
             }

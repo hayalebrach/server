@@ -18,8 +18,10 @@ namespace DAL
         public int IdUser { get; set; }
         public int IdCours { get; set; }
         public Nullable<bool> Status { get; set; }
+        public int IdPool { get; set; }
     
         public virtual Course Course { get; set; }
+        public virtual Pool Pool { get; set; }
         public virtual User User { get; set; }
     }
 }

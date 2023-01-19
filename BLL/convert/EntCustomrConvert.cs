@@ -16,14 +16,14 @@ namespace BLL.convert
                 return null;
             return new DTO.EntCustomrDTO()
             {
-                Id = obj.Id,
+               Id = obj.Id,
                EndHour = obj.EndHour,
                IdPool = obj.IdPool,
                NumPeople = obj.NumPeople,
                IdCustomerToPool = obj.IdCustomerToPool,
                Status = obj.Status,
-                EnterDate = obj.EnterDate,
-                StartHour = obj.StartHour,
+               EnterDate = obj.EnterDate,
+               StartHour = obj.StartHour,
             };
         }
         #endregion
@@ -43,6 +43,7 @@ namespace BLL.convert
                 Status = obj.Status,
                 EnterDate = obj.EnterDate,
                 StartHour = obj.StartHour,
+                
                
             };
         }

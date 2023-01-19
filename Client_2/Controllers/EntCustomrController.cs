@@ -8,8 +8,11 @@ using System.Web.Http;
 namespace Client_2.Controllers
 {
     public class EntCustomrController : ApiController
-    {
+    {   
+
         BLL.EntCustomrService service = new BLL.EntCustomrService();
+
+        //לוקחת את כל המשתמשים לבריכה זו באותו ביום
         [HttpGet]
         [Route("~/api/EntCustomr/GetAllNumPeople")]
 
@@ -17,6 +20,7 @@ namespace Client_2.Controllers
         {
             return service.GetAllNumPeople(IdPool);
         }
+        //שמירת מקום
         [HttpPost]
         public DTO.EntCustomrDTO Post(DTO.EntCustomrDTO EntCustomrDTO)
         {

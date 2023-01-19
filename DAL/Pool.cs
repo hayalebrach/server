@@ -18,6 +18,8 @@ namespace DAL
         public Pool()
         {
             this.Courses = new HashSet<Course>();
+            this.CoursToCustomers = new HashSet<CoursToCustomer>();
+            this.CustomerToPools = new HashSet<CustomerToPool>();
             this.DaysToCours = new HashSet<DaysToCour>();
             this.DaysToPools = new HashSet<DaysToPool>();
             this.EnterCustomers = new HashSet<EnterCustomer>();
@@ -35,10 +37,17 @@ namespace DAL
         public int IdErea { get; set; }
         public string Phone { get; set; }
         public Nullable<bool> Status { get; set; }
-        public string Pic { get; set; }
+        public Nullable<int> Lat { get; set; }
+        public Nullable<int> Lng { get; set; }
+        public string Dis { get; set; }
+        public int IdPic { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Course> Courses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CoursToCustomer> CoursToCustomers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CustomerToPool> CustomerToPools { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DaysToCour> DaysToCours { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -46,6 +55,7 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EnterCustomer> EnterCustomers { get; set; }
         public virtual Erea Erea { get; set; }
+        public virtual Image Image { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Package> Packages { get; set; }
         public virtual User User { get; set; }

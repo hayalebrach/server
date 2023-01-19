@@ -25,6 +25,8 @@ namespace BLL.convert
                 DateBuy = obj.DateBuy,
                 Status = obj.Status,
                 IdPool=obj.Package!=null?(int)obj.Package.IdPool:0
+     
+                
                
 
                 
@@ -48,7 +50,9 @@ namespace BLL.convert
                 IdPackage =((int) obj.IdPackage),
                 IdUser = ((int)obj.IdUser),
                 Status=obj.Status,
-                
+                IdPool=((int)obj.IdPool),
+              
+             
             };
         }
         #endregion

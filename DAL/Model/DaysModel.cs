@@ -8,7 +8,7 @@ namespace DAL.Model
 {
     public class DaysModel
     {
-        public List<Day> Get()  //כל המשתמשים
+        public List<Day> Get()  //כל הימים
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
                 return db.Days.ToList();

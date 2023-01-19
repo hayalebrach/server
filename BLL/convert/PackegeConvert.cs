@@ -21,6 +21,7 @@ namespace BLL.convert
                 EntersAmount = obj.EntersAmount,
                 Price = obj.Price,
                 Status = obj.Status,
+                
             
             };
         }

@@ -8,25 +8,13 @@ namespace DAL.Model
 {
     public class PoolModel
     {
-        //פונקצית
-        //GET 
-        //שמחזירה את השעות פעילות
+        //לוקחת את כל הבריכות
         public List<Pool> GetAllPools()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
-                return db.Pools.ToList();
+                return db.Pools.Where(x=>x.Status==true).ToList();
         }
-
-        public Pool Get(int Id)
-        {
-            using (SwimMoodEntities db = new SwimMoodEntities())
-            {
-                Pool Pool = new Pool();
-
-                return db.Pools.FirstOrDefault(x => x.Id == Id&&x.Status==true);
-            }
-        }
-        //
+        //הוספת בריכה
         public Pool AddPool(Pool Pool)
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
@@ -38,6 +26,16 @@ namespace DAL.Model
 
             }
         }
+        public Pool Get(int Id)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                Pool Pool = new Pool();
+
+                return db.Pools.FirstOrDefault(x => x.Id == Id&&x.Status==true);
+            }
+        }
+        
         //פונקצית עדכון
         public Pool Put(Pool Pool)
         {
