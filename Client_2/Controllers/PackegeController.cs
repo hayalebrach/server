@@ -10,6 +10,11 @@ namespace Client_2.Controllers
     public class PackegeController : ApiController
     {
         BLL.PackegeService service = new BLL.PackegeService();
+        [Route("~/api/Packege/GetAllCards")]
+        public List<DTO.PackegeDTO> GetAllCards()
+        {
+            return service.GetAllCards();
+        }
        //לוקחת כרטיס לפי ת"ז
         public DTO.PackegeDTO GetCardsById(int Id)
         {

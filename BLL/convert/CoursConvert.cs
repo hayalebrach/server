@@ -9,9 +9,9 @@ namespace BLL.convert
     public class CoursConvert
     {
         #region המרה משכבת דיטיאו לשכבת דל
-        public static DTO.CoursDTO Convert(DAL.Course  obj)
+        public static DTO.CoursDTO Convert(DAL.Course obj)
         {
-            
+
             if (obj == null)
                 return null;
             return new DTO.CoursDTO()
@@ -25,14 +25,15 @@ namespace BLL.convert
                 Price = obj.Price,
                 Status= obj.Status,
                 Pic = obj.Pic,
+
                 //PoolName = obj.Pool?.Name,
                 //EmailGuide = obj.User?.Email,
                 //PhoneGuide = obj.User?.Phone
             };
-   
+
         }
         #endregion
-      
+
         #region המרה משכבת דל לשכבת דיטיאו
         public static DAL.Course Convert(DTO.CoursDTO obj)
         {
@@ -63,11 +64,11 @@ namespace BLL.convert
         #endregion
 
         #region המרה של מערך דלמ לדיטיאו
- public static List<DTO.CoursDTO> Convert(List<DAL.Course> obj)
+        public static List<DTO.CoursDTO> Convert(List<DAL.Course> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }
         #endregion
-       
+
     }
 }

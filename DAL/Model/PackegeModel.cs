@@ -8,6 +8,15 @@ namespace DAL.Model
 {
     public class PackegeModel
     {
+        //פונקצית
+        //GET 
+
+        public List<Package> GetAllCards()
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+                return db.Packages.ToList();
+        }
+
          //לוקחת כרטיס לפי ת"ז
         public Package GetCardsById(int Id)
         {

@@ -50,6 +50,7 @@
     <Compile Include="convert\DaysToPoolConvert.cs" />
     <Compile Include="convert\EntCustomrConvert.cs" />
     <Compile Include="convert\EreaConvert.cs" />
+    <Compile Include="convert\ImagesConvert.cs" />
     <Compile Include="convert\PackegeConvert.cs" />
     <Compile Include="convert\PoolConvert.cs" />
     <Compile Include="convert\RoleConvert.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="DaysToPoolService.cs" />
     <Compile Include="EntCustomrService.cs" />
     <Compile Include="EreaService.cs" />
+    <Compile Include="ImagesService.cs" />
     <Compile Include="PackegeService.cs" />
     <Compile Include="PoolService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
