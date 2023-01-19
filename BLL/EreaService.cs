@@ -14,5 +14,17 @@ namespace BLL
         {
             return convert.EreaConvert.Convert(model.GetAllEreas());
         }
+        //פונקציה שמחזירה לי אוביקט שהשם שלו שווה לשם שהיא קיבלה
+        public DTO.EreaDTO GetByName(string Name)
+        {
+            return convert.EreaConvert.Convert(model.GetByName(Name));
+        }
+        //הוספת איזור
+        public DTO.EreaDTO Post(DTO.EreaDTO Erea)
+        {
+            return convert.EreaConvert.Convert(model.Post(convert.EreaConvert.Convert(Erea)));
+
+        }
+
     }
 }

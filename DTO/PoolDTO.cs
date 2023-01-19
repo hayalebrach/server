@@ -30,7 +30,7 @@ namespace DTO
         public Nullable<int> Lat { get; set; }
         public Nullable<int> Lng { get; set; }
         public string Dis { get; set; }
-        public int IdPic { get; set; }
+        public string Pic { get; set; }
 
 
     }

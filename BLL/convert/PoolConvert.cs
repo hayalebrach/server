@@ -23,7 +23,7 @@ namespace BLL.convert
                 Adress=obj.Adress,
                 IdErea=obj.IdErea,
                 IdUser=obj.IdUser,
-                IdPic=obj.IdPic,
+                Pic=obj.Pic,
                 Dis=obj.Dis,
                 Lat=obj.Lat,
                 Lng=obj.Lng,
@@ -49,7 +49,7 @@ namespace BLL.convert
                 IdErea = ((int)obj.IdErea),
                 IdUser = ((int)obj.IdUser),
                 Dis=obj.Dis,
-                IdPic = ((int)obj.IdPic),
+                Pic = obj.Pic,
                 Lat=obj.Lat,
                 Lng=obj.Lng,
                 
