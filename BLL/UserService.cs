@@ -42,7 +42,6 @@ namespace BLL
         }
         //פונקציה שמוסיפה משתמש/מנהל בריכה/מנהל אתר
         public DTO.UserDTO AddUser(DTO.UserDTO User)
-
         {
             return convert.UserConvert.Convert(model.AddUser(convert.UserConvert.Convert(User)));
         }

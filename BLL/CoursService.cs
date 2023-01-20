@@ -45,6 +45,5 @@ namespace BLL
         //    return convert.CoursConvert.Convert(model.UpdateCourse(convert.CoursConvert.Convert(course)));
 
         //}
-
     }
 }

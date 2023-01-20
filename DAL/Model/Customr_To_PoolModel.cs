@@ -17,8 +17,6 @@ namespace DAL.Model
             using (SwimMoodEntities db = new SwimMoodEntities())
                 return db.CustomerToPools.ToList();
         }
-
-        public static string send(string maill)
         //המייל
         public static string send(string body,string mail,string subject)
         {

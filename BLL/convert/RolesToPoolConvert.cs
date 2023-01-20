@@ -6,54 +6,49 @@ using System.Threading.Tasks;
 
 namespace BLL.convert
 {
-    public class ImagesConvert
+    public class RolesToPoolConvert
     {
-
-        public static DTO.ImagesDTO Convert(DAL.Image obj)
+        #region המרה משכבת דיטיאו לשכבת דל
+        public static DTO.RolesToPoolDTO Convert(DAL.RolesToPool obj)
         {
 
             if (obj == null)
                 return null;
-            return new DTO.ImagesDTO()
+            return new DTO.RolesToPoolDTO()
             {
                 Id = obj.Id,
-                NameImage=obj.NameImage,
-                ImageCaption=obj.ImageCaption,
-                FileValue=obj.FileValue,
-
-
+                IdPool = obj.IdPool,
+                IdUser = obj.IdUser,
+                IdRole = obj.IdRole,
             };
 
         }
-
+        #endregion
 
         #region המרה משכבת דל לשכבת דיטיאו
-        public static DAL.Image Convert(DTO.ImagesDTO obj)
+        public static DAL.RolesToPool Convert(DTO.RolesToPoolDTO obj)
         {
             if (obj == null)
                 return null;
-            return new DAL.Image()
+            return new DAL.RolesToPool()
             {
-
                 Id = obj.Id,
-                NameImage = obj.NameImage,
-                ImageCaption = obj.ImageCaption,
-                FileValue = obj.FileValue,
-
-
+                IdPool = obj.IdPool,
+                IdRole = obj.IdRole,
+                IdUser = obj.IdUser,
             };
         }
         #endregion
 
         #region המרה של מערך מדיטיאו לדל
-        public static List<DAL.Image> Convert(List<DTO.ImagesDTO> obj)
+        public static List<DAL.RolesToPool> Convert(List<DTO.RolesToPoolDTO> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }
         #endregion
 
         #region המרה של מערך דלמ לדיטיאו
-        public static List<DTO.ImagesDTO> Convert(List<DAL.Image> obj)
+        public static List<DTO.RolesToPoolDTO> Convert(List<DAL.RolesToPool> obj)
         {
             return obj.Select(x => Convert(x)).ToList();
         }
