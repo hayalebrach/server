@@ -21,6 +21,14 @@ namespace DAL.Model
 
             }            
         }
+
+        public List<CoursToCustomer> Get()
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+            {
+                return db.CoursToCustomers.Where(x => x.Status == true).ToList();
+            }
+        }
         //לוקחת כל הקורסים למשתמש
         public List<CoursToCustomer> GetCoursesByUser(int IdUser)
         {

@@ -23,5 +23,10 @@ namespace BLL
             return convert.CoursToCustomerConvert.Convert(model.GetCoursesByUser(IdUser));
         }
 
+        public List<DTO.CoursToCustomerDTO> Get()
+        {
+            return convert.CoursToCustomerConvert.Convert(model.Get());
+        }
+
     }
 }

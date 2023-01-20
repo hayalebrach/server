@@ -40,7 +40,8 @@ namespace DAL
         public Nullable<int> Lat { get; set; }
         public Nullable<int> Lng { get; set; }
         public string Dis { get; set; }
-        public string Pic { get; set; }
+        public int IdPic { get; set; }
+
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Course> Courses { get; set; }

@@ -24,6 +24,9 @@ namespace Client_2.Controllers
         {
             return service.GetCoursesByUser(IdUser);
         }
-
+        public List<DTO.CoursToCustomerDTO> Get()
+        {
+            return service.Get();
+        }
     }
 }
