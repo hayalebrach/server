@@ -42,7 +42,7 @@ namespace Client_2.Controllers
                     DTO.ImagesDTO Image = new DTO.ImagesDTO()
                     {
                         NameImage = postedFile.FileName,
-                        IdPool=Convert.ToInt32( id)
+                        IdPool = Convert.ToInt32(id)
                     };
 
                     ImagesService service = new ImagesService();

@@ -49,6 +49,7 @@
     <Compile Include="DayToCoursDTO.cs" />
     <Compile Include="EntCustomrDTO.cs" />
     <Compile Include="EreaDTO.cs" />
+    <Compile Include="ImagesDTO.cs" />
     <Compile Include="PackegeDTO.cs" />
     <Compile Include="PoolDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
