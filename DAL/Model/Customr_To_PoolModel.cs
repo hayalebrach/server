@@ -12,11 +12,24 @@ namespace DAL.Model
     {
 
 
-        public List<CustomerToPool> GetAll()
+        public List<CustomerToPool> AllCustomersToPool()
         {
             using (SwimMoodEntities db = new SwimMoodEntities())
                 return db.CustomerToPools.ToList();
         }
+        public List<CustomerToPool> CustomersToPool(int IdPool)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+                return db.CustomerToPools.ToList();
+        }
+
+        public List<CustomerToPool> GetCoursesToUserByIdPool(int IdPool)
+        {
+            using (SwimMoodEntities db = new SwimMoodEntities())
+                return db.CustomerToPools.ToList();
+        }
+        
+
         //המייל
         public static string send(string body,string mail,string subject)
         {

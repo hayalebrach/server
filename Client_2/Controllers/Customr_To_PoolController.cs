@@ -11,9 +11,19 @@ namespace Client_2.Controllers
     {
         BLL.Customr_To_PoolService service = new BLL.Customr_To_PoolService();
 
-        public List<DTO.Customr_To_PoolDTO> GetAll()
+        public List<DTO.Customr_To_PoolDTO> AllCustomersToPool()
         {
-            return service.GetAll();
+            return service.AllCustomersToPool();
+        }
+
+        public List<DTO.Customr_To_PoolDTO> CustomersToPool(int IdPool)
+        {
+            return service.CustomersToPool( IdPool);
+        }
+
+        public List<DTO.Customr_To_PoolDTO> GetCoursesToUserByIdPool(int IdPool)
+        {
+            return service.GetCoursesToUserByIdPool(IdPool);
         }
 
         //פונקציה שמיבאת לקוחות לבריכה מסוימת לפי id

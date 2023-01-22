@@ -11,9 +11,19 @@ namespace BLL
        
         DAL.Model.Customr_To_PoolModel model = new DAL.Model.Customr_To_PoolModel();
 
-        public List<DTO.Customr_To_PoolDTO> GetAll()
+        public List<DTO.Customr_To_PoolDTO> AllCustomersToPool()
         {
-            return convert.Customr_To_PoolConvert.Convert(model.GetAll());
+            return convert.Customr_To_PoolConvert.Convert(model.AllCustomersToPool());
+        }
+
+        public List<DTO.Customr_To_PoolDTO> CustomersToPool(int IdPool)
+        {
+            return convert.Customr_To_PoolConvert.Convert(model.CustomersToPool( IdPool));
+        }
+
+        public List<DTO.Customr_To_PoolDTO> GetCoursesToUserByIdPool(int IdPool)
+        {
+            return convert.Customr_To_PoolConvert.Convert(model.GetCoursesToUserByIdPool(IdPool));
         }
         //פונקציה שמיבאת לקוחות לבריכה מסוימת לפי id
 
