@@ -1,4 +1,7 @@
-﻿using BLL;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +14,6 @@ using System.Web.Http;
 namespace Client_2.Controllers
 {
     public class ImagesController : ApiController
-
     {
         BLL.ImagesService service = new BLL.ImagesService();
 
@@ -42,7 +44,7 @@ namespace Client_2.Controllers
                     DTO.ImagesDTO Image = new DTO.ImagesDTO()
                     {
                         NameImage = postedFile.FileName,
-                        IdPool=Convert.ToInt32( id)
+                        IdPool = Convert.ToInt32(id)
                     };
 
                     ImagesService service = new ImagesService();
@@ -57,11 +59,6 @@ namespace Client_2.Controllers
             {
                 return BadRequest(" לא הצלחנו להוסיף את התמונה כדאי לנסות לשנות את השם");
             }
-
-
-
-
         }
-
     }
 }

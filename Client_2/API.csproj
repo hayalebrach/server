@@ -203,10 +203,10 @@
     <Compile Include="Controllers\EntCustomrController.cs" />
     <Compile Include="Controllers\EreaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\PackegeController.cs" />
     <Compile Include="Controllers\PoolController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\RolesToPoolController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />

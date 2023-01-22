@@ -36,7 +36,6 @@ namespace DAL
         public virtual DbSet<Package> Packages { get; set; }
         public virtual DbSet<Pool> Pools { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<RolesToPool> RolesToPools { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
